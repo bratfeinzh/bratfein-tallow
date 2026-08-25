@@ -85,6 +85,7 @@ function Referenzen() {
     <>
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-14 md:px-8 md:pt-20">
         <SectionHeading
+          as="h1"
           eyebrow="Referenzen"
           title="Was unsere Kundschaft sagt"
           lead="Bratfein verkaufen wir von Hand zu Hand. Diese Stimmen stammen von Menschen, die am Stand probiert und danach wieder bestellt haben."
