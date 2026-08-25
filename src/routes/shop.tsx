@@ -214,6 +214,7 @@ function Shop() {
                     </button>
                     <input
                       name="quantity"
+                      aria-label="Anzahl Gläser (250 g)"
                       type="number"
                       min={1}
                       max={99}
