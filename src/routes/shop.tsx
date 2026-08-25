@@ -123,10 +123,15 @@ function Shop() {
           {sent ? (
             <div className="mt-12 rounded-sm border border-copper/40 bg-background px-7 py-12 text-center shadow-soft">
               <Check className="mx-auto size-8 text-copper" strokeWidth={1.6} />
-              <h3 className="mt-5 text-2xl text-foreground">Vielen Dank für Ihre Anfrage!</h3>
+              <h3 className="mt-5 text-2xl text-foreground">Fast geschafft!</h3>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Wir haben Ihre Bestellung erhalten und melden uns in den nächsten Tagen persönlich
-                bei Ihnen. Die Zahlung erfolgt via Twint oder bar vor Ort.
+                Ihr E-Mail-Programm hat sich mit der fertigen Bestellanfrage geöffnet – bitte einmal
+                senden, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
+                direkt an{" "}
+                <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
+                  {ORDER_EMAIL}
+                </a>
+                . Die Zahlung erfolgt via Twint oder bar vor Ort.
               </p>
               <button
                 type="button"
