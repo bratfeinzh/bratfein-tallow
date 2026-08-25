@@ -51,7 +51,7 @@ const comparison = [
   },
   {
     label: "Geschmack",
-    tallow: "Verstärkt das Fleisch",
+    tallow: "Verstärkt den natürlichen Geschmack\n",
     seed: "Neutral bis flach, kann bitter werden",
   },
   {
