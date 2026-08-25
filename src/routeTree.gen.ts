@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReferenzenRouteImport } from './routes/referenzen'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const ReferenzenRoute = ReferenzenRouteImport.update({
   path: '/referenzen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
@@ -32,30 +38,34 @@ const UeberUnsRoute = UeberUnsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
+  '/shop': typeof ShopRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
+  '/shop': typeof ShopRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
+  '/shop': typeof ShopRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/referenzen' | '/ueber-uns'
+  fullPaths: '/' | '/referenzen' | '/shop' | '/ueber-uns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/referenzen' | '/ueber-uns'
-  id: '__root__' | '/' | '/referenzen' | '/ueber-uns'
+  to: '/' | '/referenzen' | '/shop' | '/ueber-uns'
+  id: '__root__' | '/' | '/referenzen' | '/shop' | '/ueber-uns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ReferenzenRoute: typeof ReferenzenRoute
+  ShopRoute: typeof ShopRoute
   UeberUnsRoute: typeof UeberUnsRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenzenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ueber-uns': {
       id: '/ueber-uns'
       path: '/ueber-uns'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ReferenzenRoute: ReferenzenRoute,
+  ShopRoute: ShopRoute,
   UeberUnsRoute: UeberUnsRoute,
 }
 export const routeTree = rootRouteImport
