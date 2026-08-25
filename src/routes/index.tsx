@@ -68,14 +68,13 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-14 md:px-8 md:pb-28 md:pt-20">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="fade-up">
-            <p className="eyebrow">Rindertalg aus Zürich · 250 g</p>
+            <p className="eyebrow">BEEFTALLOW AUS ZÜRICH</p>
             <h1 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
               Der natürliche Genuss fürs perfekte Steak
             </h1>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-              Bratfein ist reiner Rindertalg von einer Zürcher Metzgerei – schonend ausgelassen, im
-              eleganten 250-Gramm-Glas. Hoher Rauchpunkt, voller Geschmack, keine Industrie.
+              Bratfein ist reiner Rindertalg von einer Zürcher Metzgerei –  Hoher Rauchpunkt, voller Geschmack, keine Industrie.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -92,7 +91,7 @@ function Index() {
               </Link>
             </div>
             <p className="mt-7 text-sm text-muted-foreground">
-              8–10 CHF pro Glas · Abholung am Markt oder nach Absprache
+              Abholung am Markt oder nach Absprache
             </p>
           </div>
 

@@ -30,7 +30,7 @@ export function Header() {
         <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
           <span className="font-serif text-2xl tracking-tight text-foreground">Bratfein</span>
           <span className="hidden text-[0.6rem] font-bold uppercase tracking-[0.24em] text-copper sm:inline">
-            Rindertalg
+            BEEFTALLOW
           </span>
         </Link>
 
