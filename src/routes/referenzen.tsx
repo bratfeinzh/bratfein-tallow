@@ -112,7 +112,7 @@ function Referenzen() {
           <SectionHeading
             eyebrow="Standorte"
             title="Kommende Märkte"
-            lead="Kommen Sie vorbei, probieren Sie und nehmen Sie ein Glas gleich mit. Bezahlung via Twint oder bar vor Ort."
+            lead="Kommen Sie vorbei, probieren Sie und nehmen Sie ein Glas gleich mit. Bezahlung via Twint, Karte oder bar vor Ort."
           />
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
