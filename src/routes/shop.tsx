@@ -141,6 +141,18 @@ function Shop() {
               className="mt-12 space-y-6 rounded-sm border border-border bg-background px-6 py-8 shadow-soft md:px-10 md:py-10"
               onSubmit={(e) => {
                 e.preventDefault();
+                const data = new FormData(e.currentTarget);
+                const body = [
+                  `Name: ${data.get("name") ?? ""}`,
+                  `E-Mail: ${data.get("email") ?? ""}`,
+                  `Adresse: ${data.get("address") ?? ""}`,
+                  `Anzahl Gläser (250 g): ${quantity}`,
+                  `Abholung/Lieferung: ${delivery === "markt" ? "Abholung am Markt" : "Lieferung"}`,
+                  `Bemerkungen: ${data.get("notes") ?? ""}`,
+                ].join("\n");
+                window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
+                  "Bestellanfrage Bratfein",
+                )}&body=${encodeURIComponent(body)}`;
                 setSent(true);
               }}
             >
