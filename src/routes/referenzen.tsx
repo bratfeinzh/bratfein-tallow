@@ -17,7 +17,34 @@ export const Route = createFileRoute("/referenzen")({
         property: "og:description",
         content: "Unsere Marktstände in und um Zürich – plus Stimmen unserer Kundschaft.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://bratfein-tallow.lovable.app/referenzen" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/referenzen" }],
+    scripts: markets.map((m) => ({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        name: `Bratfein am ${m.place}`,
+        startDate: m.start,
+        endDate: m.end,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        location: {
+          "@type": "Place",
+          name: m.location,
+          address: { "@type": "PostalAddress", addressLocality: m.city, addressCountry: "CH" },
+        },
+        organizer: {
+          "@type": "Organization",
+          name: "Bratfein",
+          url: "https://bratfein-tallow.lovable.app",
+        },
+        description: `Bratfein Rindertalg im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
+      }),
+    })),
   }),
   component: Referenzen,
 });
@@ -56,6 +83,9 @@ const markets = [
     time: "10:00 – 19:00",
     badge: "Weihnachtsmarkt",
     location: "Marktplatz Oerlikon, Zürich",
+    start: "2026-12-05T10:00:00+01:00",
+    end: "2026-12-05T19:00:00+01:00",
+    city: "Zürich",
   },
   {
     place: "Quartiermarkt Wiedikon",
@@ -63,6 +93,9 @@ const markets = [
     time: "09:00 – 16:00",
     badge: "Quartiermarkt",
     location: "Idaplatz, Zürich",
+    start: "2026-12-12T09:00:00+01:00",
+    end: "2026-12-12T16:00:00+01:00",
+    city: "Zürich",
   },
   {
     place: "Adventsmarkt Uster",
@@ -70,6 +103,9 @@ const markets = [
     time: "16:00 – 21:00",
     badge: "Weihnachtsmarkt",
     location: "Zeughausareal, Uster",
+    start: "2026-12-18T16:00:00+01:00",
+    end: "2026-12-18T21:00:00+01:00",
+    city: "Uster",
   },
   {
     place: "Samstagsmarkt Bürkliplatz",
@@ -77,6 +113,9 @@ const markets = [
     time: "08:00 – 14:00",
     badge: "Wochenmarkt",
     location: "Bürkliplatz, Zürich",
+    start: "2027-01-16T08:00:00+01:00",
+    end: "2027-01-16T14:00:00+01:00",
+    city: "Zürich",
   },
 ];
 
@@ -85,6 +124,7 @@ function Referenzen() {
     <>
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-14 md:px-8 md:pt-20">
         <SectionHeading
+          as="h1"
           eyebrow="Referenzen"
           title="Was unsere Kundschaft sagt"
           lead="Bratfein verkaufen wir von Hand zu Hand. Diese Stimmen stammen von Menschen, die am Stand probiert und danach wieder bestellt haben."

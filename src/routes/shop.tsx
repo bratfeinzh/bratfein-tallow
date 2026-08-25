@@ -19,10 +19,39 @@ export const Route = createFileRoute("/shop")({
         property: "og:description",
         content: "Bestellung anfragen: 250-g-Glas Rindertalg aus Zürich, 8–10 CHF.",
       },
+      { property: "og:type", content: "product" },
+      { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/shop" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Bratfein Rindertalg 250 g",
+          description:
+            "Reiner Rindertalg aus einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
+          brand: { "@type": "Brand", name: "Bratfein" },
+          category: "Speisefett",
+          weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "CHF",
+            lowPrice: "8",
+            highPrice: "10",
+            availability: "https://schema.org/InStock",
+            url: "https://bratfein-tallow.lovable.app/shop",
+          },
+        }),
+      },
     ],
   }),
   component: Shop,
 });
+
+const ORDER_EMAIL = "bestellung@bratfein.ch";
 
 const highlights = [
   "Reiner Rindertalg, zweifach filtriert",
@@ -94,10 +123,15 @@ function Shop() {
           {sent ? (
             <div className="mt-12 rounded-sm border border-copper/40 bg-background px-7 py-12 text-center shadow-soft">
               <Check className="mx-auto size-8 text-copper" strokeWidth={1.6} />
-              <h3 className="mt-5 text-2xl text-foreground">Vielen Dank für Ihre Anfrage!</h3>
+              <h3 className="mt-5 text-2xl text-foreground">Fast geschafft!</h3>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Wir haben Ihre Bestellung erhalten und melden uns in den nächsten Tagen persönlich
-                bei Ihnen. Die Zahlung erfolgt via Twint oder bar vor Ort.
+                Ihr E-Mail-Programm hat sich mit der fertigen Bestellanfrage geöffnet – bitte einmal
+                senden, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
+                direkt an{" "}
+                <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
+                  {ORDER_EMAIL}
+                </a>
+                . Die Zahlung erfolgt via Twint oder bar vor Ort.
               </p>
               <button
                 type="button"
@@ -112,6 +146,18 @@ function Shop() {
               className="mt-12 space-y-6 rounded-sm border border-border bg-background px-6 py-8 shadow-soft md:px-10 md:py-10"
               onSubmit={(e) => {
                 e.preventDefault();
+                const data = new FormData(e.currentTarget);
+                const body = [
+                  `Name: ${data.get("name") ?? ""}`,
+                  `E-Mail: ${data.get("email") ?? ""}`,
+                  `Adresse: ${data.get("address") ?? ""}`,
+                  `Anzahl Gläser (250 g): ${quantity}`,
+                  `Abholung/Lieferung: ${delivery === "markt" ? "Abholung am Markt" : "Lieferung"}`,
+                  `Bemerkungen: ${data.get("notes") ?? ""}`,
+                ].join("\n");
+                window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
+                  "Bestellanfrage Bratfein",
+                )}&body=${encodeURIComponent(body)}`;
                 setSent(true);
               }}
             >
@@ -173,6 +219,7 @@ function Shop() {
                     </button>
                     <input
                       name="quantity"
+                      aria-label="Anzahl Gläser (250 g)"
                       type="number"
                       min={1}
                       max={99}

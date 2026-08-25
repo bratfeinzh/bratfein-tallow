@@ -113,7 +113,10 @@ function Index() {
       </section>
 
       {/* Features */}
-      <section className="border-y border-border bg-cream/60">
+      <section className="border-y border-border bg-cream/60" aria-labelledby="vorteile">
+        <h2 id="vorteile" className="sr-only">
+          Vorteile von Bratfein Rindertalg
+        </h2>
         <div className="mx-auto grid max-w-6xl gap-px bg-border/70 px-0 md:grid-cols-3">
           {features.map((f) => (
             <article

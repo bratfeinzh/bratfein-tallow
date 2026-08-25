@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReferenzenRouteImport } from './routes/referenzen'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const ShopRoute = ShopRouteImport.update({
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/referenzen' | '/shop' | '/ueber-uns'
+  fullPaths: '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/referenzen' | '/shop' | '/ueber-uns'
-  id: '__root__' | '/' | '/referenzen' | '/shop' | '/ueber-uns'
+  to: '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
+  id: '__root__' | '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ReferenzenRoute: typeof ReferenzenRoute
   ShopRoute: typeof ShopRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UeberUnsRoute: typeof UeberUnsRoute
 }
 
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ueber-uns': {
       id: '/ueber-uns'
       path: '/ueber-uns'
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ReferenzenRoute: ReferenzenRoute,
   ShopRoute: ShopRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UeberUnsRoute: UeberUnsRoute,
 }
 export const routeTree = rootRouteImport
