@@ -56,6 +56,9 @@ const markets = [
     time: "10:00 – 19:00",
     badge: "Weihnachtsmarkt",
     location: "Marktplatz Oerlikon, Zürich",
+    start: "2026-12-05T10:00:00+01:00",
+    end: "2026-12-05T19:00:00+01:00",
+    city: "Zürich",
   },
   {
     place: "Quartiermarkt Wiedikon",
@@ -63,6 +66,9 @@ const markets = [
     time: "09:00 – 16:00",
     badge: "Quartiermarkt",
     location: "Idaplatz, Zürich",
+    start: "2026-12-12T09:00:00+01:00",
+    end: "2026-12-12T16:00:00+01:00",
+    city: "Zürich",
   },
   {
     place: "Adventsmarkt Uster",
@@ -70,6 +76,9 @@ const markets = [
     time: "16:00 – 21:00",
     badge: "Weihnachtsmarkt",
     location: "Zeughausareal, Uster",
+    start: "2026-12-18T16:00:00+01:00",
+    end: "2026-12-18T21:00:00+01:00",
+    city: "Uster",
   },
   {
     place: "Samstagsmarkt Bürkliplatz",
@@ -77,6 +86,9 @@ const markets = [
     time: "08:00 – 14:00",
     badge: "Wochenmarkt",
     location: "Bürkliplatz, Zürich",
+    start: "2027-01-16T08:00:00+01:00",
+    end: "2027-01-16T14:00:00+01:00",
+    city: "Zürich",
   },
 ];
 
