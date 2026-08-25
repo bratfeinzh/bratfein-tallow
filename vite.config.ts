@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle icons up front so Vite doesn't re-optimize deps mid-session
+    // (that mid-session reload is what caused the "null useContext" blank screen).
+    optimizeDeps: { include: ["lucide-react"] },
+  },
 });
