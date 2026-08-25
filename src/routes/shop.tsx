@@ -19,10 +19,39 @@ export const Route = createFileRoute("/shop")({
         property: "og:description",
         content: "Bestellung anfragen: 250-g-Glas Rindertalg aus Zürich, 8–10 CHF.",
       },
+      { property: "og:type", content: "product" },
+      { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/shop" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Bratfein Rindertalg 250 g",
+          description:
+            "Reiner Rindertalg aus einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
+          brand: { "@type": "Brand", name: "Bratfein" },
+          category: "Speisefett",
+          weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "CHF",
+            lowPrice: "8",
+            highPrice: "10",
+            availability: "https://schema.org/InStock",
+            url: "https://bratfein-tallow.lovable.app/shop",
+          },
+        }),
+      },
     ],
   }),
   component: Shop,
 });
+
+const ORDER_EMAIL = "bestellung@bratfein.ch";
 
 const highlights = [
   "Reiner Rindertalg, zweifach filtriert",
