@@ -39,7 +39,14 @@ export function Footer() {
         <div className="text-sm">
           <p className="eyebrow">Kontakt</p>
           <ul className="mt-4 space-y-2 text-walnut-foreground/80">
-            <li>hallo@bratfein.ch</li>
+            <li>
+              <a
+                className="transition-colors hover:text-copper-soft"
+                href="mailto:bratfein.zh@gmail.com"
+              >
+                bratfein.zh@gmail.com
+              </a>
+            </li>
             <li>8000 Zürich, Schweiz</li>
             <li>Zahlung via Twint, Karte oder bar vor Ort</li>
           </ul>

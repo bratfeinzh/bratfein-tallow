@@ -51,7 +51,7 @@ export const Route = createFileRoute("/shop")({
   component: Shop,
 });
 
-const ORDER_EMAIL = "bestellung@bratfein.ch";
+const ORDER_EMAIL = "bratfein.zh@gmail.com";
 
 const highlights = [
   "Reiner Rindertalg, zweifach filtriert",
@@ -156,7 +156,7 @@ function Shop() {
                   `Bemerkungen: ${data.get("notes") ?? ""}`,
                 ].join("\n");
                 window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
-                  "Bestellanfrage Bratfein",
+                  "Bestellung Bratfein Rindertalg",
                 )}&body=${encodeURIComponent(body)}`;
                 setSent(true);
               }}
