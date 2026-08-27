@@ -140,16 +140,28 @@
   blockquote {
     font-family: var(--font-serif);
     font-weight: 500;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 
 @utility surface-walnut {
-  background-image: var(--gradient-walnut);
+  background-image:
+    linear-gradient(160deg, oklch(0.3 0.04 46 / 88%), oklch(0.14 0.02 40 / 94%)),
+    url("./assets/wood-texture.jpg");
+  background-size: cover;
+  background-position: center;
   color: var(--walnut-foreground);
   position: relative;
   isolation: isolate;
 }
+
+@utility gilded {
+  border: 1px solid oklch(0.74 0.12 58 / 35%);
+  box-shadow:
+    inset 0 1px 0 oklch(0.86 0.08 74 / 12%),
+    var(--shadow-soft);
+}
+
 
 @utility grain-overlay {
   position: relative;
