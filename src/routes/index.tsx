@@ -60,12 +60,12 @@ function Index() {
               Reiner Rindertalg aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/shop"
+              <a
+                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Rindertalg"
                 className="inline-flex items-center justify-center rounded-sm bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
               >
                 Jetzt bestellen
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -155,12 +155,12 @@ function Index() {
             <p className="mx-auto mt-5 max-w-md text-sm text-walnut-foreground/70">
               250 g für 8–10 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
             </p>
-            <Link
-              to="/shop"
+            <a
+              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Rindertalg"
               className="mt-9 inline-flex items-center justify-center rounded-sm bg-copper px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground transition-opacity duration-300 hover:opacity-90"
             >
               Jetzt bestellen
-            </Link>
+            </a>
           </div>
         </div>
       </section>
