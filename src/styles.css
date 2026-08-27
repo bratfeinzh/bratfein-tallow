@@ -18,8 +18,11 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Cinzel", "Playfair Display", ui-serif, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: var(--gold);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -62,53 +65,57 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.21 0.008 60);
-  --card: oklch(0.995 0.003 80);
-  --card-foreground: oklch(0.21 0.008 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0.008 60);
-  --primary: oklch(0.24 0.01 55);
-  --primary-foreground: oklch(0.98 0.008 80);
-  --secondary: oklch(0.96 0.012 75);
-  --secondary-foreground: oklch(0.24 0.01 55);
-  --muted: oklch(0.965 0.008 75);
-  --muted-foreground: oklch(0.5 0.015 60);
-  --accent: oklch(0.62 0.115 52);
-  --accent-foreground: oklch(0.99 0.005 80);
+  /* Tiefes Anthrazit als Basis, warmes Off-White als Schrift */
+  --background: oklch(0.16 0.008 50);
+  --foreground: oklch(0.95 0.014 82);
+  --card: oklch(0.2 0.01 50);
+  --card-foreground: oklch(0.95 0.014 82);
+  --popover: oklch(0.2 0.01 50);
+  --popover-foreground: oklch(0.95 0.014 82);
+  --primary: oklch(0.7 0.11 62);
+  --primary-foreground: oklch(0.16 0.012 50);
+  --secondary: oklch(0.24 0.012 52);
+  --secondary-foreground: oklch(0.95 0.014 82);
+  --muted: oklch(0.24 0.012 52);
+  --muted-foreground: oklch(0.74 0.014 78);
+  --accent: oklch(0.78 0.1 78);
+  --accent-foreground: oklch(0.16 0.012 50);
   --destructive: oklch(0.52 0.17 25);
   --destructive-foreground: oklch(0.98 0.005 80);
-  --border: oklch(0.9 0.012 75);
-  --input: oklch(0.9 0.012 75);
-  --ring: oklch(0.62 0.115 52);
+  /* Feine Kupfer-/Goldlinien statt grauer Rahmen */
+  --border: oklch(0.42 0.05 62 / 45%);
+  --input: oklch(0.45 0.05 62 / 55%);
+  --ring: oklch(0.74 0.11 68);
 
   /* Brand tokens */
-  --copper: oklch(0.65 0.12 55);
-  --copper-soft: oklch(0.82 0.06 62);
-  --walnut: oklch(0.24 0.03 45);
-  --walnut-foreground: oklch(0.95 0.015 75);
-  --cream: oklch(0.975 0.012 82);
+  --copper: oklch(0.74 0.12 58);
+  --copper-soft: oklch(0.86 0.08 74);
+  --gold: oklch(0.82 0.11 84);
+  --walnut: oklch(0.26 0.035 48);
+  --walnut-foreground: oklch(0.95 0.015 78);
+  --cream: oklch(0.21 0.012 52);
 
-  --gradient-copper: linear-gradient(135deg, var(--copper), var(--copper-soft));
-  --gradient-walnut: linear-gradient(160deg, oklch(0.28 0.035 48), oklch(0.18 0.02 40));
-  --shadow-soft: 0 1px 2px oklch(0.21 0.008 60 / 6%), 0 12px 32px -18px oklch(0.21 0.008 60 / 22%);
-  --shadow-lift: 0 2px 4px oklch(0.21 0.008 60 / 6%), 0 28px 60px -28px oklch(0.21 0.008 60 / 30%);
+  --gradient-copper: linear-gradient(135deg, var(--copper), var(--gold));
+  --gradient-walnut: linear-gradient(160deg, oklch(0.3 0.04 46), oklch(0.16 0.022 40));
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 40%), 0 14px 34px -18px oklch(0 0 0 / 60%);
+  --shadow-lift: 0 2px 6px oklch(0 0 0 / 45%), 0 32px 70px -28px oklch(0 0 0 / 70%);
   --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
 
-  --chart-1: oklch(0.65 0.12 55);
-  --chart-2: oklch(0.5 0.06 60);
-  --chart-3: oklch(0.35 0.04 50);
-  --chart-4: oklch(0.8 0.08 70);
-  --chart-5: oklch(0.24 0.03 45);
-  --sidebar: oklch(0.975 0.012 82);
-  --sidebar-foreground: oklch(0.21 0.008 60);
-  --sidebar-primary: oklch(0.24 0.01 55);
-  --sidebar-primary-foreground: oklch(0.98 0.008 80);
-  --sidebar-accent: oklch(0.96 0.012 75);
-  --sidebar-accent-foreground: oklch(0.24 0.01 55);
-  --sidebar-border: oklch(0.9 0.012 75);
-  --sidebar-ring: oklch(0.65 0.12 55);
+  --chart-1: oklch(0.74 0.12 58);
+  --chart-2: oklch(0.82 0.11 84);
+  --chart-3: oklch(0.5 0.06 60);
+  --chart-4: oklch(0.86 0.08 74);
+  --chart-5: oklch(0.26 0.035 48);
+  --sidebar: oklch(0.19 0.01 50);
+  --sidebar-foreground: oklch(0.95 0.014 82);
+  --sidebar-primary: oklch(0.74 0.12 58);
+  --sidebar-primary-foreground: oklch(0.16 0.012 50);
+  --sidebar-accent: oklch(0.24 0.012 52);
+  --sidebar-accent-foreground: oklch(0.95 0.014 82);
+  --sidebar-border: oklch(0.42 0.05 62 / 45%);
+  --sidebar-ring: oklch(0.74 0.12 58);
 }
+
 
 @layer base {
   * {
@@ -133,16 +140,28 @@
   blockquote {
     font-family: var(--font-serif);
     font-weight: 500;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 
 @utility surface-walnut {
-  background-image: var(--gradient-walnut);
+  background-image:
+    linear-gradient(160deg, oklch(0.3 0.04 46 / 88%), oklch(0.14 0.02 40 / 94%)),
+    url("./assets/wood-texture.jpg");
+  background-size: cover;
+  background-position: center;
   color: var(--walnut-foreground);
   position: relative;
   isolation: isolate;
 }
+
+@utility gilded {
+  border: 1px solid oklch(0.74 0.12 58 / 35%);
+  box-shadow:
+    inset 0 1px 0 oklch(0.86 0.08 74 / 12%),
+    var(--shadow-soft);
+}
+
 
 @utility grain-overlay {
   position: relative;
