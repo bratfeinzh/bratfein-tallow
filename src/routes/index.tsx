@@ -1,63 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Flame, MapPin, Leaf, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
-import steakImage from "../assets/steak-pan.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bratfein — Der natürliche Genuss fürs perfekte Steak" },
+      { title: "Bratfein — Schweizer Rindertalg als hochwertiges Kochfett" },
       {
         name: "description",
         content:
-          "Rindertalg aus Zürich im 250g-Glas: hoher Rauchpunkt, 100% regional vom Metzger, Nose-to-Tail. Die natürliche Alternative zu Samenölen.",
+          "Bratfein ist reiner Schweizer Rindertalg aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
       },
-      { property: "og:title", content: "Bratfein — Der natürliche Genuss fürs perfekte Steak" },
+      { property: "og:title", content: "Bratfein — Schweizer Rindertalg als hochwertiges Kochfett" },
       {
         property: "og:description",
-        content: "Regionaler Rindertalg aus Zürich. Hoher Rauchpunkt, voller Geschmack.",
+        content: "Das natürliche Fett für unvergleichlichen Geschmack. Regional, nachhaltig, aus Zürich.",
       },
     ],
   }),
   component: Index,
 });
 
-const features = [
-  {
-    icon: Flame,
-    title: "Hoher Rauchpunkt",
-    text: "Rindertalg bleibt bis rund 250 °C stabil. Ideal für die krachende Kruste am Steak, ohne bitteren Beigeschmack.",
-  },
-  {
-    icon: MapPin,
-    title: "100% regional",
-    text: "Unser Talg stammt ausschliesslich von einer Metzgerei in Zürich. Kurze Wege, klare Herkunft, echte Handwerkskunst.",
-  },
-  {
-    icon: Leaf,
-    title: "Nose-to-Tail",
-    text: "Wir verwerten, was sonst weggeworfen wird. Aus einem Nebenprodukt entsteht ein Produkt mit Charakter.",
-  },
-];
-
 const comparison = [
-  { label: "Rauchpunkt", tallow: "ca. 250 °C – bratstabil", seed: "Oft tiefer, oxidiert schnell" },
-  {
-    label: "Verarbeitung",
-    tallow: "Ausgelassen, filtriert, abgefüllt",
-    seed: "Extraktion mit Lösungsmitteln, Raffination, Bleichung, Desodorierung",
-  },
   {
     label: "Geschmack",
-    tallow: "Verstärkt den natürlichen Geschmack\n",
-    seed: "Neutral bis flach, kann bitter werden",
+    tallow: "Herzhaft, fein-würzig und aromatisch",
+    seed: "Neutral bis leicht eigenartig bei hoher Hitze",
   },
   {
-    label: "Natürlichkeit",
-    tallow: "Eine Zutat: Rindertalg",
-    seed: "Industriell hochverarbeitetes Raffinat",
+    label: "Rauchpunkt",
+    tallow: "Sehr hoch (ca. 200 °C bis 250 °C), ideal zum scharfen Anbraten",
+    seed: "Ca. 100 °C bis 220 °C (je nach Raffination)",
+  },
+  {
+    label: "Verarbeitung",
+    tallow: "Naturprodukt aus regionalem Schweizer Upcycling",
+    seed: "Oft stark industriell verarbeitet",
   },
 ];
 
@@ -68,13 +48,16 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-14 md:px-8 md:pb-28 md:pt-20">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="fade-up">
-            <p className="eyebrow">BEEFTALLOW AUS ZÜRICH</p>
+            <p className="eyebrow">Schweizer Rindertalg</p>
             <h1 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
-              Der natürliche Genuss fürs perfekte Steak
+              Bratfein – Schweizer Rindertalg als hochwertiges Kochfett
             </h1>
+            <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
+              Das natürliche Fett für unvergleichlichen Geschmack.
+            </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-              Bratfein ist reiner Rindertalg von einer Zürcher Metzgerei –  Hoher Rauchpunkt, voller Geschmack, keine Industrie.
+              Reiner Rindertalg aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -83,16 +66,7 @@ function Index() {
               >
                 Jetzt bestellen
               </Link>
-              <Link
-                to="/referenzen"
-                className="inline-flex items-center justify-center rounded-sm border border-foreground/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
-              >
-                Märkte entdecken
-              </Link>
             </div>
-            <p className="mt-7 text-sm text-muted-foreground">
-              Abholung am Markt oder nach Absprache
-            </p>
           </div>
 
           <div className="relative">
@@ -105,85 +79,46 @@ function Index() {
               className="relative w-full rounded-sm object-cover shadow-lift"
             />
             <div className="absolute bottom-4 left-4 rounded-sm bg-background/92 px-4 py-3 shadow-soft backdrop-blur">
-              <p className="eyebrow">Handwerk</p>
-              <p className="mt-1 font-serif text-lg text-foreground">Eine Zutat. Nichts sonst.</p>
+              <p className="eyebrow">Produkt</p>
+              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Rindertalg</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="border-y border-border bg-cream/60" aria-labelledby="vorteile">
-        <h2 id="vorteile" className="sr-only">
-          Vorteile von Bratfein Rindertalg
-        </h2>
-        <div className="mx-auto grid max-w-6xl gap-px bg-border/70 px-0 md:grid-cols-3">
-          {features.map((f) => (
-            <article
-              key={f.title}
-              className="group bg-background px-6 py-12 transition-colors duration-300 hover:bg-cream md:px-10"
-            >
-              <f.icon className="size-7 text-copper" strokeWidth={1.4} />
-              <h3 className="mt-6 text-2xl text-foreground">{f.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
-            </article>
-          ))}
+      {/* Problem / Story */}
+      <section className="border-y border-border bg-cream/60" aria-labelledby="problem">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+          <SectionHeading
+            eyebrow="Warum wir das tun"
+            title="Vom Nebenprodukt zum Küchenliebling"
+          />
+          <div className="mt-12 max-w-3xl">
+            <p className="text-lg leading-relaxed text-foreground md:text-xl">
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und landet im Abfall. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitativen Schweizer Rindertalg für die Küche.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Storytelling */}
-      <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      {/* Product benefits comparison */}
+      <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
         <SectionHeading
-          eyebrow="Die Wahrheit über die Bratpfanne"
-          title="Warum Rindertalg statt Samenöle?"
-          lead="Vor hundert Jahren stand in jeder Schweizer Küche ein Topf mit Talg. Heute steht dort eine Plastikflasche mit Öl, das eine industrielle Reise hinter sich hat, die kaum jemand kennt."
+          eyebrow="Produktnutzen"
+          title="Rindertalg im Vergleich"
+          lead="Unser Beef Tallow punktet beim Geschmack, der Hitzestabilität und der Herkunft."
         />
 
-        <div className="mt-14 grid items-start gap-12 md:grid-cols-2 md:gap-16">
-          <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
-            <p>
-              Moderne Samenöle werden aus Saaten gepresst, die von Natur aus kaum Fett hergeben.
-              Damit trotzdem etwas fliesst, kommen Lösungsmittel zum Einsatz. Danach folgt, was die
-              Industrie „Raffination“ nennt: entschleimen, bleichen, mit hoher Hitze desodorieren –
-              bis nichts mehr riecht, nichts mehr schmeckt und nichts mehr an eine Pflanze erinnert.
-            </p>
-            <p>
-              In der Pfanne rächt sich das. Ein Öl, das schon im Werk erhitzt wurde, hält der Hitze
-              beim Anbraten nur begrenzt stand. Es beginnt zu rauchen, zu oxidieren, bitter zu
-              werden – genau in dem Moment, in dem das Steak seine Kruste braucht.
-            </p>
-            <p className="border-l-2 border-copper pl-5 font-serif text-xl leading-snug text-foreground">
-              Rindertalg braucht keine Fabrik. Er wird ausgelassen, filtriert und abgefüllt. Fertig.
-            </p>
-            <p>
-              Das Fett unserer Zürcher Metzgerei wird bei niedriger Temperatur langsam ausgelassen,
-              feinfiltriert und direkt ins Glas gefüllt. Es bleibt bei hoher Hitze stabil, trägt
-              Röstaromen statt sie zu überdecken und verwertet einen Rohstoff, der sonst im Abfall
-              landet.
-            </p>
-          </div>
-
-          <img
-            src={steakImage}
-            alt="Steak brät in einer gusseisernen Pfanne mit Rindertalg"
-            width={1408}
-            height={912}
-            loading="lazy"
-            className="w-full rounded-sm object-cover shadow-lift"
-          />
-        </div>
-
-        {/* Comparison card */}
-        <div className="mt-16 overflow-hidden rounded-sm border border-border shadow-soft">
+        <div className="mt-14 overflow-hidden rounded-sm border border-border shadow-soft">
           <div className="surface-walnut grain-overlay grid grid-cols-3 gap-4 px-5 py-6 md:px-8">
             <p className="relative z-10 self-end text-[0.65rem] font-bold uppercase tracking-[0.2em] text-walnut-foreground/60">
-              Im Vergleich
+              Eigenschaft
             </p>
-            <p className="relative z-10 font-serif text-xl text-copper-soft md:text-2xl">
-              Bratfein Rindertalg
+            <p className="relative z-10 font-serif text-lg text-copper-soft md:text-xl">
+              Herkömmliches Speiseöl
             </p>
-            <p className="relative z-10 font-serif text-xl text-walnut-foreground/70 md:text-2xl">
-              Industrielle Samenöle
+            <p className="relative z-10 font-serif text-lg text-walnut-foreground md:text-xl">
+              Unser Rindertalg
             </p>
           </div>
           {comparison.map((row, i) => (
@@ -196,13 +131,13 @@ function Index() {
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
                 {row.label}
               </p>
-              <p className="flex gap-2 text-sm text-foreground">
-                <Check className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={2} />
-                <span>{row.tallow}</span>
-              </p>
               <p className="flex gap-2 text-sm text-muted-foreground">
                 <X className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" strokeWidth={2} />
                 <span>{row.seed}</span>
+              </p>
+              <p className="flex gap-2 text-sm text-foreground">
+                <Check className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={2} />
+                <span>{row.tallow}</span>
               </p>
             </div>
           ))}
@@ -224,7 +159,31 @@ function Index() {
               to="/shop"
               className="mt-9 inline-flex items-center justify-center rounded-sm bg-copper px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground transition-opacity duration-300 hover:opacity-90"
             >
-              Bestellung anfragen
+              Jetzt bestellen
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About us / Team */}
+      <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
+          <SectionHeading
+            eyebrow="Über uns"
+            title="Jugendunternehmen mit Überzeugung"
+          />
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed text-foreground">
+              Vorstellung unseres Teams: Wer wir sind, was wir machen und wofür wir stehen (Schülerunternehmen im Rahmen von YES / Young Enterprise Switzerland).
+            </p>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im YES-Programm ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand. Unser Ziel: regionale Ressourcen wertschätzen und euch zeigen, wie gut Nachhaltigkeit schmecken kann.
+            </p>
+            <Link
+              to="/ueber-uns"
+              className="inline-flex items-center justify-center rounded-sm border border-foreground/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
+            >
+              Team kennenlernen
             </Link>
           </div>
         </div>
