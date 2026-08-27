@@ -41,7 +41,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-walnut-foreground/80">
             <li>hallo@bratfein.ch</li>
             <li>8000 Zürich, Schweiz</li>
-            <li>Zahlung via Twint oder bar vor Ort</li>
+            <li>Zahlung via Twint, Karte oder bar vor Ort</li>
           </ul>
         </div>
       </div>
