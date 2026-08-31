@@ -50,10 +50,10 @@ function Index() {
           <div className="fade-up">
             <p className="eyebrow">Schweizer Rindertalg</p>
             <h1 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
-              Bratfein – Schweizer Rindertalg als hochwertiges Kochfett
+              Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Das natürliche Fett für unvergleichlichen Geschmack.
+              Schweizer Rindertalg aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
