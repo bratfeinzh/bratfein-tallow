@@ -134,7 +134,7 @@ function Referenzen() {
           {testimonials.map((t) => (
             <blockquote
               key={t.name}
-              className="rounded-sm border border-border bg-card px-7 py-8 shadow-soft transition-shadow duration-300 hover:shadow-lift"
+              className="gilded rounded-sm bg-card px-8 py-10 shadow-soft transition-shadow duration-300 hover:shadow-lift"
             >
               <Quote className="size-6 text-copper" strokeWidth={1.4} />
               <p className="mt-5 font-serif text-xl leading-snug text-foreground">„{t.quote}“</p>
@@ -159,7 +159,7 @@ function Referenzen() {
             {markets.map((m) => (
               <article
                 key={m.place}
-                className="group overflow-hidden rounded-sm border border-border bg-background shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                className="group overflow-hidden gilded rounded-sm bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
                 <div className="surface-walnut grain-overlay flex items-center justify-between px-6 py-4">
                   <span className="relative z-10 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-copper-soft">

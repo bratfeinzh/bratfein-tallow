@@ -28,7 +28,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 md:px-8">
         <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif text-2xl tracking-tight text-foreground">Bratfein</span>
+          <span className="font-display text-2xl tracking-[0.08em] text-foreground">Bratfein</span>
           <span className="hidden text-[0.6rem] font-bold uppercase tracking-[0.24em] text-copper sm:inline">
             BEEFTALLOW
           </span>

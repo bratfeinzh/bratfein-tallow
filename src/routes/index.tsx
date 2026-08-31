@@ -109,7 +109,7 @@ function Index() {
           lead="Unser Beef Tallow punktet beim Geschmack, der Hitzestabilität und der Herkunft."
         />
 
-        <div className="mt-14 overflow-hidden rounded-sm border border-border shadow-soft">
+        <div className="mt-14 gilded overflow-hidden rounded-sm">
           <div className="surface-walnut grain-overlay grid grid-cols-3 gap-4 px-5 py-6 md:px-8">
             <p className="relative z-10 self-end text-[0.65rem] font-bold uppercase tracking-[0.2em] text-walnut-foreground/60">
               Eigenschaft
