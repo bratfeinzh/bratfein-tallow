@@ -66,9 +66,9 @@ function UeberUns() {
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-14 md:px-8 md:pt-20">
         <SectionHeading
           as="h1"
-          eyebrow="Über uns"
-          title="Sieben Jugendliche, ein Glas, eine Überzeugung"
-          lead="Bratfein ist kein Konzern. Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im Rahmen von Young Enterprise Switzerland ein Jahr lang ein richtiges Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand."
+          eyebrow="ÜBER UNS // YES-MINI-UNTERNEHMEN"
+          title="Ein YES-Mini-Unternehmen mit Überzeugung."
+          lead="Als offizielles Mini-Unternehmen von Young Enterprise Switzerland (YES) sind wir sieben Schweizer Gymnasiastinnen und Gymnasiasten, die ein Jahr lang ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand."
         />
 
         <div className="mt-14 grid gap-px bg-border/70 md:grid-cols-3">
