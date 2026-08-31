@@ -10,12 +10,12 @@ export const Route = createFileRoute("/ueber-uns")({
       {
         name: "description",
         content:
-          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Rindertalg aus einer Zürcher Metzgerei.",
+          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Schweizer Rinderfett aus einer Zürcher Metzgerei.",
       },
       { property: "og:title", content: "Über uns — Das YES-Projekt hinter Bratfein" },
       {
         property: "og:description",
-        content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Rindertalg.",
+        content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Rinderfett.",
       },
     ],
   }),
@@ -46,7 +46,7 @@ const pillars = [
   {
     icon: Beef,
     title: "Respekt vor dem Tier",
-    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Talg ist dabei der unterschätzteste Teil.",
+    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Rinderfett ist dabei der unterschätzteste Teil.",
   },
 ];
 

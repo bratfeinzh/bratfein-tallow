@@ -10,7 +10,7 @@ export const Route = createFileRoute("/referenzen")({
       {
         name: "description",
         content:
-          "Stimmen von Steak-Fans und Marktkundschaft sowie alle kommenden Weihnachts- und Quartiermärkte, an denen Bratfein Rindertalg erhältlich ist.",
+          "Stimmen von Steak-Fans und Marktkundschaft sowie alle kommenden Weihnachts- und Quartiermärkte, an denen Bratfein Schweizer Rinderfett erhältlich ist.",
       },
       { property: "og:title", content: "Referenzen & Standorte — Bratfein am Markt" },
       {
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/referenzen")({
           name: "Bratfein",
           url: "https://bratfein-tallow.lovable.app",
         },
-        description: `Bratfein Rindertalg im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
+        description: `Bratfein Schweizer Rinderfett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
       }),
     })),
   }),
