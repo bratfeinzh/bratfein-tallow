@@ -7,13 +7,13 @@ import jarImage from "../assets/tallow-jar.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bratfein — Schweizer Rindertalg als hochwertiges Kochfett" },
+      { title: "Bratfein — Schweizer Rinderfett als hochwertiges Kochfett" },
       {
         name: "description",
         content:
-          "Bratfein ist reiner Schweizer Rindertalg aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
+          "Bratfein ist reines Schweizer Rinderfett aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
       },
-      { property: "og:title", content: "Bratfein — Schweizer Rindertalg als hochwertiges Kochfett" },
+      { property: "og:title", content: "Bratfein — Schweizer Rinderfett als hochwertiges Kochfett" },
       {
         property: "og:description",
         content: "Das natürliche Fett für unvergleichlichen Geschmack. Regional, nachhaltig, aus Zürich.",
@@ -26,17 +26,17 @@ export const Route = createFileRoute("/")({
 const comparison = [
   {
     label: "Geschmack",
-    tallow: "Herzhaft, fein-würzig und aromatisch",
+    fett: "Herzhaft, fein-würzig und aromatisch",
     seed: "Neutral bis leicht eigenartig bei hoher Hitze",
   },
   {
     label: "Rauchpunkt",
-    tallow: "Sehr hoch (ca. 200 °C bis 250 °C), ideal zum scharfen Anbraten",
+    fett: "Sehr hoch (ca. 200 °C bis 250 °C), ideal zum scharfen Anbraten",
     seed: "Ca. 100 °C bis 220 °C (je nach Raffination)",
   },
   {
     label: "Verarbeitung",
-    tallow: "Naturprodukt aus regionalem Schweizer Upcycling",
+    fett: "Naturprodukt aus regionalem Schweizer Upcycling",
     seed: "Oft stark industriell verarbeitet",
   },
 ];
