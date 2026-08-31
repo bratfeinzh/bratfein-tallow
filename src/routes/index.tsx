@@ -48,20 +48,20 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-14 md:px-8 md:pb-28 md:pt-20">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="fade-up">
-            <p className="eyebrow">Schweizer Rindertalg</p>
+            <p className="eyebrow">Schweizer Rinderfett</p>
             <h1 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
               Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Schweizer Rindertalg aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
+              Schweizer Rinderfett aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-              Reiner Rindertalg aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
+              Reines Schweizer Rinderfett aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Rindertalg"
+                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett"
                 className="inline-flex items-center justify-center rounded-sm bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
               >
                 Jetzt bestellen
@@ -73,14 +73,14 @@ function Index() {
             <div className="surface-walnut grain-overlay absolute -inset-3 rounded-sm opacity-[0.08]" />
             <img
               src={jarImage}
-              alt="Bratfein Rindertalg im 250-Gramm-Glas auf einem Nussholzbrett"
+              alt="Bratfein Schweizer Rinderfett im 250-Gramm-Glas auf einem Nussholzbrett"
               width={1200}
               height={1200}
               className="relative w-full rounded-sm object-cover shadow-lift"
             />
             <div className="absolute bottom-4 left-4 rounded-sm bg-background/92 px-4 py-3 shadow-soft backdrop-blur">
               <p className="eyebrow">Produkt</p>
-              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Rindertalg</p>
+              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Rinderfett</p>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ function Index() {
           />
           <div className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
-              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und landet im Abfall. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitativen Schweizer Rindertalg für die Küche.
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und landet im Abfall. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Rinderfett für die Küche.
             </p>
           </div>
         </div>
@@ -105,8 +105,8 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
         <SectionHeading
           eyebrow="Produktnutzen"
-          title="Rindertalg im Vergleich"
-          lead="Unser Beef Tallow punktet beim Geschmack, der Hitzestabilität und der Herkunft."
+          title="Schweizer Rinderfett im Vergleich"
+          lead="Unser Schweizer Rinderfett punktet beim Geschmack, der Hitzestabilität und der Herkunft."
         />
 
         <div className="mt-14 gilded overflow-hidden rounded-sm">
@@ -118,7 +118,7 @@ function Index() {
               Herkömmliches Speiseöl
             </p>
             <p className="relative z-10 font-serif text-lg text-walnut-foreground md:text-xl">
-              Unser Rindertalg
+              Unser Schweizer Rinderfett
             </p>
           </div>
           {comparison.map((row, i) => (
@@ -137,7 +137,7 @@ function Index() {
               </p>
               <p className="flex gap-2 text-sm text-foreground">
                 <Check className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={2} />
-                <span>{row.tallow}</span>
+                <span>{row.fett}</span>
               </p>
             </div>
           ))}
@@ -156,7 +156,7 @@ function Index() {
               250 g für 8–10 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
             </p>
             <a
-              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Rindertalg"
+              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett"
               className="mt-9 inline-flex items-center justify-center rounded-sm bg-copper px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground transition-opacity duration-300 hover:opacity-90"
             >
               Jetzt bestellen
