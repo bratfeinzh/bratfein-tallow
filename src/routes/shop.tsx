@@ -100,7 +100,7 @@ function Shop() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex items-start gap-3 rounded-sm border border-border bg-cream/70 px-5 py-4">
+            <div className="mt-8 flex items-start gap-3 gilded rounded-sm bg-cream px-5 py-4">
               <Wallet className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
               <p className="text-sm text-muted-foreground">
                 Zahlung bequem via Twint oder Bar vor Ort / nach Absprache.
@@ -143,7 +143,7 @@ function Shop() {
             </div>
           ) : (
             <form
-              className="mt-12 space-y-6 rounded-sm border border-border bg-background px-6 py-8 shadow-soft md:px-10 md:py-10"
+              className="mt-12 space-y-6 gilded rounded-sm bg-card px-6 py-8 md:px-10 md:py-10"
               onSubmit={(e) => {
                 e.preventDefault();
                 const data = new FormData(e.currentTarget);
