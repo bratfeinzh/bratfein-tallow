@@ -8,16 +8,16 @@ import jarImage from "../assets/tallow-jar.jpg";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop — Bratfein Rindertalg 250 g bestellen" },
+      { title: "Shop — Bratfein Schweizer Rinderfett 250 g bestellen" },
       {
         name: "description",
         content:
-          "Bratfein Rindertalg im 250-g-Glas für 8–10 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
+          "Bratfein Schweizer Rinderfett im 250-g-Glas für 8–10 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
       },
-      { property: "og:title", content: "Shop — Bratfein Rindertalg 250 g bestellen" },
+      { property: "og:title", content: "Shop — Bratfein Schweizer Rinderfett 250 g bestellen" },
       {
         property: "og:description",
-        content: "Bestellung anfragen: 250-g-Glas Rindertalg aus Zürich, 8–10 CHF.",
+        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 8–10 CHF.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
@@ -30,9 +30,9 @@ export const Route = createFileRoute("/shop")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Bratfein Rindertalg 250 g",
+          name: "Bratfein Schweizer Rinderfett 250 g",
           description:
-            "Reiner Rindertalg aus einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
+            "Reines Schweizer Rinderfett aus einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
           brand: { "@type": "Brand", name: "Bratfein" },
           category: "Speisefett",
           weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/shop")({
 const ORDER_EMAIL = "bratfein.zh@gmail.com";
 
 const highlights = [
-  "Reiner Rindertalg, zweifach filtriert",
+  "Reines Schweizer Rinderfett, zweifach filtriert",
   "Von einer Metzgerei in Zürich",
   "Neutrales 250-g-Glas, wiederverwendbar",
   "Hoher Rauchpunkt für Steak, Rösti und Gemüse",
@@ -76,15 +76,15 @@ function Shop() {
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <img
             src={jarImage}
-            alt="Bratfein Rindertalg im neutralen 250-Gramm-Glas"
+            alt="Bratfein Schweizer Rinderfett im neutralen 250-Gramm-Glas"
             width={1200}
             height={1200}
             className="w-full rounded-sm object-cover shadow-lift"
           />
           <div>
-            <p className="eyebrow">Bratfein · Rindertalg</p>
+            <p className="eyebrow">Bratfein · Schweizer Rinderfett</p>
             <h1 className="mt-4 text-4xl leading-tight text-foreground md:text-5xl">
-              250-g-Glas Rindertalg
+              250-g-Glas Schweizer Rinderfett
             </h1>
             <hr className="copper-rule mt-6" />
             <p className="mt-6 font-serif text-3xl text-copper">8 – 10 CHF</p>
@@ -156,7 +156,7 @@ function Shop() {
                   `Bemerkungen: ${data.get("notes") ?? ""}`,
                 ].join("\n");
                 window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
-                  "Bestellung Bratfein Rindertalg",
+                  "Bestellung Bratfein Schweizer Rinderfett",
                 )}&body=${encodeURIComponent(body)}`;
                 setSent(true);
               }}
