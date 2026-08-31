@@ -79,17 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bratfein — Regionaler Rindertalg aus Zürich" },
+      { title: "Bratfein — Schweizer Rinderfett aus Zürich" },
       {
         name: "description",
         content:
-          "Bratfein: hochwertiger Rindertalg aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
+          "Bratfein: hochwertiges Schweizer Rinderfett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
       },
       { name: "author", content: "Bratfein" },
-      { property: "og:title", content: "Bratfein — Regionaler Rindertalg aus Zürich" },
+      { property: "og:title", content: "Bratfein — Schweizer Rinderfett aus Zürich" },
       {
         property: "og:description",
-        content: "Der natürliche Genuss fürs perfekte Steak. Rindertalg aus Zürich im 250g-Glas.",
+        content: "Der natürliche Genuss fürs perfekte Steak. Schweizer Rinderfett aus Zürich im 250g-Glas.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
