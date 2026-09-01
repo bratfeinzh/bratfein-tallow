@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CalendarDays, Clock, MapPin, Quote } from "lucide-react";
+import { CalendarDays, Clock, MapPin } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
 
