@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 
+import { Reveal } from "../components/site/Reveal";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
 
@@ -69,7 +70,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="relative">
+          <Reveal delay={150} className="relative">
             <div className="surface-walnut grain-overlay absolute -inset-3 rounded-sm opacity-[0.08]" />
             <img
               src={jarImage}
@@ -82,28 +83,30 @@ function Index() {
               <p className="eyebrow">Produkt</p>
               <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Rinderfett</p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Problem / Story */}
       <section className="border-y border-border bg-cream/60" aria-labelledby="problem">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-          <SectionHeading
-            eyebrow="Warum wir das tun"
-            title="Vom Nebenprodukt zum Küchenliebling"
-          />
-          <div className="mt-12 max-w-3xl">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Warum wir das tun"
+              title="Vom Nebenprodukt zum Küchenliebling"
+            />
+          </Reveal>
+          <Reveal delay={120} className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
               In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und landet im Abfall. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Rinderfett für die Küche.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Product benefits comparison */}
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
-        <div className="text-center">
+        <Reveal className="text-center">
           <h2 id="vergleich" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
             Warum Schweizer Rinderfett?
           </h2>
@@ -111,11 +114,11 @@ function Index() {
             Die Vorteile auf einen Blick.
           </p>
           <hr className="copper-rule mx-auto mt-6" />
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
           {/* Bratfein card */}
-          <div className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+          <Reveal className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <span className="inline-block size-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px] shadow-emerald-500/40" aria-hidden="true" />
               <h3 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein</h3>
@@ -127,17 +130,17 @@ function Index() {
                 "Reines Naturprodukt (Eine Zutat: Rinderfett)",
                 "Herzhafter, fein-würziger Geschmack",
                 "Keine industrielle Raffination",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
+              ].map((item, i) => (
+                <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-emerald-400" strokeWidth={2.5} />
                   <span className="text-base leading-snug text-foreground">{item}</span>
-                </li>
+                </Reveal>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           {/* Conventional oil card */}
-          <div className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+          <Reveal delay={150} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <h3 className="font-serif text-2xl text-foreground md:text-3xl">Herkömmliches Speiseöl</h3>
             </div>
@@ -148,20 +151,20 @@ function Index() {
                 "Mehrfach raffiniert, gebleicht und desodoriert",
                 "Neutraler bis flacher Geschmack, kann bitter werden",
                 "Stark industriell verarbeitetes Produkt",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
+              ].map((item, i) => (
+                <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
                   <X className="mt-0.5 size-5 shrink-0 text-rose-400" strokeWidth={2.5} />
                   <span className="text-base leading-snug text-muted-foreground">{item}</span>
-                </li>
+                </Reveal>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className="surface-walnut grain-overlay rounded-sm px-6 py-16 text-center md:px-16 md:py-20">
+        <Reveal className="surface-walnut grain-overlay rounded-sm px-6 py-16 text-center md:px-16 md:py-20">
           <div className="relative z-10">
             <p className="eyebrow">Bratfein bestellen</p>
             <h2 className="mx-auto mt-4 max-w-xl text-3xl leading-tight md:text-4xl">
@@ -177,29 +180,37 @@ function Index() {
               Jetzt bestellen
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* About us / Team */}
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
-          <SectionHeading
-            eyebrow="Über uns"
-            title="Jugendunternehmen mit Überzeugung"
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Über uns"
+              title="Jugendunternehmen mit Überzeugung"
+            />
+          </Reveal>
           <div className="space-y-6">
-            <p className="text-lg leading-relaxed text-foreground">
-              Vorstellung unseres Teams: Wer wir sind, was wir machen und wofür wir stehen (Schülerunternehmen im Rahmen von YES / Young Enterprise Switzerland).
-            </p>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im YES-Programm ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand. Unser Ziel: regionale Ressourcen wertschätzen und euch zeigen, wie gut Nachhaltigkeit schmecken kann.
-            </p>
-            <Link
-              to="/ueber-uns"
-              className="inline-flex items-center justify-center rounded-sm border border-foreground/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
-            >
-              Team kennenlernen
-            </Link>
+            <Reveal delay={100}>
+              <p className="text-lg leading-relaxed text-foreground">
+                Vorstellung unseres Teams: Wer wir sind, was wir machen und wofür wir stehen (Schülerunternehmen im Rahmen von YES / Young Enterprise Switzerland).
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im YES-Programm ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand. Unser Ziel: regionale Ressourcen wertschätzen und euch zeigen, wie gut Nachhaltigkeit schmecken kann.
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <Link
+                to="/ueber-uns"
+                className="inline-flex items-center justify-center rounded-sm border border-foreground/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
+              >
+                Team kennenlernen
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
