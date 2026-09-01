@@ -1,21 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CalendarDays, Clock, MapPin } from "lucide-react";
+import { CalendarDays, Clock, MapPin, Quote } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
 
 export const Route = createFileRoute("/referenzen")({
   head: () => ({
     meta: [
-      { title: "Standorte — Bratfein am Markt" },
+      { title: "Referenzen & Standorte — Bratfein am Markt" },
       {
         name: "description",
         content:
-          "Alle kommenden Weihnachts- und Quartiermärkte, an denen Bratfein Schweizer Rinderfett erhältlich ist.",
+          "Stimmen von Steak-Fans und Marktkundschaft sowie alle kommenden Weihnachts- und Quartiermärkte, an denen Bratfein Schweizer Rinderfett erhältlich ist.",
       },
-      { property: "og:title", content: "Standorte — Bratfein am Markt" },
+      { property: "og:title", content: "Referenzen & Standorte — Bratfein am Markt" },
       {
         property: "og:description",
-        content: "Unsere Marktstände in und um Zürich.",
+        content: "Unsere Marktstände in und um Zürich – plus Stimmen unserer Kundschaft.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://bratfein-tallow.lovable.app/referenzen" },
@@ -48,6 +48,33 @@ export const Route = createFileRoute("/referenzen")({
   }),
   component: Referenzen,
 });
+
+const testimonials = [
+  {
+    quote:
+      "Ich habe jahrelang mit Öl gebraten. Mit Bratfein bekommt das Entrecôte eine Kruste, wie ich sie sonst nur im Restaurant kenne.",
+    name: "Marco R.",
+    role: "Steak-Enthusiast, Zürich",
+  },
+  {
+    quote:
+      "Am Marktstand haben sie mir in fünf Minuten mehr über Fett erklärt als jede Werbung. Und der Geschmack überzeugt sowieso.",
+    name: "Andrea B.",
+    role: "Marktkundin, Winterthur",
+  },
+  {
+    quote:
+      "Sauber gefiltert, neutral im Geruch, sehr hitzestabil. Für Rösti und Bratkartoffeln ist es bei uns zum Standard geworden.",
+    name: "Familie Grüninger",
+    role: "Stammkundschaft",
+  },
+  {
+    quote:
+      "Regional, konsequent verwertet und von Jugendlichen selber gemacht – dieses Projekt unterstütze ich gerne.",
+    name: "Peter H.",
+    role: "Besucher Weihnachtsmarkt",
+  },
+];
 
 const markets = [
   {
