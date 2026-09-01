@@ -103,44 +103,59 @@ function Index() {
 
       {/* Product benefits comparison */}
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
-        <SectionHeading
-          eyebrow="Produktnutzen"
-          title="Schweizer Rinderfett im Vergleich"
-          lead="Unser Schweizer Rinderfett punktet beim Geschmack, der Hitzestabilität und der Herkunft."
-        />
+        <div className="text-center">
+          <h2 id="vergleich" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
+            Warum Schweizer Rinderfett?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+            Die Vorteile auf einen Blick.
+          </p>
+          <hr className="copper-rule mx-auto mt-6" />
+        </div>
 
-        <div className="mt-14 gilded overflow-hidden rounded-sm">
-          <div className="surface-walnut grain-overlay grid grid-cols-3 gap-4 px-5 py-6 md:px-8">
-            <p className="relative z-10 self-end text-[0.65rem] font-bold uppercase tracking-[0.2em] text-walnut-foreground/60">
-              Eigenschaft
-            </p>
-            <p className="relative z-10 font-serif text-lg text-copper-soft md:text-xl">
-              Herkömmliches Speiseöl
-            </p>
-            <p className="relative z-10 font-serif text-lg text-walnut-foreground md:text-xl">
-              Unser Schweizer Rinderfett
-            </p>
-          </div>
-          {comparison.map((row, i) => (
-            <div
-              key={row.label}
-              className={`grid grid-cols-3 gap-4 px-5 py-6 md:px-8 ${
-                i % 2 === 0 ? "bg-background" : "bg-cream/70"
-              }`}
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                {row.label}
-              </p>
-              <p className="flex gap-2 text-sm text-muted-foreground">
-                <X className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" strokeWidth={2} />
-                <span>{row.seed}</span>
-              </p>
-              <p className="flex gap-2 text-sm text-foreground">
-                <Check className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={2} />
-                <span>{row.fett}</span>
-              </p>
+        <div className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
+          {/* Bratfein card */}
+          <div className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="inline-block size-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px] shadow-emerald-500/40" aria-hidden="true" />
+              <h3 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein</h3>
             </div>
-          ))}
+            <ul className="flex flex-1 flex-col gap-4">
+              {[
+                "Rauchpunkt bis ca. 250 °C (bratstabil)",
+                "100% natürliches Upcycling aus Zürich",
+                "Reines Naturprodukt (Eine Zutat: Rinderfett)",
+                "Herzhafter, fein-würziger Geschmack",
+                "Keine industrielle Raffination",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="mt-0.5 size-5 shrink-0 text-emerald-400" strokeWidth={2.5} />
+                  <span className="text-base leading-snug text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Conventional oil card */}
+          <div className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <h3 className="font-serif text-2xl text-foreground md:text-3xl">Herkömmliches Speiseöl</h3>
+            </div>
+            <ul className="flex flex-1 flex-col gap-4">
+              {[
+                "Tieferer Rauchpunkt, oxidiert schnell bei Hitze",
+                "Industrielle Extraktion mit Lösungsmitteln",
+                "Mehrfach raffiniert, gebleicht und desodoriert",
+                "Neutraler bis flacher Geschmack, kann bitter werden",
+                "Stark industriell verarbeitetes Produkt",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <X className="mt-0.5 size-5 shrink-0 text-rose-400" strokeWidth={2.5} />
+                  <span className="text-base leading-snug text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
