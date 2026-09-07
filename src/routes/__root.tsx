@@ -74,6 +74,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const siteUrl = "https://bratfein.lovable.app";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Bratfein",
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.ico`,
+  email: "mailto:bratfein.zh@gmail.com",
+  sameAs: [
+    "https://www.instagram.com/bratfein.ch/",
+    "https://www.tiktok.com/@bratfein",
+    "https://www.youtube.com/@bratfein_ch",
+    "https://www.facebook.com/profile.php?id=61593513461142",
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -106,6 +123,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cinzel:wght@400;600&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationSchema),
+      },
     ],
   }),
   shellComponent: RootShell,
