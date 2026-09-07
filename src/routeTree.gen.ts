@@ -10,19 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ReferenzenRouteImport } from './routes/referenzen'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StandorteRouteImport } from './routes/standorte'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReferenzenRoute = ReferenzenRouteImport.update({
-  id: '/referenzen',
-  path: '/referenzen',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopRoute = ShopRouteImport.update({
@@ -35,6 +30,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StandorteRoute = StandorteRouteImport.update({
+  id: '/standorte',
+  path: '/standorte',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
@@ -43,39 +43,39 @@ const UeberUnsRoute = UeberUnsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/referenzen': typeof ReferenzenRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
+  fullPaths: '/' | '/shop' | '/sitemap.xml' | '/standorte' | '/ueber-uns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
-  id: '__root__' | '/' | '/referenzen' | '/shop' | '/sitemap.xml' | '/ueber-uns'
+  to: '/' | '/shop' | '/sitemap.xml' | '/standorte' | '/ueber-uns'
+  id: '__root__' | '/' | '/shop' | '/sitemap.xml' | '/standorte' | '/ueber-uns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ReferenzenRoute: typeof ReferenzenRoute
   ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StandorteRoute: typeof StandorteRoute
   UeberUnsRoute: typeof UeberUnsRoute
 }
 
@@ -86,13 +86,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/referenzen': {
-      id: '/referenzen'
-      path: '/referenzen'
-      fullPath: '/referenzen'
-      preLoaderRoute: typeof ReferenzenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -109,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/standorte': {
+      id: '/standorte'
+      path: '/standorte'
+      fullPath: '/standorte'
+      preLoaderRoute: typeof StandorteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ueber-uns': {
       id: '/ueber-uns'
       path: '/ueber-uns'
@@ -121,9 +121,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ReferenzenRoute: ReferenzenRoute,
   ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StandorteRoute: StandorteRoute,
   UeberUnsRoute: UeberUnsRoute,
 }
 export const routeTree = rootRouteImport
