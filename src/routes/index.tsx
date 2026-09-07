@@ -171,7 +171,7 @@ function Index() {
               Ein Glas, das jedes Steak besser macht.
             </h2>
             <p className="mx-auto mt-5 max-w-md text-sm text-walnut-foreground/70">
-              250 g für 8–10 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
+              250 g für 9 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
             </p>
             <a
               href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett"
