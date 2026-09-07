@@ -25,8 +25,8 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/referenzen" className="transition-colors hover:text-copper-soft">
-                Referenzen & Standorte
+              <Link to="/standorte" className="transition-colors hover:text-copper-soft">
+                Standorte
               </Link>
             </li>
             <li>
