@@ -87,7 +87,7 @@ function Shop() {
               250-g-Glas Schweizer Rinderfett
             </h1>
             <hr className="copper-rule mt-6" />
-            <p className="mt-6 font-serif text-3xl text-copper">8 – 10 CHF</p>
+            <p className="mt-6 font-serif text-3xl text-copper">9 CHF</p>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
               Schonend ausgelassen, von Hand abgefüllt. Ein Glas reicht für rund zwanzig Mal
               Anbraten – kühl und dunkel gelagert monatelang haltbar.
