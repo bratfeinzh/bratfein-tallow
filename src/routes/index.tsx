@@ -127,7 +127,7 @@ function Index() {
               {[
                 "Rauchpunkt bis ca. 250 °C (bratstabil)",
                 "100% natürliches Upcycling aus Zürich",
-                "Reines Naturprodukt (Eine Zutat: Rinderfett)",
+                "Reines Naturprodukt ",
                 "Herzhafter, fein-würziger Geschmack",
                 "Keine industrielle Raffination",
               ].map((item, i) => (
