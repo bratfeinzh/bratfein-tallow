@@ -119,7 +119,7 @@ function UeberUns() {
               wollen, woher ihr Fett kommt.
             </p>
             <Link
-              to="/referenzen"
+              to="/standorte"
               className="inline-flex items-center justify-center rounded-sm border border-foreground/20 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
             >
               Wo Sie uns treffen
