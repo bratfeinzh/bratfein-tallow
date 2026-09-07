@@ -98,7 +98,7 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
-              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und landet im Abfall. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Rinderfett für die Küche.
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und wird verschwendet. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Rinderfett für die Küche.
             </p>
           </Reveal>
         </div>
