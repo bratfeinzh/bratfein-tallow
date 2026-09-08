@@ -74,6 +74,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const sameAs = [
+  "https://www.instagram.com/bratfein.ch/",
+  "https://www.tiktok.com/@bratfein",
+  "https://www.youtube.com/@bratfein_ch",
+  "https://www.facebook.com/profile.php?id=61593513461142",
+] as const;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -106,6 +113,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cinzel:wght@400;600&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Bratfein",
+          alternateName: "Bratfein Schweizer Rinderfett",
+          url: "https://bratfein.lovable.app",
+          email: "bratfein.zh@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Zürich",
+            postalCode: "8000",
+            addressCountry: "CH",
+          },
+          description:
+            "Bratfein: hochwertiges Schweizer Rinderfett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
+          sameAs: Array.from(sameAs),
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
