@@ -1,9 +1,50 @@
 import { Link } from "@tanstack/react-router";
+import { Facebook, Instagram, Youtube } from "lucide-react";
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/bratfein.ch/",
+    label: "Bratfein auf Instagram besuchen",
+    icon: Instagram,
+  },
+  {
+    href: "https://www.tiktok.com/@bratfein",
+    label: "Bratfein auf TikTok besuchen",
+    icon: TikTokIcon,
+  },
+  {
+    href: "https://www.youtube.com/@bratfein_ch",
+    label: "Bratfein auf YouTube besuchen",
+    icon: Youtube,
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=61593513461142",
+    label: "Bratfein auf Facebook besuchen",
+    icon: Facebook,
+  },
+] as const;
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4c.667.667 2 2 4 2" />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
     <footer className="surface-walnut grain-overlay mt-24">
-      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-3 md:px-8">
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-4 md:px-8">
         <div>
           <p className="font-serif text-3xl">Bratfein</p>
           <p className="mt-3 max-w-xs text-sm text-walnut-foreground/70">
@@ -49,6 +90,24 @@ export function Footer() {
             </li>
             <li>8000 Zürich, Schweiz</li>
             <li>Zahlung via Twint, Karte oder bar vor Ort</li>
+          </ul>
+        </div>
+        <div className="text-sm">
+          <p className="eyebrow">Folge uns</p>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="inline-flex size-10 items-center justify-center rounded-full border border-walnut-foreground/20 text-walnut-foreground/80 transition-colors duration-300 hover:border-copper/60 hover:text-copper-soft"
+                >
+                  <Icon className="size-5" />
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
