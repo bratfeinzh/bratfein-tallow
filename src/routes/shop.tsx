@@ -5,15 +5,6 @@ import { useState } from "react";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
 
-const siteUrl = "https://bratfein.lovable.app";
-
-const sameAs = [
-  "https://www.instagram.com/bratfein.ch/",
-  "https://www.tiktok.com/@bratfein",
-  "https://www.youtube.com/@bratfein_ch",
-  "https://www.facebook.com/profile.php?id=61593513461142",
-];
-
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
@@ -21,18 +12,18 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Bratfein Schweizer Rinderfett im 250-g-Glas für 9 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
+          "Bratfein Schweizer Rinderfett im 250-g-Glas für 8–10 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
       },
       { property: "og:title", content: "Shop — Bratfein Schweizer Rinderfett 250 g bestellen" },
       {
         property: "og:description",
-        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 9 CHF.",
+        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 8–10 CHF.",
       },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: `${siteUrl}/shop` },
+      { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${siteUrl}/shop` }],
+    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/shop" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -42,19 +33,16 @@ export const Route = createFileRoute("/shop")({
           name: "Bratfein Schweizer Rinderfett 250 g",
           description:
             "Reines Schweizer Rinderfett aus einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
-          brand: {
-            "@type": "Brand",
-            name: "Bratfein",
-            sameAs,
-          },
+          brand: { "@type": "Brand", name: "Bratfein" },
           category: "Speisefett",
           weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
           offers: {
-            "@type": "Offer",
+            "@type": "AggregateOffer",
             priceCurrency: "CHF",
-            price: "9",
+            lowPrice: "8",
+            highPrice: "10",
             availability: "https://schema.org/InStock",
-            url: `${siteUrl}/shop`,
+            url: "https://bratfein-tallow.lovable.app/shop",
           },
         }),
       },
