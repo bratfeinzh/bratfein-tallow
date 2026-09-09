@@ -19,12 +19,12 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Bratfein Schweizer Rinderfett im 250-g-Glas für 8–10 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
+          "Bratfein Schweizer Rinderfett im 250-g-Glas für 9 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
       },
       { property: "og:title", content: "Shop — Bratfein Schweizer Rinderfett 250 g bestellen" },
       {
         property: "og:description",
-        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 8–10 CHF.",
+        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 9 CHF.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
@@ -44,10 +44,9 @@ export const Route = createFileRoute("/shop")({
           category: "Speisefett",
           weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
           offers: {
-            "@type": "AggregateOffer",
+            "@type": "Offer",
             priceCurrency: "CHF",
-            lowPrice: "8",
-            highPrice: "10",
+            price: "9",
             availability: "https://schema.org/InStock",
             url: "https://bratfein-tallow.lovable.app/shop",
           },
