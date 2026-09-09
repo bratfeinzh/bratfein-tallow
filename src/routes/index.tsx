@@ -220,6 +220,46 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <section className="border-y border-border bg-cream/60" aria-labelledby="faq">
+        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-28">
+          <Reveal className="text-center">
+            <p className="eyebrow">Fragen & Antworten</p>
+            <h2 id="faq" className="mt-4 text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
+              Häufig gestellte Fragen
+            </h2>
+            <hr className="copper-rule mx-auto mt-6" />
+          </Reveal>
+          <Reveal delay={120} className="mt-12">
+            <Accordion type="single" collapsible className="gilded rounded-sm bg-card px-5 md:px-8">
+              {[
+                {
+                  q: "Wie lange ist das Schweizer Rinderfett haltbar?",
+                  a: "Bei kühl und dunkel gelagert hält sich unser Rinderfett problemlos mehrere Monate. Im Kühlschrank verlängert sich die Haltbarkeit weiter. Wichtig ist, dass das Glas trocken und vor direkter Sonneneinstrahlung geschützt steht.",
+                },
+                {
+                  q: "Muss das Glas im Kühlschrank gelagert werden?",
+                  a: "Nein, das ist nicht zwingend nötig. Rinderfett ist bei Raumtemperatur fest und haltbar. Wer es jedoch sehr lange lagern möchte, kann das Glas im Kühlschrank aufbewahren. Vor Gebrauch kurz antrocknen lassen, damit es sich leichter portionieren lässt.",
+                },
+                {
+                  q: "Wie verwende ich es am besten beim Anbraten von Fleisch?",
+                  a: "Erhitze eine pfannengeeignete Menge Rinderfett bei mittlerer bis hoher Hitze, bis es schmilzt und leicht duftet. Dann das Fleisch hineingeben und wie gewohnt scharf anbraten. Dank des hohen Rauchpunkts bis ca. 250 °C entsteht kaum bitterer Geschmack.",
+                },
+              ].map((item, i) => (
+                <AccordionItem key={item.q} value={`item-${i}`}>
+                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
