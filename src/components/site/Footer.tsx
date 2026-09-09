@@ -78,7 +78,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="text-sm">
-          <p className="eyebrow">Kontakt</p>
+          <p className="eyebrow">Kontakt & Impressum</p>
           <ul className="mt-4 space-y-2 text-walnut-foreground/80">
             <li>
               <a
@@ -90,6 +90,9 @@ export function Footer() {
             </li>
             <li>8000 Zürich, Schweiz</li>
             <li>Zahlung via Twint, Karte oder bar vor Ort</li>
+            <li className="pt-2 text-xs leading-relaxed text-walnut-foreground/60">
+              Bratfein ist ein offizielles Mini-Unternehmen von Young Enterprise Switzerland (YES).
+            </li>
           </ul>
         </div>
         <div className="text-sm">

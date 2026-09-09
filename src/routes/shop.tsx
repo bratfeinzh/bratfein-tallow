@@ -1,7 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Minus, Plus, Wallet } from "lucide-react";
+import { Check, Flame, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { useState } from "react";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
 

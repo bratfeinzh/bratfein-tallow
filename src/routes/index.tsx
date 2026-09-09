@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Reveal } from "../components/site/Reveal";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
