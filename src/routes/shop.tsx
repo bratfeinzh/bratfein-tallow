@@ -1,7 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Minus, Plus, Wallet } from "lucide-react";
+import { Check, Flame, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { useState } from "react";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
 
@@ -12,12 +19,12 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Bratfein Schweizer Rinderfett im 250-g-Glas für 8–10 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint oder bar.",
+          "Bratfein Schweizer Rinderfett im 250-g-Glas für 9 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
       },
       { property: "og:title", content: "Shop — Bratfein Schweizer Rinderfett 250 g bestellen" },
       {
         property: "og:description",
-        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 8–10 CHF.",
+        content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 9 CHF.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
@@ -37,10 +44,9 @@ export const Route = createFileRoute("/shop")({
           category: "Speisefett",
           weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
           offers: {
-            "@type": "AggregateOffer",
+            "@type": "Offer",
             priceCurrency: "CHF",
-            lowPrice: "8",
-            highPrice: "10",
+            price: "9",
             availability: "https://schema.org/InStock",
             url: "https://bratfein-tallow.lovable.app/shop",
           },
@@ -64,10 +70,24 @@ const fieldClass =
   "mt-2 w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors duration-200 placeholder:text-muted-foreground/70 focus:border-copper";
 const labelClass = "block text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground";
 
+const deliveryOptions = [
+  { value: "bassersdorf", label: "Abholung Markt Bassersdorf (5. Dezember)" },
+  { value: "wallisellen", label: "Abholung Markt Wallisellen (10. Dezember)" },
+  { value: "lieferung", label: "Lieferung / Übergabe nach Absprache" },
+] as const;
+
+const productDetails = [
+  { icon: ShieldCheck, text: "100% reines Rinderfett aus Zürich" },
+  { icon: Check, text: "Ohne Konservierungsstoffe" },
+  { icon: Flame, text: "Hohe Hitzebeständigkeit bis ca. 250 °C" },
+];
+
 function Shop() {
   const [quantity, setQuantity] = useState(1);
-  const [delivery, setDelivery] = useState<"markt" | "lieferung">("markt");
+  const [delivery, setDelivery] = useState<string>("bassersdorf");
   const [sent, setSent] = useState(false);
+
+  const selectedDelivery = deliveryOptions.find((o) => o.value === delivery)?.label ?? delivery;
 
   return (
     <>
@@ -100,10 +120,24 @@ function Shop() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex items-start gap-3 gilded rounded-sm bg-cream px-5 py-4">
+
+            {/* Product details box */}
+            <div className="mt-8 gilded rounded-sm bg-cream px-5 py-5">
+              <p className="eyebrow">Produkteigenschaften</p>
+              <ul className="mt-4 space-y-3">
+                {productDetails.map(({ icon: Icon, text }) => (
+                  <li key={text} className="flex items-start gap-3 text-sm text-foreground">
+                    <Icon className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={2} />
+                    {text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
               <Wallet className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
               <p className="text-sm text-muted-foreground">
-                Zahlung bequem via Twint oder Bar vor Ort / nach Absprache.
+                Zahlung bequem via Twint, Karte oder bar vor Ort / nach Absprache.
               </p>
             </div>
           </div>
@@ -131,7 +165,7 @@ function Shop() {
                 <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
                   {ORDER_EMAIL}
                 </a>
-                . Die Zahlung erfolgt via Twint oder bar vor Ort.
+                . Die Zahlung erfolgt via Twint, Karte oder bar vor Ort.
               </p>
               <button
                 type="button"
@@ -152,7 +186,7 @@ function Shop() {
                   `E-Mail: ${data.get("email") ?? ""}`,
                   `Adresse: ${data.get("address") ?? ""}`,
                   `Anzahl Gläser (250 g): ${quantity}`,
-                  `Abholung/Lieferung: ${delivery === "markt" ? "Abholung am Markt" : "Lieferung"}`,
+                  `Abholung/Lieferung: ${selectedDelivery}`,
                   `Bemerkungen: ${data.get("notes") ?? ""}`,
                 ].join("\n");
                 window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
@@ -239,30 +273,28 @@ function Shop() {
                 </div>
 
                 <div>
-                  <span className={labelClass}>Abholung oder Lieferung</span>
-                  <div className="mt-2 grid grid-cols-2 gap-2">
-                    {(
-                      [
-                        { value: "markt", label: "Abholung am Markt" },
-                        { value: "lieferung", label: "Lieferung" },
-                      ] as const
-                    ).map((option) => (
-                      <button
-                        key={option.value}
-                        type="button"
-                        onClick={() => setDelivery(option.value)}
-                        aria-pressed={delivery === option.value}
-                        className={`rounded-sm border px-4 py-3 text-xs font-semibold transition-colors duration-200 ${
-                          delivery === option.value
-                            ? "border-copper bg-copper/10 text-foreground"
-                            : "border-input text-muted-foreground hover:border-copper/60"
-                        }`}
-                      >
-                        {option.label}
-                      </button>
-                    ))}
-                    <input type="hidden" name="delivery" value={delivery} />
-                  </div>
+                  <label className={labelClass} htmlFor="delivery">
+                    Abholung / Lieferung
+                  </label>
+                  <Select value={delivery} onValueChange={setDelivery} name="delivery">
+                    <SelectTrigger
+                      id="delivery"
+                      className="mt-2 h-auto rounded-sm border-input bg-background px-4 py-3 text-sm text-foreground focus:ring-copper"
+                    >
+                      <SelectValue placeholder="Abholung / Lieferung wählen" />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-sm border-border bg-popover text-popover-foreground">
+                      {deliveryOptions.map((option) => (
+                        <SelectItem
+                          key={option.value}
+                          value={option.value}
+                          className="cursor-pointer py-3 text-sm focus:bg-accent focus:text-accent-foreground"
+                        >
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
@@ -280,8 +312,8 @@ function Shop() {
               </div>
 
               <p className="text-xs leading-relaxed text-muted-foreground">
-                Zahlung bequem via Twint oder Bar vor Ort / nach Absprache. Diese Anfrage ist noch
-                keine verbindliche Bestellung – wir bestätigen sie persönlich.
+                Zahlung bequem via Twint, Karte oder bar vor Ort / nach Absprache. Diese Anfrage ist
+                noch keine verbindliche Bestellung – wir bestätigen sie persönlich.
               </p>
 
               <button
