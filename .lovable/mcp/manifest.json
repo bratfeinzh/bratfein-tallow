@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "sdk_version": "2.0.4",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "bratfein-webseite",
+      "version": "0.1.0",
+      "title": "Bratfein Webseite"
+    },
+    "tools": [
+      {
+        "name": "get_product",
+        "title": "Produkt-Infos",
+        "description": "Liefert die öffentlichen Produktangaben zu Bratfein Schweizer Rinderfett: Grösse, Preis, Eigenschaften und Verwendung.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_markets",
+        "title": "Markttermine",
+        "description": "Listet die öffentlichen Markttermine und Verkaufsstandorte von Bratfein rund um Zürich.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_faq",
+        "title": "Häufige Fragen",
+        "description": "Liefert die öffentlichen Fragen und Antworten zu Lagerung, Haltbarkeit und Verwendung.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contact",
+        "title": "Kontakt & Bestellung",
+        "description": "Gibt die öffentlichen Kontaktangaben von Bratfein sowie den Bestellweg per E-Mail und die Social-Media-Kanäle zurück.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
