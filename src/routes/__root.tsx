@@ -97,11 +97,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "google-site-verification",
         content: "ErKQHQ_ksoeWGPO8iYJT-_cL3nwDRO0MzCM9oFlPTkU",
       },
-      { property: "og:title", content: "Bratfein — Schweizer Rinderfett aus Zürich" },
-      {
-        property: "og:description",
-        content: "Der natürliche Genuss fürs perfekte Steak. Schweizer Rinderfett aus Zürich im 250g-Glas.",
-      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
