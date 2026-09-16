@@ -48,7 +48,7 @@ export const Route = createFileRoute("/shop")({
             priceCurrency: "CHF",
             price: "9",
             availability: "https://schema.org/InStock",
-            url: "https://bratfein-tallow.lovable.app/shop",
+            url: "https://bratfein.lovable.app/shop",
           },
         }),
       },

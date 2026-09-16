@@ -64,7 +64,7 @@ export const Route = createFileRoute("/standorte")({
         organizer: {
           "@type": "Organization",
           name: "Bratfein",
-          url: "https://bratfein-tallow.lovable.app",
+          url: "https://bratfein.lovable.app",
         },
         description: `Bratfein Schweizer Rinderfett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
       }),
