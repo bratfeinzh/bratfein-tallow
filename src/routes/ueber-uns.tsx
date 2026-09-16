@@ -75,7 +75,7 @@ function UeberUns() {
           {pillars.map((p) => (
             <article key={p.title} className="bg-background px-6 py-10 md:px-8">
               <p.icon className="size-7 text-copper" strokeWidth={1.4} />
-              <h3 className="mt-5 text-2xl text-foreground">{p.title}</h3>
+              <h2 className="mt-5 text-2xl text-foreground">{p.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
             </article>
           ))}
