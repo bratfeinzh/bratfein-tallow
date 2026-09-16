@@ -27,10 +27,10 @@ export const Route = createFileRoute("/shop")({
         content: "Bestellung anfragen: 250-g-Glas Schweizer Rinderfett aus Zürich, 9 CHF.",
       },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "https://bratfein-tallow.lovable.app/shop" },
+      { property: "og:url", content: "/shop" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/shop" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/shop" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/shop")({
             priceCurrency: "CHF",
             price: "9",
             availability: "https://schema.org/InStock",
-            url: "https://bratfein-tallow.lovable.app/shop",
+            url: "https://bratfein.lovable.app/shop",
           },
         }),
       },

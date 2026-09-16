@@ -42,10 +42,10 @@ export const Route = createFileRoute("/standorte")({
         content: "Unsere Marktstände in und um Zürich – Termine, Zeiten und Orte auf einen Blick.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://bratfein-tallow.lovable.app/standorte" },
+      { property: "og:url", content: "/standorte" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://bratfein-tallow.lovable.app/standorte" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/standorte" }],
     scripts: markets.map((m) => ({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/standorte")({
         organizer: {
           "@type": "Organization",
           name: "Bratfein",
-          url: "https://bratfein-tallow.lovable.app",
+          url: "https://bratfein.lovable.app",
         },
         description: `Bratfein Schweizer Rinderfett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
       }),
