@@ -3,7 +3,12 @@
   "sdk_version": "2.0.4",
   "path": "/mcp",
   "auth": {
-    "type": "none"
+    "type": "oauth",
+    "issuer": "https://infuvfzudvaqlbentooy.supabase.co/auth/v1",
+    "resource_name": "Bratfein Webseite",
+    "accepted_audiences": [
+      "authenticated"
+    ]
   },
   "mcp": {
     "server": {
