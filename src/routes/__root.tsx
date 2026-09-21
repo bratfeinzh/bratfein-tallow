@@ -86,12 +86,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bratfein — Schweizer Rinderfett aus Zürich" },
-      {
-        name: "description",
-        content:
-          "Bratfein: hochwertiges Schweizer Rinderfett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
-      },
       { name: "author", content: "Bratfein" },
       {
         name: "google-site-verification",
