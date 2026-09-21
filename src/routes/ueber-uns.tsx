@@ -17,7 +17,9 @@ export const Route = createFileRoute("/ueber-uns")({
         property: "og:description",
         content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Rinderfett.",
       },
+      { property: "og:url", content: "/ueber-uns" },
     ],
+    links: [{ rel: "canonical", href: "/ueber-uns" }],
   }),
   component: UeberUns,
 });
