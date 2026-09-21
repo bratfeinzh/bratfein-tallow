@@ -45,7 +45,7 @@ export const Route = createFileRoute("/standorte")({
       { property: "og:url", content: "/standorte" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/standorte" }],
+    links: [{ rel: "canonical", href: "/standorte" }],
     scripts: markets.map((m) => ({
       type: "application/ld+json",
       children: JSON.stringify({

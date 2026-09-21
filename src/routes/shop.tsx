@@ -30,7 +30,7 @@ export const Route = createFileRoute("/shop")({
       { property: "og:url", content: "/shop" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/shop" }],
+    links: [{ rel: "canonical", href: "/shop" }],
     scripts: [
       {
         type: "application/ld+json",

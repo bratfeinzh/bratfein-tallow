@@ -25,7 +25,9 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Das natürliche Fett für unvergleichlichen Geschmack. Regional, nachhaltig, aus Zürich.",
       },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
