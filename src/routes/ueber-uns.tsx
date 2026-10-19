@@ -60,7 +60,7 @@ const pillars = [
   },
 ];
 
-function TeamAvatar({ name, photo }: { name: string; photo?: string }) {
+function TeamAvatar({ name, photo }: { name: string; photo?: string | undefined }) {
   if (photo) {
     return (
       <img
