@@ -6,6 +6,7 @@ import timPhoto from "../assets/team-tim.jpg.asset.json";
 import finnPhoto from "../assets/team-finn.jpg.asset.json";
 import nilsPhoto from "../assets/team-nils.jpg.asset.json";
 import stefanPhoto from "../assets/team-stefan.jpg.asset.json";
+import victorPhoto from "../assets/team-victor.jpg.asset.json";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
@@ -57,7 +58,12 @@ const team: TeamMember[] = [
     photo: stefanPhoto.url,
   },
   { name: "Valerio", role: "CTO", note: "Website, Technik und Prozesse." },
-  { name: "Victor", role: "CPO", note: "Produkt, Qualität und Abfüllung." },
+  {
+    name: "Victor",
+    role: "CPO",
+    note: "Produkt, Qualität und Abfüllung.",
+    photo: victorPhoto.url,
+  },
 ];
 
 const pillars = [
