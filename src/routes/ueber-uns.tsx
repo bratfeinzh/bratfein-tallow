@@ -32,7 +32,7 @@ const team: TeamMember[] = [
   {
     name: "Tim",
     role: "CEO",
-    note: "Führt das Team, hält Kurs und Kalender.",
+    note: "\n\n\n",
     photo: timPhoto.url,
   },
   {
