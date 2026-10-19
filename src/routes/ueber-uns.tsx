@@ -3,6 +3,7 @@ import { Beef, GraduationCap, Handshake } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
 import timPhoto from "../assets/team-tim.jpg.asset.json";
+import finnPhoto from "../assets/team-finn.jpg.asset.json";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
@@ -34,7 +35,12 @@ const team: TeamMember[] = [
     note: "Führt das Team, hält Kurs und Kalender.",
     photo: timPhoto.url,
   },
-  { name: "Finn", role: "CAO", note: "Administration, Struktur und Ordnung." },
+  {
+    name: "Finn",
+    role: "CAO",
+    note: "Administration, Struktur und Ordnung.",
+    photo: finnPhoto.url,
+  },
   { name: "Nils", role: "CMO", note: "Marke, Auftritt und Geschichten." },
   { name: "Melissa", role: "CMO", note: "Social Media und Marktkommunikation." },
   { name: "Stefan", role: "CFO", note: "Zahlen, Kalkulation und Budget." },
