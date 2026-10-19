@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Beef, GraduationCap, Handshake } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
+import timPhoto from "../assets/team-tim.jpg.asset.json";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
@@ -24,8 +25,15 @@ export const Route = createFileRoute("/ueber-uns")({
   component: UeberUns,
 });
 
-const team = [
-  { name: "Tim", role: "CEO", note: "Führt das Team, hält Kurs und Kalender." },
+type TeamMember = { name: string; role: string; note: string; photo?: string };
+
+const team: TeamMember[] = [
+  {
+    name: "Tim",
+    role: "CEO",
+    note: "Führt das Team, hält Kurs und Kalender.",
+    photo: timPhoto.url,
+  },
   { name: "Finn", role: "CAO", note: "Administration, Struktur und Ordnung." },
   { name: "Nils", role: "CMO", note: "Marke, Auftritt und Geschichten." },
   { name: "Melissa", role: "CMO", note: "Social Media und Marktkommunikation." },
@@ -52,7 +60,18 @@ const pillars = [
   },
 ];
 
-function TeamAvatar({ name }: { name: string }) {
+function TeamAvatar({ name, photo }: { name: string; photo?: string }) {
+  if (photo) {
+    return (
+      <img
+        src={photo}
+        alt={`${name}, Team von Bratfein`}
+        className="aspect-4/5 w-full object-cover"
+        loading="lazy"
+      />
+    );
+  }
+
   return (
     <div className="surface-walnut grain-overlay flex aspect-4/5 w-full items-center justify-center rounded-sm">
       <span className="relative z-10 font-serif text-5xl text-copper-soft/80">
@@ -91,7 +110,7 @@ function UeberUns() {
             {team.map((m) => (
               <article key={m.name + m.role} className="group">
                 <div className="overflow-hidden rounded-sm shadow-soft transition-shadow duration-300 group-hover:shadow-lift">
-                  <TeamAvatar name={m.name} />
+                  <TeamAvatar name={m.name} photo={m.photo} />
                 </div>
                 <p className="mt-4 font-serif text-2xl text-foreground">{m.name}</p>
                 <p className="eyebrow mt-1">{m.role}</p>
