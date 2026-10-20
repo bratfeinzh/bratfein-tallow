@@ -28,6 +28,8 @@ export const Route = createFileRoute("/shop")({
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "/shop" },
+      { property: "og:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
+      { name: "twitter:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/shop" }],
@@ -157,7 +159,7 @@ function Shop() {
           {sent ? (
             <div className="mt-12 rounded-sm border border-copper/40 bg-background px-7 py-12 text-center shadow-soft">
               <Check className="mx-auto size-8 text-copper" strokeWidth={1.6} />
-              <h3 className="mt-5 text-2xl text-foreground">Fast geschafft!</h3>
+              <h2 className="mt-5 text-2xl text-foreground">Fast geschafft!</h2>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
                 Ihr E-Mail-Programm hat sich mit der fertigen Bestellanfrage geöffnet – bitte einmal
                 senden, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
