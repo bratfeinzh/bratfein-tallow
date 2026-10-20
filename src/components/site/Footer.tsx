@@ -114,8 +114,16 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="relative z-10 border-t border-walnut-foreground/10 px-5 py-6 text-center text-xs text-walnut-foreground/50 md:px-8">
-        © {new Date().getFullYear()} Bratfein — Young Enterprise Switzerland Projekt
+      <div className="relative z-10 flex flex-col items-center gap-2 border-t border-walnut-foreground/10 px-5 py-6 text-center text-xs text-walnut-foreground/50 md:flex-row md:justify-between md:px-8">
+        <span>© {new Date().getFullYear()} Bratfein — Young Enterprise Switzerland Projekt</span>
+        <span className="flex gap-4">
+          <Link to="/impressum" className="transition-colors hover:text-copper-soft">
+            Impressum
+          </Link>
+          <Link to="/datenschutz" className="transition-colors hover:text-copper-soft">
+            Datenschutz
+          </Link>
+        </span>
       </div>
     </footer>
   );
