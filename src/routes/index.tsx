@@ -26,6 +26,9 @@ export const Route = createFileRoute("/")({
         content: "Das natürliche Fett für unvergleichlichen Geschmack. Regional, nachhaltig, aus Zürich.",
       },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
+      { name: "twitter:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -203,7 +206,7 @@ function Index() {
           <div className="space-y-6">
             <Reveal delay={100}>
               <p className="text-lg leading-relaxed text-foreground">
-                Vorstellung unseres Teams: Wer wir sind, was wir machen und wofür wir stehen (Schülerunternehmen im Rahmen von YES / Young Enterprise Switzerland).
+                Wir sind sieben Schülerinnen und Schüler, die Bratfein im Rahmen von YES (Young Enterprise Switzerland) gegründet haben – mit dem Ziel, regionale Ressourcen wertzuschätzen.
               </p>
             </Reveal>
             <Reveal delay={200}>
