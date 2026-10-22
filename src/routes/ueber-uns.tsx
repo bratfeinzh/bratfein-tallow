@@ -67,7 +67,7 @@ const team: TeamMember[] = [
   {
     name: "Victor",
     role: "CPO",
-    note: "Produkt, Qualität und Abfüllung.",
+    note: "\n",
     photo: victorPhoto.url,
   },
 ];
