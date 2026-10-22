@@ -22,7 +22,7 @@ function Impressum() {
     <LegalPage eyebrow="Rechtliches" title="Impressum">
       <LegalBlock title="Unternehmen">
         <p>Bratfein (YES-Mini-Unternehmen)</p>
-        <p>8000 Zürich, Schweiz</p>
+        <p>Emil-Rütti-Weg 4, 8050 Zürich, Schweiz</p>
       </LegalBlock>
       <LegalBlock title="Kontakt">
         <p>

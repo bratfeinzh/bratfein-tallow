@@ -22,7 +22,7 @@ function Datenschutz() {
     <LegalPage eyebrow="Rechtliches // revDSG" title="Datenschutzerklärung">
       <LegalBlock title="Verantwortlicher">
         <p>
-          Bratfein (YES-Mini-Unternehmen), 8000 Zürich, Schweiz –{" "}
+          Bratfein (YES-Mini-Unternehmen), Emil-Rütti-Weg 4, 8050 Zürich, Schweiz –{" "}
           <a className="text-copper underline-offset-4 hover:underline" href="mailto:bratfein.zh@gmail.com">
             bratfein.zh@gmail.com
           </a>
@@ -37,7 +37,7 @@ function Datenschutz() {
       <LegalBlock title="Zweck der Verarbeitung">
         <p>
           Die Daten werden ausschliesslich zur Abwicklung von Bestellungen, Kundenanfragen sowie für die
-          Zahlungsabwicklung (via Twint / Vorkasse) verwendet.
+          Zahlungsabwicklung (via Twint, Karte oder bar) verwendet.
         </p>
       </LegalBlock>
       <LegalBlock title="Weitergabe an Dritte">

@@ -88,8 +88,8 @@ export function Footer() {
                 bratfein.zh@gmail.com
               </a>
             </li>
-            <li>8000 Zürich, Schweiz</li>
-            <li>Zahlung via Twint, Karte oder bar vor Ort</li>
+            <li>Emil-Rütti-Weg 4, 8050 Zürich, Schweiz</li>
+            <li>Zahlung via Twint, Karte oder bar</li>
             <li className="pt-2 text-xs leading-relaxed text-walnut-foreground/60">
               Bratfein ist ein offizielles Mini-Unternehmen von Young Enterprise Switzerland (YES).
             </li>
