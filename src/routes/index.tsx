@@ -132,7 +132,7 @@ function Index() {
           <Reveal className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <span className="inline-block size-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px] shadow-emerald-500/40" aria-hidden="true" />
-              <h3 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein</h3>
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein</h2>
             </div>
             <ul className="flex flex-1 flex-col gap-4">
               {[
@@ -153,7 +153,7 @@ function Index() {
           {/* Conventional oil card */}
           <Reveal delay={150} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
-              <h3 className="font-serif text-2xl text-foreground md:text-3xl">Herkömmliches Speiseöl</h3>
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Herkömmliches Speiseöl</h2>
             </div>
             <ul className="flex flex-1 flex-col gap-4">
               {[
