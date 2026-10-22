@@ -139,7 +139,7 @@ function Shop() {
             <div className="mt-8 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
               <Wallet className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
               <p className="text-sm text-muted-foreground">
-                Zahlung bequem via Twint, Karte oder bar vor Ort / nach Absprache.
+                Zahlung via Twint, Karte oder bar.
               </p>
             </div>
           </div>
@@ -167,7 +167,7 @@ function Shop() {
                 <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
                   {ORDER_EMAIL}
                 </a>
-                . Die Zahlung erfolgt via Twint, Karte oder bar vor Ort.
+                . Die Zahlung erfolgt via Twint, Karte oder bar.
               </p>
               <button
                 type="button"
@@ -314,8 +314,8 @@ function Shop() {
               </div>
 
               <p className="text-xs leading-relaxed text-muted-foreground">
-                Zahlung bequem via Twint, Karte oder bar vor Ort / nach Absprache. Diese Anfrage ist
-                noch keine verbindliche Bestellung – wir bestätigen sie persönlich.
+                Zahlung via Twint, Karte oder bar. Diese Anfrage ist noch keine verbindliche
+                Bestellung – wir bestätigen sie persönlich.
               </p>
 
               <button
