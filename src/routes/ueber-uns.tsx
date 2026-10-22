@@ -42,7 +42,7 @@ const team: TeamMember[] = [
   {
     name: "Finn",
     role: "CAO",
-    note: "Administration, Struktur und Ordnung.",
+    note: "\n",
     photo: finnPhoto.url,
   },
   {
