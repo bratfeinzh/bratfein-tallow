@@ -32,6 +32,9 @@ function Impressum() {
           </a>
         </p>
       </LegalBlock>
+      <LegalBlock title="Zahlung">
+        <p>Zahlung via Twint, Karte oder bar.</p>
+      </LegalBlock>
       <LegalBlock title="Vertretungsberechtigte Person">
         <p>Tim (CEO)</p>
       </LegalBlock>
