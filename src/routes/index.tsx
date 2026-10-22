@@ -23,7 +23,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Bratfein — Schweizer Rinderfett als hochwertiges Kochfett" },
       {
         property: "og:description",
-        content: "Das natürliche Fett für unvergleichlichen Geschmack. Regional, nachhaltig, aus Zürich.",
+        content:
+          "Bratfein aus Zürich: reines Schweizer Rinderfett im 250-g-Glas, hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
       },
       { property: "og:url", content: "/" },
       { property: "og:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
