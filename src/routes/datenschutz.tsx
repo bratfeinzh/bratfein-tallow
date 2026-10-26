@@ -9,10 +9,10 @@ export const Route = createFileRoute("/datenschutz")({
       { name: "description", content: "Wie Bratfein personenbezogene Daten bei Bestellungen und Anfragen gemäss Schweizer Datenschutzgesetz (revDSG) bearbeitet." },
       { property: "og:title", content: "Datenschutzerklärung — Bratfein" },
       { property: "og:description", content: "Datenschutz bei Bratfein gemäss revDSG: Zweck, Weitergabe und Ihre Rechte." },
-      { property: "og:url", content: "/datenschutz" },
+      { property: "og:url", content: "https://bratfein.lovable.app/datenschutz" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/datenschutz" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/datenschutz" }],
   }),
   component: Datenschutz,
 });

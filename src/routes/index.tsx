@@ -26,12 +26,12 @@ export const Route = createFileRoute("/")({
         content:
           "Bratfein aus Zürich: reines Schweizer Rinderfett im 250-g-Glas, hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://bratfein.lovable.app/" },
       { property: "og:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
       { name: "twitter:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/" }],
   }),
   component: Index,
 });

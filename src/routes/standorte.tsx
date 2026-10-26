@@ -42,10 +42,10 @@ export const Route = createFileRoute("/standorte")({
         content: "Unsere Marktstände in und um Zürich – Termine, Zeiten und Orte auf einen Blick.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/standorte" },
+      { property: "og:url", content: "https://bratfein.lovable.app/standorte" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/standorte" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/standorte" }],
     scripts: markets.map((m) => ({
       type: "application/ld+json",
       children: JSON.stringify({
