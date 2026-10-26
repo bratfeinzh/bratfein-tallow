@@ -1,28 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, Clock, MapPin } from "lucide-react";
 
 import { SectionHeading } from "../components/site/SectionHeading";
-
-const markets = [
-  {
-    place: "Bassersdorf",
-    date: "5. Dezember 2026",
-    time: "10:00 – 19:00",
-    location: "Bassersdorf",
-    start: "2026-12-05T10:00:00+01:00",
-    end: "2026-12-05T19:00:00+01:00",
-    city: "Bassersdorf",
-  },
-  {
-    place: "Wallisellen",
-    date: "10. Dezember 2026",
-    time: "10:00 – 19:00",
-    location: "Wallisellen",
-    start: "2026-12-10T10:00:00+01:00",
-    end: "2026-12-10T19:00:00+01:00",
-    city: "Wallisellen",
-  },
-];
+import { markets } from "../lib/markets";
 
 const preorderMailto =
   "mailto:bratfein.zh@gmail.com?subject=Vorbestellung%20Markt";
@@ -53,7 +33,7 @@ export const Route = createFileRoute("/standorte")({
         "@type": "Event",
         name: `Bratfein am ${m.place}`,
         startDate: m.start,
-        endDate: m.end,
+        ...(m.end ? { endDate: m.end } : {}),
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         location: {
@@ -103,10 +83,23 @@ function Standorte() {
                   {m.date}
                 </li>
                 <li className="flex items-center gap-3">
-                  <MapPin className="size-4 text-copper" strokeWidth={1.6} />
+                  <Clock className="size-4 shrink-0 text-copper" strokeWidth={1.6} />
+                  {m.time}
+                </li>
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={1.6} />
                   {m.location}
                 </li>
               </ul>
+              <a
+                href={m.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Veranstalterangaben für ${m.place} (öffnet in neuem Tab)`}
+                className="mt-4 text-sm text-copper underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                Angaben des Veranstalters
+              </a>
               <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
                 Besuche unseren Marktstand und sichere dir dein Schweizer Rinderfett direkt vor Ort.
               </p>

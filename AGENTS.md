@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep public market facts in `src/lib/markets.ts` for both the location page and MCP listings, so confirmed venues and unknown selling hours stay consistent.
