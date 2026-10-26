@@ -159,10 +159,11 @@ function Shop() {
           {sent ? (
             <div className="mt-12 rounded-sm border border-copper/40 bg-background px-7 py-12 text-center shadow-soft">
               <Check className="mx-auto size-8 text-copper" strokeWidth={1.6} />
-              <h2 className="mt-5 text-2xl text-foreground">Fast geschafft!</h2>
+              <h2 className="mt-5 text-2xl text-foreground">E-Mail-Programm geöffnet</h2>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Ihr E-Mail-Programm hat sich mit der fertigen Bestellanfrage geöffnet – bitte einmal
-                senden, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
+                Die fertige Bestellanfrage liegt in Ihrem E-Mail-Programm bereit. Übermittelt wird
+                sie erst, wenn Sie die E-Mail dort selbst absenden – bitte schicken Sie sie einmal
+                ab, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
                 direkt an{" "}
                 <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
                   {ORDER_EMAIL}
@@ -315,7 +316,9 @@ function Shop() {
 
               <p className="text-xs leading-relaxed text-muted-foreground">
                 Zahlung via Twint, Karte oder bar. Diese Anfrage ist noch keine verbindliche
-                Bestellung – wir bestätigen sie persönlich.
+                Bestellung – wir bestätigen sie persönlich. Beim Absenden öffnet sich Ihr
+                E-Mail-Programm mit der fertigen Anfrage; übermittelt wird sie erst, wenn Sie die
+                E-Mail selbst abschicken.
               </p>
 
               <button
