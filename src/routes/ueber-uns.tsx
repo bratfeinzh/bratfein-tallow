@@ -23,9 +23,9 @@ export const Route = createFileRoute("/ueber-uns")({
         property: "og:description",
         content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Rinderfett.",
       },
-      { property: "og:url", content: "/ueber-uns" },
+      { property: "og:url", content: "https://bratfein.lovable.app/ueber-uns" },
     ],
-    links: [{ rel: "canonical", href: "/ueber-uns" }],
+    links: [{ rel: "canonical", href: "https://bratfein.lovable.app/ueber-uns" }],
   }),
   component: UeberUns,
 });
