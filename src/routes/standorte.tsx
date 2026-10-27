@@ -10,11 +10,11 @@ const preorderMailto =
 export const Route = createFileRoute("/standorte")({
   head: () => ({
     meta: [
-      { title: "Standorte & Märkte — Bratfein Schweizer Rinderfett" },
+      { title: "Standorte & Märkte — Bratfein Schweizer Speisefett" },
       {
         name: "description",
         content:
-          "Alle Märkte und Verkaufsstandorte, an denen Bratfein Schweizer Rinderfett im 250-g-Glas erhältlich ist – in und um Zürich.",
+          "Alle Märkte und Verkaufsstandorte, an denen Bratfein Schweizer Speisefett im 250-g-Glas erhältlich ist – in und um Zürich.",
       },
       { property: "og:title", content: "Standorte & Märkte — Bratfein" },
       {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/standorte")({
           name: "Bratfein",
           url: "https://bratfein.lovable.app",
         },
-        description: `Bratfein Schweizer Rinderfett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
+        description: `Bratfein Schweizer Speisefett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
       }),
     })),
   }),
@@ -101,7 +101,7 @@ function Standorte() {
                 Angaben des Veranstalters
               </a>
               <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
-                Besuche unseren Marktstand und sichere dir dein Schweizer Rinderfett direkt vor Ort.
+                Besuche unseren Marktstand und sichere dir dein Schweizer Speisefett direkt vor Ort.
               </p>
               <a
                 href={preorderMailto}

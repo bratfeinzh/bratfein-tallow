@@ -12,7 +12,7 @@ export default defineMcp({
   title: "Bratfein Webseite",
   version: "0.1.0",
   instructions:
-    "Tools zu Bratfein, Schweizer Rinderfett aus Zürich: Produktangaben, Markttermine, häufige Fragen und Kontakt- bzw. Bestellinfos. Zugriff nur für angemeldete Nutzer.",
+    "Tools zu Bratfein, Schweizer Speisefett aus Zürich: Produktangaben, Markttermine, häufige Fragen und Kontakt- bzw. Bestellinfos. Zugriff nur für angemeldete Nutzer.",
   auth: auth.oauth.issuer({
     issuer: `${authBaseUrl}/auth/v1`,
     acceptedAudiences: "authenticated",

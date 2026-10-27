@@ -18,14 +18,15 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Bratfein ist reines Schweizer Rinderfett aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
+          "Bratfein ist reines Schweizer Speisefett aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
       },
-      { property: "og:title", content: "Bratfein — Schweizer Rinderfett als hochwertiges Kochfett" },
+      { property: "og:title", content: "Bratfein — Schweizer Speisefett als hochwertiges Kochfett" },
       {
         property: "og:description",
         content:
-          "Bratfein aus Zürich: reines Schweizer Rinderfett im 250-g-Glas, hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
+          "Bratfein aus Zürich: reines Schweizer Speisefett im 250-g-Glas, hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
       },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://bratfein.lovable.app/" },
       { property: "og:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
       { name: "twitter:image", content: "https://bratfein.lovable.app/og-bratfein.jpg" },
@@ -61,20 +62,20 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-14 md:px-8 md:pb-28 md:pt-20">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="fade-up">
-            <p className="eyebrow">Schweizer Rinderfett</p>
+            <p className="eyebrow">Schweizer Speisefett</p>
             <h1 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
               Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Schweizer Rinderfett aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
+              Schweizer Speisefett aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-              Reines Schweizer Rinderfett aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
+              Reines Schweizer Speisefett aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett"
+                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"
                 className="inline-flex items-center justify-center rounded-sm bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
               >
                 Jetzt bestellen
@@ -86,14 +87,14 @@ function Index() {
             <div className="surface-walnut grain-overlay absolute -inset-3 rounded-sm opacity-[0.08]" />
             <img
               src={jarImage}
-              alt="Bratfein Schweizer Rinderfett im 250-Gramm-Glas auf einem Nussholzbrett"
+              alt="Bratfein Schweizer Speisefett im 250-Gramm-Glas auf einem Nussholzbrett"
               width={1200}
               height={1200}
               className="relative w-full rounded-sm object-cover shadow-lift"
             />
             <div className="absolute bottom-4 left-4 rounded-sm bg-background/92 px-4 py-3 shadow-soft backdrop-blur">
               <p className="eyebrow">Produkt</p>
-              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Rinderfett</p>
+              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Speisefett</p>
             </div>
           </Reveal>
         </div>
@@ -110,7 +111,7 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
-              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und wird verschwendet. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Rinderfett für die Küche.
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und damit verschwendet. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Speisefett für die Küche.
             </p>
           </Reveal>
         </div>
@@ -120,7 +121,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
         <Reveal className="text-center">
           <h2 id="vergleich" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-            Warum Schweizer Rinderfett?
+            Warum Schweizer Speisefett?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             Die Vorteile auf einen Blick.
@@ -186,7 +187,7 @@ function Index() {
               250 g für 9 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
             </p>
             <a
-              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett"
+              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"
               className="mt-9 inline-flex items-center justify-center rounded-sm bg-copper px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground transition-opacity duration-300 hover:opacity-90"
             >
               Jetzt bestellen
@@ -241,16 +242,16 @@ function Index() {
             <Accordion type="single" collapsible className="gilded rounded-sm bg-card px-5 md:px-8">
               {[
                 {
-                  q: "Wie lange ist das Schweizer Rinderfett haltbar?",
-                  a: "Bei kühl und dunkel gelagert hält sich unser Rinderfett problemlos mehrere Monate. Im Kühlschrank verlängert sich die Haltbarkeit weiter. Wichtig ist, dass das Glas trocken und vor direkter Sonneneinstrahlung geschützt steht.",
+                  q: "Wie lange ist das Schweizer Speisefett haltbar?",
+                  a: "Kühl und dunkel gelagert hält sich unser Speisefett problemlos mehrere Monate. Im Kühlschrank verlängert sich die Haltbarkeit weiter. Wichtig ist, dass das Glas trocken und vor direkter Sonneneinstrahlung geschützt steht.",
                 },
                 {
                   q: "Muss das Glas im Kühlschrank gelagert werden?",
-                  a: "Nein, das ist nicht zwingend nötig. Rinderfett ist bei Raumtemperatur fest und haltbar. Wer es jedoch sehr lange lagern möchte, kann das Glas im Kühlschrank aufbewahren. Vor Gebrauch kurz antrocknen lassen, damit es sich leichter portionieren lässt.",
+                  a: "Nein, das ist nicht zwingend nötig. Speisefett ist bei Raumtemperatur fest und haltbar. Wer es jedoch sehr lange lagern möchte, kann das Glas im Kühlschrank aufbewahren. Vor Gebrauch kurz antrocknen lassen, damit es sich leichter portionieren lässt.",
                 },
                 {
                   q: "Wie verwende ich es am besten beim Anbraten von Fleisch?",
-                  a: "Erhitze eine pfannengeeignete Menge Rinderfett bei mittlerer bis hoher Hitze, bis es schmilzt und leicht duftet. Dann das Fleisch hineingeben und wie gewohnt scharf anbraten. Dank des hohen Rauchpunkts bis ca. 250 °C entsteht kaum bitterer Geschmack.",
+                  a: "Erhitze eine pfannengeeignete Menge Speisefett bei mittlerer bis hoher Hitze, bis es schmilzt und leicht duftet. Dann das Fleisch hineingeben und wie gewohnt scharf anbraten. Dank des hohen Rauchpunkts bis ca. 250 °C entsteht kaum bitterer Geschmack.",
                 },
               ].map((item, i) => (
                 <AccordionItem key={item.q} value={`item-${i}`}>

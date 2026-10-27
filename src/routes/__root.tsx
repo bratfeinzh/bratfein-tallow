@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Bratfein",
-          alternateName: "Bratfein Schweizer Rinderfett",
+          alternateName: "Bratfein Schweizer Speisefett",
           url: "https://bratfein.lovable.app",
           email: "bratfein.zh@gmail.com",
           address: {
@@ -127,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "CH",
           },
           description:
-            "Bratfein: hochwertiges Schweizer Rinderfett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
+            "Bratfein: hochwertiges Schweizer Speisefett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
           sameAs: Array.from(sameAs),
         }),
       },
