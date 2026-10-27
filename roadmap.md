@@ -1,5 +1,5 @@
 # Terminologie Bratfein
 
-- [ ] Produkttexte, Vorschautexte und Bestelltexte auf Speisefett umstellen.
-- [ ] Rohstoff- und Herkunftstexte auf Nierenfett umstellen; Logo und Marke bewahren.
-- [ ] Alle Seiten und Bestellablauf prüfen.
+- [x] Produkttexte, Vorschautexte und Bestelltexte auf Speisefett umstellen.
+- [x] Rohstoff- und Herkunftstexte auf Nierenfett umstellen; Logo und Marke bewahren.
+- [x] Alle Seiten und Bestellablauf prüfen.

@@ -20,7 +20,7 @@
       {
         "name": "get_product",
         "title": "Produkt-Infos",
-        "description": "Liefert die öffentlichen Produktangaben zu Bratfein Schweizer Rinderfett: Grösse, Preis, Eigenschaften und Verwendung.",
+        "description": "Liefert die öffentlichen Produktangaben zu Bratfein Schweizer Speisefett: Grösse, Preis, Eigenschaften und Verwendung.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
