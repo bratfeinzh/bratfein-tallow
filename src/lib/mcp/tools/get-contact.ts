@@ -13,7 +13,7 @@ export default defineTool({
       note: "Offizielles Mini-Unternehmen von Young Enterprise Switzerland (YES)",
       email: "bratfein.zh@gmail.com",
       orderMailto:
-        "mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Rinderfett",
+        "mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett",
       city: "Zürich, Schweiz",
       website: "https://bratfein.lovable.app",
       social: {

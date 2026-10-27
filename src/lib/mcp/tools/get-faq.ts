@@ -2,7 +2,7 @@ import { defineTool } from "@lovable.dev/mcp-js";
 
 const faq = [
   {
-    question: "Wie lange ist das Schweizer Rinderfett haltbar?",
+    question: "Wie lange ist das Schweizer Speisefett haltbar?",
     answer:
       "Ungeöffnet und kühl gelagert rund 12 Monate. Nach dem Öffnen sauber verschlossen mehrere Monate.",
   },
@@ -14,7 +14,7 @@ const faq = [
   {
     question: "Wie verwende ich es am besten beim Anbraten von Fleisch?",
     answer:
-      "Pfanne stark erhitzen, einen Löffel Rinderfett schmelzen lassen und das Steak scharf anbraten – der hohe Rauchpunkt bis ca. 250 °C macht es ideal.",
+      "Pfanne stark erhitzen, einen Löffel Speisefett schmelzen lassen und das Steak scharf anbraten – der hohe Rauchpunkt bis ca. 250 °C macht es ideal.",
   },
 ] as const;
 

@@ -48,7 +48,7 @@ export function Footer() {
         <div>
           <p className="font-serif text-3xl">Bratfein</p>
           <p className="mt-3 max-w-xs text-sm text-walnut-foreground/70">
-            Schweizer Rinderfett aus Zürich. Ein YES-Projekt von sieben Schweizer
+            Schweizer Speisefett aus Zürich. Ein YES-Projekt von sieben Schweizer
             Gymnasiastinnen und Gymnasiasten.
           </p>
         </div>

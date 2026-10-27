@@ -16,13 +16,15 @@ export const Route = createFileRoute("/ueber-uns")({
       {
         name: "description",
         content:
-          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Schweizer Rinderfett aus einer Zürcher Metzgerei.",
+          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Schweizer Speisefett aus Nierenfett von einer Zürcher Metzgerei.",
       },
       { property: "og:title", content: "Über uns — Das YES-Projekt hinter Bratfein" },
       {
         property: "og:description",
-        content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Rinderfett.",
+        content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Speisefett.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://bratfein.lovable.app/ueber-uns" },
     ],
     links: [{ rel: "canonical", href: "https://bratfein.lovable.app/ueber-uns" }],
@@ -81,12 +83,12 @@ const pillars = [
   {
     icon: Handshake,
     title: "Partnerschaft in Zürich",
-    text: "Unser Rohstoff kommt von einer Metzgerei in Zürich, die uns ihr Rinderfett überlässt. Wir holen es persönlich ab und lassen es selber aus.",
+    text: "Unser Rohstoff kommt von einer Metzgerei in Zürich, die uns ihr Nierenfett vom Rind überlässt. Wir holen es persönlich ab und lassen es selber aus.",
   },
   {
     icon: Beef,
     title: "Respekt vor dem Tier",
-    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Rinderfett ist dabei der unterschätzteste Teil.",
+    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Nierenfett vom Rind ist dabei der unterschätzteste Teil.",
   },
 ];
 
@@ -156,12 +158,12 @@ function UeberUns() {
           <SectionHeading
             eyebrow="Unsere Geschichte"
             title="Vom Nebenprodukt zum Lieblingsfett"
-            lead="Angefangen hat alles mit einer Frage in der Schulküche: Warum braten wir eigentlich mit hochverarbeitetem Öl, wenn direkt um die Ecke ausgezeichnetes Rinderfett übrig bleibt?"
+            lead="Angefangen hat alles mit einer Frage in der Schulküche: Warum braten wir eigentlich mit hochverarbeitetem Öl, wenn direkt um die Ecke ausgezeichnetes Nierenfett vom Rind übrig bleibt?"
           />
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
               Nach einigen Telefonaten sagte eine Zürcher Metzgerei zu. Seither holen wir das
-              Rinderfett regelmässig ab, lassen es in kleinen Chargen bei tiefer Temperatur aus,
+              Nierenfett regelmässig ab, lassen es in kleinen Chargen bei tiefer Temperatur aus,
               filtrieren es zweifach und füllen es von Hand in neutrale 250-Gramm-Gläser.
             </p>
             <p>
