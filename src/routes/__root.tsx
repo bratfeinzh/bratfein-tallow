@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Bratfein" },
+      { title: "Bratfein – Schweizer Speisefett" },
       {
         name: "google-site-verification",
         content: "ErKQHQ_ksoeWGPO8iYJT-_cL3nwDRO0MzCM9oFlPTkU",
@@ -106,7 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cinzel:wght@400;600&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "/logo.jpg", type: "image/jpeg" },
+
     ],
     scripts: [
       {

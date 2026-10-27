@@ -14,7 +14,7 @@ import jarImage from "../assets/tallow-jar.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bratfein — Schweizer Rinderfett als hochwertiges Kochfett" },
+      { title: "Bratfein – Schweizer Speisefett" },
       {
         name: "description",
         content:
