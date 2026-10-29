@@ -59,7 +59,7 @@ function Standorte() {
       <SectionHeading
         as="h1"
         eyebrow="Standorte"
-        title="Märkte & Verkaufsstandorte"
+        title="Märkte & Verkaufsstandorte in und um Zürich"
         lead="Kommen Sie vorbei, probieren Sie und nehmen Sie ein Glas gleich mit. Bezahlung via Twint, Karte oder bar vor Ort."
       />
 
