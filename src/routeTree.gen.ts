@@ -19,6 +19,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StandorteRouteImport } from './routes/standorte'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as ApiMarketAssistantRouteImport } from './routes/api/market-assistant'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 
 const IndexRoute = IndexRouteImport.update({
@@ -72,6 +73,11 @@ const Char91DotwellKnownChar93OauthProtectedResourceRoute =
     path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMarketAssistantRoute = ApiMarketAssistantRouteImport.update({
+  id: '/api/market-assistant',
+  path: '/api/market-assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
   id: '/.lovable/oauth/consent',
   path: '/.lovable/oauth/consent',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/api/market-assistant': typeof ApiMarketAssistantRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
 }
 export interface FileRoutesByTo {
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/api/market-assistant': typeof ApiMarketAssistantRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
 }
 export interface FileRoutesById {
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/standorte': typeof StandorteRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/api/market-assistant': typeof ApiMarketAssistantRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
 }
 export interface FileRouteTypes {
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/standorte'
     | '/ueber-uns'
     | '/.well-known/oauth-protected-resource'
+    | '/api/market-assistant'
     | '/.lovable/oauth/consent'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/standorte'
     | '/ueber-uns'
     | '/.well-known/oauth-protected-resource'
+    | '/api/market-assistant'
     | '/.lovable/oauth/consent'
   id:
     | '__root__'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/standorte'
     | '/ueber-uns'
     | '/.well-known/oauth-protected-resource'
+    | '/api/market-assistant'
     | '/.lovable/oauth/consent'
   fileRoutesById: FileRoutesById
 }
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   StandorteRoute: typeof StandorteRoute
   UeberUnsRoute: typeof UeberUnsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  ApiMarketAssistantRoute: typeof ApiMarketAssistantRoute
   DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
 }
 
@@ -246,6 +259,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/market-assistant': {
+      id: '/api/market-assistant'
+      path: '/api/market-assistant'
+      fullPath: '/api/market-assistant'
+      preLoaderRoute: typeof ApiMarketAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.lovable/oauth/consent': {
       id: '/.lovable/oauth/consent'
       path: '/.lovable/oauth/consent'
@@ -268,6 +288,7 @@ const rootRouteChildren: RootRouteChildren = {
   UeberUnsRoute: UeberUnsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  ApiMarketAssistantRoute: ApiMarketAssistantRoute,
   DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
 }
 export const routeTree = rootRouteImport
