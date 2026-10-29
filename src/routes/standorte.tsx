@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CalendarDays, Clock, MapPin } from "lucide-react";
 
+import { MarketAssistant } from "../components/site/MarketAssistant";
 import { SectionHeading } from "../components/site/SectionHeading";
 import { markets } from "../lib/markets";
 
@@ -113,6 +114,8 @@ function Standorte() {
           </article>
         ))}
       </div>
+
+      <MarketAssistant />
     </section>
   );
 }
