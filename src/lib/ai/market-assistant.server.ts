@@ -26,7 +26,7 @@ Regeln:
 }
 
 export async function handleMarketQuestion(request: Request): Promise<Response> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) return Response.json({ error: "KI ist nicht konfiguriert." }, { status: 500 });
 
   let question = "";
