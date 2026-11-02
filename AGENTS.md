@@ -11,3 +11,4 @@
 
 - Keep public market facts in `src/lib/markets.ts` for both the location page and MCP listings, so confirmed venues and unknown selling hours stay consistent.
 - The Standorte AI assistant builds its prompt from `src/lib/markets.ts` server-side (`src/lib/ai/market-assistant.server.ts`, route `/api/market-assistant`), so answers never drift from the published market facts.
+- Keep confirmed product facts (jar sizes, weights, prices) in `src/lib/product.ts`; pages, MCP tools and the AI assistant read them from there so quantities and prices never drift apart.
