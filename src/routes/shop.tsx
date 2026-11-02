@@ -9,22 +9,35 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 import { SectionHeading } from "../components/site/SectionHeading";
 import jarImage from "../assets/tallow-jar.jpg";
+import {
+  defaultJarId,
+  findJar,
+  jars,
+  jarOfferLine,
+  totalChf,
+  type JarId,
+} from "../lib/product";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop — Bratfein Schweizer Speisefett 250 g bestellen" },
+      { title: "Shop — Bratfein Schweizer Speisefett in zwei Grössen bestellen" },
       {
         name: "description",
         content:
-          "Bratfein Schweizer Speisefett im 250-g-Glas für 9 CHF bestellen. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
+          "Bratfein Schweizer Speisefett bestellen: 330-ml-Glas (275 g) für 12 CHF oder 205-ml-Glas (165 g) für 9 CHF. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
       },
-      { property: "og:title", content: "Shop — Bratfein Schweizer Speisefett 250 g bestellen" },
+      {
+        property: "og:title",
+        content: "Shop — Bratfein Schweizer Speisefett in zwei Grössen bestellen",
+      },
       {
         property: "og:description",
-        content: "Bestellung anfragen: 250-g-Glas Schweizer Speisefett aus Zürich, 9 CHF.",
+        content:
+          "Bestellung anfragen: Schweizer Speisefett aus Zürich in zwei Grössen – 330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://bratfein.lovable.app/shop" },
@@ -39,19 +52,24 @@ export const Route = createFileRoute("/shop")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Bratfein Schweizer Speisefett 250 g",
+          name: "Bratfein Schweizer Speisefett",
           description:
-            "Reines Schweizer Speisefett aus Nierenfett vom Rind, bezogen von einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand ins neutrale 250-g-Glas abgefüllt.",
+            "Reines Schweizer Speisefett aus Nierenfett vom Rind, bezogen von einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand in neutrale Gläser abgefüllt.",
           brand: { "@type": "Brand", name: "Bratfein" },
           category: "Speisefett",
-          weight: { "@type": "QuantitativeValue", value: 250, unitCode: "GRM" },
-          offers: {
+          hasVariant: jars.map((jar) => ({
+            "@type": "Product",
+            name: `Bratfein Schweizer Speisefett ${jar.label}`,
+            weight: { "@type": "QuantitativeValue", value: jar.weightG, unitCode: "GRM" },
+          })),
+          offers: jars.map((jar) => ({
             "@type": "Offer",
+            name: jar.label,
             priceCurrency: "CHF",
-            price: "9",
+            price: String(jar.priceChf),
             availability: "https://schema.org/InStock",
             url: "https://bratfein.lovable.app/shop",
-          },
+          })),
         }),
       },
     ],
@@ -64,7 +82,7 @@ const ORDER_EMAIL = "bratfein.zh@gmail.com";
 const highlights = [
   "Reines Schweizer Speisefett, zweifach filtriert",
   "Aus Schweizer Nierenfett vom Rind von einer Metzgerei in Zürich",
-  "Neutrales 250-g-Glas, wiederverwendbar",
+  "Neutrale Gläser in zwei Grössen, wiederverwendbar",
   "Hoher Rauchpunkt für Steak, Rösti und Gemüse",
 ];
 
@@ -85,10 +103,13 @@ const productDetails = [
 ];
 
 function Shop() {
+  const [jar, setJar] = useState<JarId>(defaultJarId);
   const [quantity, setQuantity] = useState(1);
   const [delivery, setDelivery] = useState<string>("bassersdorf");
   const [sent, setSent] = useState(false);
 
+  const selectedJar = findJar(jar) ?? jars[0];
+  const total = totalChf(jar, quantity);
   const selectedDelivery = deliveryOptions.find((o) => o.value === delivery)?.label ?? delivery;
 
   return (
@@ -98,7 +119,7 @@ function Shop() {
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <img
             src={jarImage}
-            alt="Bratfein Schweizer Speisefett im neutralen 250-Gramm-Glas"
+            alt="Bratfein Schweizer Speisefett im neutralen Glas"
             width={1200}
             height={1200}
             className="w-full rounded-sm object-cover shadow-lift"
@@ -106,14 +127,59 @@ function Shop() {
           <div>
             <p className="eyebrow">Bratfein · Schweizer Speisefett</p>
             <h1 className="mt-4 text-4xl leading-tight text-foreground md:text-5xl">
-              250-g-Glas Schweizer Speisefett
+              Schweizer Speisefett in zwei Grössen
             </h1>
             <hr className="copper-rule mt-6" />
-            <p className="mt-6 font-serif text-3xl text-copper">9 CHF</p>
+            <p className="mt-6 font-serif text-3xl text-copper">{selectedJar.priceLabel}</p>
+            <p className="mt-1 text-sm text-muted-foreground">für das {selectedJar.label}</p>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-              Schonend ausgelassen, von Hand abgefüllt. Ein Glas reicht für rund zwanzig Mal
-              Anbraten – kühl und dunkel gelagert monatelang haltbar.
+              Schonend ausgelassen, von Hand abgefüllt. Kühl und dunkel gelagert monatelang haltbar.
             </p>
+
+            {/* Size chooser */}
+            <div className="mt-8">
+              <span className={labelClass}>Grösse wählen</span>
+              <div
+                className="mt-3 grid gap-3 sm:grid-cols-2"
+                role="radiogroup"
+                aria-label="Grösse wählen"
+              >
+                {jars.map((option) => {
+                  const active = option.id === jar;
+                  return (
+                    <button
+                      key={option.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => setJar(option.id)}
+                      className={cn(
+                        "rounded-sm border px-4 py-4 text-left transition-colors duration-200",
+                        active
+                          ? "border-copper bg-cream"
+                          : "border-input hover:border-copper hover:bg-cream/60",
+                      )}
+                    >
+                      <span className="block font-serif text-lg text-foreground">
+                        {option.volumeMl} ml
+                      </span>
+                      <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                        {option.weightG} g
+                      </span>
+                      <span
+                        className={cn(
+                          "mt-2 block text-sm font-bold",
+                          active ? "text-copper" : "text-foreground",
+                        )}
+                      >
+                        {option.priceLabel}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <ul className="mt-8 space-y-3">
               {highlights.map((h) => (
                 <li key={h} className="flex items-start gap-3 text-sm text-foreground">
@@ -138,9 +204,7 @@ function Shop() {
 
             <div className="mt-8 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
               <Wallet className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
-              <p className="text-sm text-muted-foreground">
-                Zahlung via Twint, Karte oder bar.
-              </p>
+              <p className="text-sm text-muted-foreground">Zahlung via Twint, Karte oder bar.</p>
             </div>
           </div>
         </div>
@@ -152,7 +216,7 @@ function Shop() {
           <SectionHeading
             eyebrow="Bestellformular"
             title="Bestellung anfragen"
-            lead="Füllen Sie das Formular aus – wir melden uns per E-Mail mit der Bestätigung, dem Preis und den Details zur Abholung oder Lieferung."
+            lead={`Füllen Sie das Formular aus – wir melden uns per E-Mail mit der Bestätigung und den Details zur Abholung oder Lieferung. Zur Wahl stehen ${jarOfferLine}.`}
             align="center"
           />
 
@@ -188,7 +252,9 @@ function Shop() {
                   `Name: ${data.get("name") ?? ""}`,
                   `E-Mail: ${data.get("email") ?? ""}`,
                   `Adresse: ${data.get("address") ?? ""}`,
-                  `Anzahl Gläser (250 g): ${quantity}`,
+                  `Grösse: ${selectedJar.label}`,
+                  `Anzahl Gläser: ${quantity}`,
+                  `Total: ${total} CHF`,
                   `Abholung/Lieferung: ${selectedDelivery}`,
                   `Bemerkungen: ${data.get("notes") ?? ""}`,
                 ].join("\n");
@@ -244,7 +310,36 @@ function Shop() {
 
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <span className={labelClass}>Anzahl Gläser (250 g)</span>
+                  <label className={labelClass} htmlFor="jar">
+                    Grösse
+                  </label>
+                  <Select
+                    value={jar}
+                    onValueChange={(value) => setJar(value as JarId)}
+                    name="jar"
+                  >
+                    <SelectTrigger
+                      id="jar"
+                      className="mt-2 h-auto rounded-sm border-input bg-background px-4 py-3 text-sm text-foreground focus:ring-copper"
+                    >
+                      <SelectValue placeholder="Grösse wählen" />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-sm border-border bg-popover text-popover-foreground">
+                      {jars.map((option) => (
+                        <SelectItem
+                          key={option.id}
+                          value={option.id}
+                          className="cursor-pointer py-3 text-sm focus:bg-accent focus:text-accent-foreground"
+                        >
+                          {option.label} – {option.priceLabel}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <span className={labelClass}>Anzahl Gläser</span>
                   <div className="mt-2 flex items-center gap-3">
                     <button
                       type="button"
@@ -256,7 +351,7 @@ function Shop() {
                     </button>
                     <input
                       name="quantity"
-                      aria-label="Anzahl Gläser (250 g)"
+                      aria-label="Anzahl Gläser"
                       type="number"
                       min={1}
                       max={99}
@@ -273,32 +368,35 @@ function Shop() {
                       <Plus className="size-4" />
                     </button>
                   </div>
+                  <p className="mt-3 text-sm text-muted-foreground" aria-live="polite">
+                    Total: <span className="font-semibold text-foreground">{total} CHF</span>
+                  </p>
                 </div>
+              </div>
 
-                <div>
-                  <label className={labelClass} htmlFor="delivery">
-                    Abholung / Lieferung
-                  </label>
-                  <Select value={delivery} onValueChange={setDelivery} name="delivery">
-                    <SelectTrigger
-                      id="delivery"
-                      className="mt-2 h-auto rounded-sm border-input bg-background px-4 py-3 text-sm text-foreground focus:ring-copper"
-                    >
-                      <SelectValue placeholder="Abholung / Lieferung wählen" />
-                    </SelectTrigger>
-                    <SelectContent className="rounded-sm border-border bg-popover text-popover-foreground">
-                      {deliveryOptions.map((option) => (
-                        <SelectItem
-                          key={option.value}
-                          value={option.value}
-                          className="cursor-pointer py-3 text-sm focus:bg-accent focus:text-accent-foreground"
-                        >
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+              <div>
+                <label className={labelClass} htmlFor="delivery">
+                  Abholung / Lieferung
+                </label>
+                <Select value={delivery} onValueChange={setDelivery} name="delivery">
+                  <SelectTrigger
+                    id="delivery"
+                    className="mt-2 h-auto rounded-sm border-input bg-background px-4 py-3 text-sm text-foreground focus:ring-copper"
+                  >
+                    <SelectValue placeholder="Abholung / Lieferung wählen" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-sm border-border bg-popover text-popover-foreground">
+                    {deliveryOptions.map((option) => (
+                      <SelectItem
+                        key={option.value}
+                        value={option.value}
+                        className="cursor-pointer py-3 text-sm focus:bg-accent focus:text-accent-foreground"
+                      >
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               <div>
