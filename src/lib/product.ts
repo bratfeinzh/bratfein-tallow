@@ -1,0 +1,56 @@
+// Single source of truth for the confirmed jar sizes, weights and prices.
+// Public product facts live here so pages, MCP tools and the AI assistant never drift.
+
+export type JarId = "gross" | "klein";
+
+export type Jar = {
+  id: JarId;
+  volumeMl: number;
+  weightG: number;
+  priceChf: number;
+  /** Full label, e.g. "330-ml-Glas (275 g)". */
+  label: string;
+  /** Compact label, e.g. "330 ml / 275 g". */
+  shortLabel: string;
+  /** Price as shown in the UI, e.g. "12 CHF". */
+  priceLabel: string;
+};
+
+export const jars: readonly Jar[] = [
+  {
+    id: "gross",
+    volumeMl: 330,
+    weightG: 275,
+    priceChf: 12,
+    label: "330-ml-Glas (275 g)",
+    shortLabel: "330 ml / 275 g",
+    priceLabel: "12 CHF",
+  },
+  {
+    id: "klein",
+    volumeMl: 205,
+    weightG: 165,
+    priceChf: 9,
+    label: "205-ml-Glas (165 g)",
+    shortLabel: "205 ml / 165 g",
+    priceLabel: "9 CHF",
+  },
+];
+
+export const defaultJarId: JarId = "gross";
+
+export function findJar(id: string): Jar | undefined {
+  return jars.find((jar) => jar.id === id);
+}
+
+export function jarLabel(id: string): string {
+  return findJar(id)?.label ?? id;
+}
+
+export function totalChf(id: string, quantity: number): number {
+  const price = findJar(id)?.priceChf ?? 0;
+  return price * Math.max(1, Math.floor(quantity));
+}
+
+/** "330-ml-Glas (275 g) für 12 CHF, 205-ml-Glas (165 g) für 9 CHF" */
+export const jarOfferLine = jars.map((jar) => `${jar.label} für ${jar.priceLabel}`).join(", ");
