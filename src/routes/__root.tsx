@@ -127,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "CH",
           },
           description:
-            "Bratfein: hochwertiges Schweizer Speisefett aus Zürich im 250g-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
+            "Bratfein: hochwertiges Schweizer Speisefett aus Zürich im 330-ml- oder 205-ml-Glas. Hoher Rauchpunkt, 100% regional, Nose-to-Tail.",
           sameAs: Array.from(sameAs),
         }),
       },
