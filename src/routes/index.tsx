@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Bratfein aus Zürich: reines Schweizer Speisefett im 250-g-Glas, hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
+          "Bratfein aus Zürich: reines Schweizer Speisefett im 330-ml-Glas (275 g) oder 205-ml-Glas (165 g), hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://bratfein.lovable.app/" },
@@ -87,14 +87,14 @@ function Index() {
             <div className="surface-walnut grain-overlay absolute -inset-3 rounded-sm opacity-[0.08]" />
             <img
               src={jarImage}
-              alt="Bratfein Schweizer Speisefett im 250-Gramm-Glas auf einem Nussholzbrett"
+              alt="Bratfein Schweizer Speisefett im neutralen Glas auf einem Nussholzbrett"
               width={1200}
               height={1200}
               className="relative w-full rounded-sm object-cover shadow-lift"
             />
             <div className="absolute bottom-4 left-4 rounded-sm bg-background/92 px-4 py-3 shadow-soft backdrop-blur">
               <p className="eyebrow">Produkt</p>
-              <p className="mt-1 font-serif text-lg text-foreground">250 g Schweizer Speisefett</p>
+              <p className="mt-1 font-serif text-lg text-foreground">Schweizer Speisefett: 330 ml / 205 ml</p>
             </div>
           </Reveal>
         </div>
@@ -184,7 +184,7 @@ function Index() {
               Ein Glas, das jedes Steak besser macht.
             </h2>
             <p className="mx-auto mt-5 max-w-md text-sm text-walnut-foreground/70">
-              250 g für 9 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
+              330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
             </p>
             <a
               href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/standorte")({
       {
         name: "description",
         content:
-          "Alle Märkte und Verkaufsstandorte, an denen Bratfein Schweizer Speisefett im 250-g-Glas erhältlich ist – in und um Zürich.",
+          "Alle Märkte und Verkaufsstandorte, an denen Bratfein Schweizer Speisefett in zwei Grössen (330 ml / 205 ml) erhältlich ist – in und um Zürich.",
       },
       { property: "og:title", content: "Standorte & Märkte — Bratfein" },
       {
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/standorte")({
           name: "Bratfein",
           url: "https://bratfein.lovable.app",
         },
-        description: `Bratfein Schweizer Speisefett im 250-g-Glas am ${m.place}, ${m.date}, ${m.time}.`,
+        description: `Bratfein Schweizer Speisefett in zwei Grössen (330 ml und 205 ml) am ${m.place}, ${m.date}, ${m.time}.`,
       }),
     })),
   }),

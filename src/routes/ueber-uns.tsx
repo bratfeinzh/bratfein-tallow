@@ -164,7 +164,7 @@ function UeberUns() {
             <p>
               Nach einigen Telefonaten sagte eine Zürcher Metzgerei zu. Seither holen wir das
               Nierenfett regelmässig ab, lassen es in kleinen Chargen bei tiefer Temperatur aus,
-              filtrieren es zweifach und füllen es von Hand in neutrale 250-Gramm-Gläser.
+              filtrieren es zweifach und füllen es von Hand in neutrale Gläser in zwei Grössen.
             </p>
             <p>
               Jedes Glas verkaufen wir dort, wo wir erklären können, was drin ist: an
