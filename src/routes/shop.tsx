@@ -18,8 +18,10 @@ import {
   jars,
   jarOfferLine,
   totalChf,
+  totalWeightG,
   type JarId,
 } from "../lib/product";
+
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
@@ -110,7 +112,9 @@ function Shop() {
 
   const selectedJar = findJar(jar) ?? jars[0];
   const total = totalChf(jar, quantity);
+  const totalWeight = totalWeightG(jar, quantity);
   const selectedDelivery = deliveryOptions.find((o) => o.value === delivery)?.label ?? delivery;
+
 
   return (
     <>
@@ -253,11 +257,15 @@ function Shop() {
                   `E-Mail: ${data.get("email") ?? ""}`,
                   `Adresse: ${data.get("address") ?? ""}`,
                   `Grösse: ${selectedJar.label}`,
+                  `Gewicht pro Glas: ${selectedJar.weightG} g`,
                   `Anzahl Gläser: ${quantity}`,
+                  `Grundpreis: ${selectedJar.priceLabel} pro Glas`,
+                  `Total Gewicht: ${totalWeight} g`,
                   `Total: ${total} CHF`,
                   `Abholung/Lieferung: ${selectedDelivery}`,
                   `Bemerkungen: ${data.get("notes") ?? ""}`,
                 ].join("\n");
+
                 window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
                   "Bestellung Bratfein Schweizer Speisefett",
                 )}&body=${encodeURIComponent(body)}`;

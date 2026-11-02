@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import { strict as assert } from "node:assert";
-import { findJar, jars, jarOfferLine, totalChf } from "./product";
+import { findJar, jars, jarOfferLine, totalChf, totalWeightG } from "./product";
 
 describe("confirmed product quantities", () => {
   test("330 ml glass holds 275 g and costs 12 CHF", () => {
@@ -32,6 +32,14 @@ describe("confirmed product quantities", () => {
     assert.equal(totalChf("klein", 2), 18);
     assert.equal(totalChf("gross", 0), 12);
   });
+
+  test("order email totals carry the confirmed weights", () => {
+    assert.equal(totalWeightG("gross", 3), 825);
+    assert.equal(totalWeightG("klein", 2), 330);
+    assert.equal(totalWeightG("gross", 0), 275);
+    assert.equal(totalWeightG("unknown", 2), 0);
+  });
+
 
   test("offer line names both glasses with weight and price", () => {
     assert.equal(jarOfferLine, "330-ml-Glas (275 g) für 12 CHF, 205-ml-Glas (165 g) für 9 CHF");
