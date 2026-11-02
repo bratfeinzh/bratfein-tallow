@@ -55,5 +55,12 @@ export function totalChf(id: string, quantity: number): number {
   return price * Math.max(1, Math.floor(quantity));
 }
 
+/** Total net weight in grams for an order, e.g. 3 × 275 g = 825 g. */
+export function totalWeightG(id: string, quantity: number): number {
+  const weight = findJar(id)?.weightG ?? 0;
+  return weight * Math.max(1, Math.floor(quantity));
+}
+
+
 /** "330-ml-Glas (275 g) für 12 CHF, 205-ml-Glas (165 g) für 9 CHF" */
 export const jarOfferLine = jars.map((jar) => `${jar.label} für ${jar.priceLabel}`).join(", ");

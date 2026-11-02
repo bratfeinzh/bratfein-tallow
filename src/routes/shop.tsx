@@ -18,8 +18,10 @@ import {
   jars,
   jarOfferLine,
   totalChf,
+  totalWeightG,
   type JarId,
 } from "../lib/product";
+
 
 export const Route = createFileRoute("/shop")({
   head: () => ({

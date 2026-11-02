@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import { strict as assert } from "node:assert";
-import { findJar, jars, jarOfferLine, totalChf } from "./product";
+import { findJar, jars, jarOfferLine, totalChf, totalWeightG } from "./product";
 
 describe("confirmed product quantities", () => {
   test("330 ml glass holds 275 g and costs 12 CHF", () => {
