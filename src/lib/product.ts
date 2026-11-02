@@ -16,28 +16,31 @@ export type Jar = {
   priceLabel: string;
 };
 
-export const jars: readonly Jar[] = [
-  {
-    id: "gross",
-    volumeMl: 330,
-    weightG: 275,
-    priceChf: 12,
-    label: "330-ml-Glas (275 g)",
-    shortLabel: "330 ml / 275 g",
-    priceLabel: "12 CHF",
-  },
-  {
-    id: "klein",
-    volumeMl: 205,
-    weightG: 165,
-    priceChf: 9,
-    label: "205-ml-Glas (165 g)",
-    shortLabel: "205 ml / 165 g",
-    priceLabel: "9 CHF",
-  },
-];
+const grossJar = {
+  id: "gross",
+  volumeMl: 330,
+  weightG: 275,
+  priceChf: 12,
+  label: "330-ml-Glas (275 g)",
+  shortLabel: "330 ml / 275 g",
+  priceLabel: "12 CHF",
+} as const satisfies Jar;
 
-export const defaultJarId: JarId = "gross";
+const kleinJar = {
+  id: "klein",
+  volumeMl: 205,
+  weightG: 165,
+  priceChf: 9,
+  label: "205-ml-Glas (165 g)",
+  shortLabel: "205 ml / 165 g",
+  priceLabel: "9 CHF",
+} as const satisfies Jar;
+
+/** Tuple on purpose: `jars[0]` stays defined for callers with a fallback. */
+export const jars = [grossJar, kleinJar] as const satisfies readonly Jar[];
+
+export const defaultJarId: JarId = grossJar.id;
+
 
 export function findJar(id: string): Jar | undefined {
   return jars.find((jar) => jar.id === id);
