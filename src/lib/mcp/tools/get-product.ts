@@ -22,13 +22,13 @@ export default defineTool({
       currency: "CHF",
       origin: "Schweizer Nierenfett vom Rind von einer regionalen Metzgerei in Zürich, Schweiz",
       properties: [
-        "100% reines Speisefett aus Zürich",
+        "100% reines Rindertalg-Speisefett aus Zürich",
         "Ohne Konservierungsstoffe",
-        "Hohe Hitzebeständigkeit, Rauchpunkt bis ca. 250 °C",
+        "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–250 °C)",
         "Nose-to-Tail / Upcycling von Nierenfett",
       ],
       usage:
-        "Pfanne stark erhitzen, einen Löffel Speisefett schmelzen lassen und das Fleisch scharf anbraten.",
+        "Pfanne auf mittlere bis hohe Hitze erhitzen, einen Teelöffel Bratfein hineingeben und schmelzen lassen, dann Fleisch, Rösti oder Gemüse braten.",
       payment: "Twint, Karte oder bar vor Ort",
       website: "https://bratfein.lovable.app",
     };

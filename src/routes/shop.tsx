@@ -26,20 +26,20 @@ import {
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop — Bratfein Schweizer Speisefett in zwei Grössen bestellen" },
+      { title: "Shop — Bratfein Rindertalg-Speisefett in zwei Grössen bestellen" },
       {
         name: "description",
         content:
-          "Bratfein Schweizer Speisefett bestellen: 330-ml-Glas (275 g) für 12 CHF oder 205-ml-Glas (165 g) für 9 CHF. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
+          "Bratfein Rindertalg-Speisefett bestellen: 330-ml-Glas (275 g) für 12 CHF oder 205-ml-Glas (165 g) für 9 CHF. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
       },
       {
         property: "og:title",
-        content: "Shop — Bratfein Schweizer Speisefett in zwei Grössen bestellen",
+        content: "Shop — Bratfein Rindertalg-Speisefett in zwei Grössen bestellen",
       },
       {
         property: "og:description",
         content:
-          "Bestellung anfragen: Schweizer Speisefett aus Zürich in zwei Grössen – 330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF.",
+          "Bestellung anfragen: Rindertalg-Speisefett, in Zürich ausgelassen und abgefüllt, in zwei Grössen – 330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://bratfein.lovable.app/shop" },
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/shop")({
           "@type": "Product",
           name: "Bratfein Schweizer Speisefett",
           description:
-            "Reines Schweizer Speisefett aus Nierenfett vom Rind, bezogen von einer Zürcher Metzgerei, schonend ausgelassen, zweifach filtriert und von Hand in neutrale Gläser abgefüllt.",
+            "Speisefett aus Schweizer Rindernierenfett, in Zürich in kleinen Chargen schonend ausgelassen, zweifach filtriert und von Hand in neutrale Gläser abgefüllt.",
           brand: { "@type": "Brand", name: "Bratfein" },
           category: "Speisefett",
           hasVariant: jars.map((jar) => ({
@@ -82,8 +82,8 @@ export const Route = createFileRoute("/shop")({
 const ORDER_EMAIL = "bratfein.zh@gmail.com";
 
 const highlights = [
-  "Reines Schweizer Speisefett, zweifach filtriert",
-  "Aus Schweizer Nierenfett vom Rind von einer Metzgerei in Zürich",
+  "Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt",
+  "Upcycling von Nierenfett aus einer Zürcher Metzgerei",
   "Neutrale Gläser in zwei Grössen, wiederverwendbar",
   "Hoher Rauchpunkt für Steak, Rösti und Gemüse",
 ];
@@ -99,9 +99,9 @@ const deliveryOptions = [
 ] as const;
 
 const productDetails = [
-  { icon: ShieldCheck, text: "100% reines Speisefett aus Zürich" },
+  { icon: ShieldCheck, text: "100% reines Rindertalg-Speisefett aus Zürich" },
   { icon: Check, text: "Ohne Konservierungsstoffe" },
-  { icon: Flame, text: "Hohe Hitzebeständigkeit bis ca. 250 °C" },
+  { icon: Flame, text: "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–250 °C)" },
 ];
 
 function Shop() {
@@ -137,7 +137,7 @@ function Shop() {
             <p className="mt-6 font-serif text-3xl text-copper">{selectedJar.priceLabel}</p>
             <p className="mt-1 text-sm text-muted-foreground">für das {selectedJar.label}</p>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-              Schonend ausgelassen, von Hand abgefüllt. Kühl und dunkel gelagert monatelang haltbar.
+              Schonend in kleinen Chargen ausgelassen, zweifach filtriert und von Hand abgefüllt. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.
             </p>
 
             {/* Size chooser */}

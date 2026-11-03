@@ -12,13 +12,13 @@ import valerioPhoto from "../assets/team-valerio.jpg.asset.json";
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
     meta: [
-      { title: "Über uns — Das YES-Projekt hinter Bratfein" },
+      { title: "Über uns — Das YES-Projekt hinter Bratfein Rindertalg-Speisefett" },
       {
         name: "description",
         content:
-          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Schweizer Speisefett aus Nierenfett von einer Zürcher Metzgerei.",
+          "Sieben Schweizer Gymnasiasten führen im YES-Programm ein echtes Unternehmen: Bratfein, Speisefett aus Rindertalg von Schweizer Rindern, in Zürich ausgelassen und abgefüllt.",
       },
-      { property: "og:title", content: "Über uns — Das YES-Projekt hinter Bratfein" },
+      { property: "og:title", content: "Über uns — Das YES-Projekt hinter Bratfein Rindertalg-Speisefett" },
       {
         property: "og:description",
         content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Speisefett.",
@@ -88,7 +88,7 @@ const pillars = [
   {
     icon: Beef,
     title: "Respekt vor dem Tier",
-    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Nierenfett vom Rind ist dabei der unterschätzteste Teil.",
+    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Auch Nierenfett vom Rind ist ein hochwertiger Rohstoff für die Küche.",
   },
 ];
 
@@ -158,7 +158,7 @@ function UeberUns() {
           <SectionHeading
             eyebrow="Unsere Geschichte"
             title="Vom Nebenprodukt zum Lieblingsfett"
-            lead="Angefangen hat alles mit einer Frage in der Schulküche: Warum braten wir eigentlich mit hochverarbeitetem Öl, wenn direkt um die Ecke ausgezeichnetes Nierenfett vom Rind übrig bleibt?"
+            lead="Angefangen hat alles mit einer Frage in der Schulküche: Wie können wir hochwertiges Nierenfett von Schweizer Rindern aus einer Zürcher Metzgerei für die Küche nutzen?"
           />
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
