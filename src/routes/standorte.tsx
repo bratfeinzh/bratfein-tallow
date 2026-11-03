@@ -1,15 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { CalendarDays, Clock, MapPin } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { CalendarDays, Clock, MapPin, Navigation } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "../components/ui/button";
 
 import { MarketAssistant } from "../components/site/MarketAssistant";
 import { SectionHeading } from "../components/site/SectionHeading";
-import { markets } from "../lib/markets";
-
-const preorderMailto =
-  "mailto:bratfein.zh@gmail.com?subject=Vorbestellung%20Markt";
+import { upcomingMarkets, zurichDate, marketMapsUrl } from "../lib/markets";
 
 export const Route = createFileRoute("/standorte")({
-  head: () => ({
+  loader: () => ({ today: zurichDate() }),
+  head: ({ loaderData }) => ({
     meta: [
       { title: "Standorte & Märkte — Bratfein Rindertalg-Speisefett" },
       {
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/standorte")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://bratfein.lovable.app/standorte" }],
-    scripts: markets.map((m) => ({
+    scripts: upcomingMarkets(loaderData?.today ?? zurichDate()).map((m) => ({
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
@@ -55,6 +55,15 @@ export const Route = createFileRoute("/standorte")({
 });
 
 function Standorte() {
+  const initial = Route.useLoaderData();
+  const [today, setToday] = useState(initial.today);
+  useEffect(() => {
+    const update = () => setToday(zurichDate());
+    update();
+    const interval = window.setInterval(update, 60_000);
+    return () => window.clearInterval(interval);
+  }, []);
+  const visibleMarkets = upcomingMarkets(today);
   return (
     <section className="mx-auto max-w-5xl px-5 pb-24 pt-14 md:px-8 md:pt-20">
       <SectionHeading
@@ -64,10 +73,14 @@ function Standorte() {
         lead="Kommen Sie vorbei, probieren Sie und nehmen Sie ein Glas gleich mit. Bezahlung via Twint, Karte oder bar vor Ort."
       />
 
-      <div className="mt-14 grid gap-6 sm:grid-cols-2">
-        {markets.map((m) => (
+      {visibleMarkets.length === 0 ? (
+        <p className="mt-14 text-base leading-relaxed text-muted-foreground">
+          Aktuell sind keine Märkte geplant. Du kannst trotzdem direkt über den <Link to="/shop" className="text-copper underline underline-offset-4">Shop</Link> bestellen.
+        </p>
+      ) : <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        {visibleMarkets.map((m) => (
           <article
-            key={m.place}
+            key={`${m.place}-${m.dateIso}`}
             className="group flex flex-col overflow-hidden gilded rounded-sm bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
           >
             <div className="surface-walnut grain-overlay flex items-center justify-between px-6 py-4">
@@ -85,7 +98,14 @@ function Standorte() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock className="size-4 shrink-0 text-copper" strokeWidth={1.6} />
-                  {m.time}
+                  <div>
+                    {m.begins && m.ends ? `${m.begins}–${m.ends}` : "Zeit wird noch bekanntgegeben"}
+                    {(!m.begins || !m.ends) && (
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Updates auf Instagram: <a href="https://www.instagram.com/bratfein.ch/" target="_blank" rel="noopener noreferrer" className="text-copper underline underline-offset-4">@bratfein.ch</a>
+                      </p>
+                    )}
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-copper" strokeWidth={1.6} />
@@ -104,16 +124,18 @@ function Standorte() {
               <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
                 Besuche unseren Marktstand und sichere dir dein Schweizer Speisefett direkt vor Ort.
               </p>
-              <a
-                href={preorderMailto}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-sm bg-primary px-6 py-3.5 text-center text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
-              >
-                Für Abholung vorbestellen
-              </a>
+              <Button asChild variant="outline" className="mt-6 h-auto w-full rounded-sm border-foreground/20 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] hover:border-copper hover:text-copper">
+                <a href={marketMapsUrl(m.location)} target="_blank" rel="noopener noreferrer" aria-label={`Route öffnen: ${m.location} (öffnet in neuem Tab)`}>
+                  <Navigation aria-hidden="true" /> Route öffnen
+                </a>
+              </Button>
+              <Button asChild className="mt-3 h-auto w-full rounded-sm px-6 py-3.5 text-center text-xs font-bold uppercase tracking-[0.16em] hover:bg-accent">
+                <Link to="/shop">Für Abholung vorbestellen</Link>
+              </Button>
             </div>
           </article>
         ))}
-      </div>
+      </div>}
 
       <MarketAssistant />
     </section>
