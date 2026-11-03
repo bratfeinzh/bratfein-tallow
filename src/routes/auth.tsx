@@ -32,7 +32,7 @@ export const Route = createFileRoute("/auth")({
       { property: "og:title", content: "Anmelden | Bratfein" },
       {
         property: "og:description",
-        content: "Anmeldung für Bratfein – Schweizer Speisefett aus Zürich.",
+        content: "Anmeldung für verbundene Anwendungen bei Bratfein.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

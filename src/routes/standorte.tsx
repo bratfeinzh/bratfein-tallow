@@ -11,11 +11,11 @@ const preorderMailto =
 export const Route = createFileRoute("/standorte")({
   head: () => ({
     meta: [
-      { title: "Standorte & Märkte — Bratfein Schweizer Speisefett" },
+      { title: "Standorte & Märkte — Bratfein Rindertalg-Speisefett" },
       {
         name: "description",
         content:
-          "Alle Märkte und Verkaufsstandorte, an denen Bratfein Schweizer Speisefett in zwei Grössen (330 ml / 205 ml) erhältlich ist – in und um Zürich.",
+          "Bratfein Rindertalg-Speisefett an Märkten in und um Zürich kaufen: Termine, Orte und Vorbestellung für die Gläser mit 330 ml (275 g) oder 205 ml (165 g).",
       },
       { property: "og:title", content: "Standorte & Märkte — Bratfein" },
       {
