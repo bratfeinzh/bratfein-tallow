@@ -6,6 +6,6 @@
 
 # Sachliche Textüberarbeitung
 
-- [ ] Vergleich, Produkttexte und Vorschautexte gemäss Vorlage überarbeiten; bestätigte Glasangaben bewahren.
-- [ ] FAQ-Texte aktualisieren und alle Antworten auf Desktop und Handy prüfen.
-- [ ] Fehlerprüfung und Textkontrolle abschliessen, ohne Designänderungen.
+- [x] Vergleich, Produkttexte und Vorschautexte gemäss Vorlage überarbeiten; bestätigte Glasangaben bewahren.
+- [x] FAQ-Texte aktualisieren und alle Antworten auf Desktop und Handy prüfen.
+- [x] Fehlerprüfung und Textkontrolle abschliessen, ohne Designänderungen.
