@@ -10,6 +10,7 @@ export const Route = createFileRoute("/impressum")({
       { property: "og:title", content: "Impressum — Bratfein" },
       { property: "og:description", content: "Kontakt und Angaben zu Bratfein, YES-Mini-Unternehmen aus Zürich." },
       { property: "og:url", content: "https://bratfein.lovable.app/impressum" },
+      { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://bratfein.lovable.app/impressum" }],

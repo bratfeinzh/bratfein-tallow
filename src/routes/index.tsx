@@ -14,17 +14,17 @@ import jarImage from "../assets/tallow-jar.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bratfein – Schweizer Speisefett" },
+      { title: "Bratfein – Rindertalg-Speisefett aus Zürich" },
       {
         name: "description",
         content:
-          "Bratfein ist reines Schweizer Speisefett aus Zürich. Hoher Rauchpunkt, herzhafter Geschmack, regionales Upcycling — das natürliche Fett für unvergleichlichen Geschmack.",
+          "Bratfein: hitzebeständiges Speisefett aus Rindertalg, in Zürich ausgelassen und abgefüllt. 330 ml (275 g) für 12 CHF oder 205 ml (165 g) für 9 CHF.",
       },
-      { property: "og:title", content: "Bratfein — Schweizer Speisefett als hochwertiges Kochfett" },
+      { property: "og:title", content: "Bratfein — Rindertalg-Speisefett für Steak, Rösti und Gemüse" },
       {
         property: "og:description",
         content:
-          "Bratfein aus Zürich: reines Schweizer Speisefett im 330-ml-Glas (275 g) oder 205-ml-Glas (165 g), hoher Rauchpunkt für kross gebratene Steaks – die regionale Alternative zu herkömmlichem Speiseöl.",
+          "Bratfein: Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse – in 330 ml (275 g) oder 205 ml (165 g).",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://bratfein.lovable.app/" },
@@ -36,24 +36,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const comparison = [
-  {
-    label: "Geschmack",
-    fett: "Herzhaft, fein-würzig und aromatisch",
-    seed: "Neutral bis leicht eigenartig bei hoher Hitze",
-  },
-  {
-    label: "Rauchpunkt",
-    fett: "Sehr hoch (ca. 200 °C bis 250 °C), ideal zum scharfen Anbraten",
-    seed: "Ca. 100 °C bis 220 °C (je nach Raffination)",
-  },
-  {
-    label: "Verarbeitung",
-    fett: "Naturprodukt aus regionalem Schweizer Upcycling",
-    seed: "Oft stark industriell verarbeitet",
-  },
-];
 
 function Index() {
   return (
@@ -67,11 +49,11 @@ function Index() {
               Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Schweizer Speisefett aus regionaler Zürcher Herkunft. Die natürliche, hitzebeständige Alternative für das perfekte Steak.
+              Speisefett aus Nierenfett von Schweizer Rindern einer Zürcher Metzgerei. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-              Reines Schweizer Speisefett aus Zürich – herzhaft, hitzestabil und regional. Die natürliche Alternative zu industriellen Speiseölen.
+              Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt – herzhaft und fein-würzig.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -111,7 +93,7 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
-              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und damit verschwendet. Dabei handelt es sich um ein erstklassiges, nährstoffreiches Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Speisefett für die Küche.
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und damit verschwendet. Dabei handelt es sich um ein erstklassiges, hochwertiges Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Speisefett für die Küche.
             </p>
           </Reveal>
         </div>
@@ -121,7 +103,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="vergleich">
         <Reveal className="text-center">
           <h2 id="vergleich" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-            Warum Schweizer Speisefett?
+            Warum Rindertalg zum Braten?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             Die Vorteile auf einen Blick.
@@ -134,15 +116,15 @@ function Index() {
           <Reveal className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
               <span className="inline-block size-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px] shadow-emerald-500/40" aria-hidden="true" />
-              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein</h2>
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Bratfein (Rindertalg)</h2>
             </div>
             <ul className="flex flex-1 flex-col gap-4">
               {[
-                "Rauchpunkt bis ca. 250 °C (bratstabil)",
-                "100% natürliches Upcycling aus Zürich",
-                "Reines Naturprodukt ",
-                "Herzhafter, fein-würziger Geschmack",
-                "Keine industrielle Raffination",
+                "Hitzestabil zum Braten (Rauchpunkt je nach Quelle ca. 200–250 °C)",
+                "Herzhafter, fein-würziger Eigengeschmack",
+                "Schonend in kleinen Chargen ausgelassen und zweifach filtriert",
+                "Aus Nierenfett von Schweizer Rindern einer Zürcher Metzgerei, das sonst oft ungenutzt bleibt",
+                "Ohne Konservierungsstoffe",
               ].map((item, i) => (
                 <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-emerald-400" strokeWidth={2.5} />
@@ -155,15 +137,14 @@ function Index() {
           {/* Conventional oil card */}
           <Reveal delay={150} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
             <div className="mb-6 flex items-center gap-3">
-              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Herkömmliches Speiseöl</h2>
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">Raffinierte Pflanzenöle (z. B. Sonnenblumen-, Rapsöl)</h2>
             </div>
             <ul className="flex flex-1 flex-col gap-4">
               {[
-                "Tieferer Rauchpunkt, oxidiert schnell bei Hitze",
-                "Industrielle Extraktion mit Lösungsmitteln",
-                "Mehrfach raffiniert, gebleicht und desodoriert",
-                "Neutraler bis flacher Geschmack, kann bitter werden",
-                "Stark industriell verarbeitetes Produkt",
+                "Ebenfalls zum Braten geeignet",
+                "Neutraler Geschmack",
+                "Industriell raffiniert",
+                "Pflanzliche Alternative",
               ].map((item, i) => (
                 <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
                   <X className="mt-0.5 size-5 shrink-0 text-rose-400" strokeWidth={2.5} />
@@ -173,6 +154,7 @@ function Index() {
             </ul>
           </Reveal>
         </div>
+        <p className="mt-4 text-sm text-muted-foreground">Rauchpunkte variieren je nach Herstellung und Quelle.</p>
       </section>
 
       {/* CTA */}
@@ -243,15 +225,19 @@ function Index() {
               {[
                 {
                   q: "Wie lange ist das Schweizer Speisefett haltbar?",
-                  a: "Kühl und dunkel gelagert hält sich unser Speisefett problemlos mehrere Monate. Im Kühlschrank verlängert sich die Haltbarkeit weiter. Wichtig ist, dass das Glas trocken und vor direkter Sonneneinstrahlung geschützt steht.",
+                  a: "Ungeöffnet und kühl und dunkel gelagert mehrere Monate. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.",
                 },
                 {
                   q: "Muss das Glas im Kühlschrank gelagert werden?",
-                  a: "Nein, das ist nicht zwingend nötig. Speisefett ist bei Raumtemperatur fest und haltbar. Wer es jedoch sehr lange lagern möchte, kann das Glas im Kühlschrank aufbewahren. Vor Gebrauch kurz antrocknen lassen, damit es sich leichter portionieren lässt.",
+                  a: "Nicht zwingend. Kühl und dunkel gelagert reicht. Im Kühlschrank hält es länger.",
                 },
                 {
                   q: "Wie verwende ich es am besten beim Anbraten von Fleisch?",
-                  a: "Erhitze eine pfannengeeignete Menge Speisefett bei mittlerer bis hoher Hitze, bis es schmilzt und leicht duftet. Dann das Fleisch hineingeben und wie gewohnt scharf anbraten. Dank des hohen Rauchpunkts bis ca. 250 °C entsteht kaum bitterer Geschmack.",
+                  a: "Pfanne auf mittlere bis hohe Hitze erhitzen, einen Teelöffel Bratfein hineingeben und schmelzen lassen, dann Fleisch, Rösti oder Gemüse braten.",
+                },
+                {
+                  q: "Woher kommt das Fett?",
+                  a: "Von Schweizer Rindern. Eine Zürcher Metzgerei überlässt uns ihr Nierenfett. Wir holen es persönlich ab, lassen es in kleinen Chargen bei tiefer Temperatur aus und filtrieren es zweifach.",
                 },
               ].map((item, i) => (
                 <AccordionItem key={item.q} value={`item-${i}`}>

@@ -10,6 +10,7 @@ export const Route = createFileRoute("/datenschutz")({
       { property: "og:title", content: "Datenschutzerklärung — Bratfein" },
       { property: "og:description", content: "Datenschutz bei Bratfein gemäss revDSG: Zweck, Weitergabe und Ihre Rechte." },
       { property: "og:url", content: "https://bratfein.lovable.app/datenschutz" },
+      { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://bratfein.lovable.app/datenschutz" }],

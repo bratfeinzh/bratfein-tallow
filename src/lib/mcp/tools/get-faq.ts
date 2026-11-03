@@ -4,17 +4,22 @@ const faq = [
   {
     question: "Wie lange ist das Schweizer Speisefett haltbar?",
     answer:
-      "Ungeöffnet und kühl gelagert rund 12 Monate. Nach dem Öffnen sauber verschlossen mehrere Monate.",
+      "Ungeöffnet und kühl und dunkel gelagert mehrere Monate. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.",
   },
   {
     question: "Muss das Glas im Kühlschrank gelagert werden?",
     answer:
-      "Nein. Kühl, trocken und dunkel gelagert bleibt es stabil. Im Kühlschrank hält es noch länger.",
+      "Nicht zwingend. Kühl und dunkel gelagert reicht. Im Kühlschrank hält es länger.",
   },
   {
     question: "Wie verwende ich es am besten beim Anbraten von Fleisch?",
     answer:
-      "Pfanne stark erhitzen, einen Löffel Speisefett schmelzen lassen und das Steak scharf anbraten – der hohe Rauchpunkt bis ca. 250 °C macht es ideal.",
+      "Pfanne auf mittlere bis hohe Hitze erhitzen, einen Teelöffel Bratfein hineingeben und schmelzen lassen, dann Fleisch, Rösti oder Gemüse braten.",
+  },
+  {
+    question: "Woher kommt das Fett?",
+    answer:
+      "Von Schweizer Rindern. Eine Zürcher Metzgerei überlässt uns ihr Nierenfett. Wir holen es persönlich ab, lassen es in kleinen Chargen bei tiefer Temperatur aus und filtrieren es zweifach.",
   },
 ] as const;
 
