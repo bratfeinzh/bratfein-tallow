@@ -224,54 +224,52 @@ function Shop() {
             align="center"
           />
 
-          {sent ? (
-            <div className="mt-12 rounded-sm border border-copper/40 bg-background px-7 py-12 text-center shadow-soft">
-              <Check className="mx-auto size-8 text-copper" strokeWidth={1.6} />
-              <h2 className="mt-5 text-2xl text-foreground">E-Mail-Programm geöffnet</h2>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Die fertige Bestellanfrage liegt in Ihrem E-Mail-Programm bereit. Übermittelt wird
-                sie erst, wenn Sie die E-Mail dort selbst absenden – bitte schicken Sie sie einmal
-                ab, damit wir sie erhalten. Falls sich nichts geöffnet hat, schreiben Sie uns
-                direkt an{" "}
-                <a className="text-copper underline" href={`mailto:${ORDER_EMAIL}`}>
-                  {ORDER_EMAIL}
-                </a>
-                . Die Zahlung erfolgt via Twint, Karte oder bar.
-              </p>
-              <button
-                type="button"
-                onClick={() => setSent(false)}
-                className="mt-8 rounded-sm border border-foreground/20 px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-copper hover:text-copper"
-              >
-                Weitere Bestellung
-              </button>
-            </div>
-          ) : (
-            <form
-              className="mt-12 space-y-6 gilded rounded-sm bg-card px-6 py-8 md:px-10 md:py-10"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const data = new FormData(e.currentTarget);
-                const body = [
-                  `Name: ${data.get("name") ?? ""}`,
-                  `E-Mail: ${data.get("email") ?? ""}`,
-                  `Adresse: ${data.get("address") ?? ""}`,
-                  `Grösse: ${selectedJar.label}`,
-                  `Gewicht pro Glas: ${selectedJar.weightG} g`,
-                  `Anzahl Gläser: ${quantity}`,
-                  `Grundpreis: ${selectedJar.priceLabel} pro Glas`,
-                  `Total Gewicht: ${totalWeight} g`,
-                  `Total: ${total} CHF`,
-                  `Abholung/Lieferung: ${selectedDelivery}`,
-                  `Bemerkungen: ${data.get("notes") ?? ""}`,
-                ].join("\n");
-
-                window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(
-                  "Bestellung Bratfein Schweizer Speisefett",
-                )}&body=${encodeURIComponent(body)}`;
-                setSent(true);
-              }}
-            >
+          <form
+            ref={formRef}
+            noValidate
+            className="mt-12 space-y-6 gilded rounded-sm bg-card px-6 py-8 md:px-10 md:py-10"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setStatus(null);
+              const data = new FormData(e.currentTarget);
+              const parsed = orderSchema.safeParse({
+                name: data.get("name") ?? "",
+                email: data.get("email") ?? "",
+                address: isDelivery ? (data.get("address") ?? "") : "",
+                notes: data.get("notes") ?? "",
+                quantity,
+                delivery,
+              });
+              if (!parsed.success) {
+                setStatus({ ok: false, msg: parsed.error.issues[0]?.message ?? "Bitte prüfen Sie Ihre Angaben." });
+                return;
+              }
+              if (isDelivery && !parsed.data.address) {
+                setStatus({ ok: false, msg: "Bitte geben Sie für die Lieferung Ihre Adresse an." });
+                return;
+              }
+              setBusy(true);
+              const { error } = await supabase.from("orders").insert({
+                name: parsed.data.name,
+                email: parsed.data.email,
+                address: isDelivery ? parsed.data.address : null,
+                jar_size: jar,
+                quantity: parsed.data.quantity,
+                delivery: parsed.data.delivery,
+                notes: parsed.data.notes || null,
+              });
+              setBusy(false);
+              if (error) {
+                setStatus({ ok: false, msg: `Die Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an ${ORDER_EMAIL}.` });
+                return;
+              }
+              formRef.current?.reset();
+              setQuantity(1);
+              setDelivery("");
+              setJar(defaultJarId);
+              setStatus({ ok: true, msg: "Danke! Deine Anfrage ist bei uns eingegangen. Wir bestätigen sie persönlich per E-Mail." });
+            }}
+          >
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label className={labelClass} htmlFor="name">
@@ -434,9 +432,3 @@ function Shop() {
                 Bestellung anfragen
               </button>
             </form>
-          )}
-        </div>
-      </section>
-    </>
-  );
-}
