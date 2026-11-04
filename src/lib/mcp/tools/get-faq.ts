@@ -19,7 +19,7 @@ const faq = [
   {
     question: "Woher kommt das Fett?",
     answer:
-      "Von Schweizer Rindern. Eine Zürcher Metzgerei überlässt uns ihr Nierenfett. Wir holen es persönlich ab, lassen es in kleinen Chargen bei tiefer Temperatur aus und filtrieren es zweifach.",
+      "Das Nierenfett stammt von einem Schlachthof in Hinwil. Wir lassen es in kleinen Chargen aus und filtrieren es.",
   },
 ] as const;
 

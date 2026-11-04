@@ -59,7 +59,7 @@ export const Route = createFileRoute("/shop")({
           "@type": "Product",
           name: "Bratfein Schweizer Speisefett",
           description:
-            "Speisefett aus Schweizer Rindernierenfett, in Zürich in kleinen Chargen schonend ausgelassen, zweifach filtriert und von Hand in neutrale Gläser abgefüllt.",
+            "Speisefett aus Schweizer Rindernierenfett, in Zürich in kleinen Chargen schonend ausgelassen, filtriert und von Hand in neutrale Gläser abgefüllt.",
           brand: { "@type": "Brand", name: "Bratfein" },
           category: "Speisefett",
           hasVariant: jars.map((jar) => ({
@@ -86,7 +86,7 @@ const ORDER_EMAIL = "bratfein.zh@gmail.com";
 
 const highlights = [
   "Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt",
-  "Upcycling von Nierenfett aus einer Zürcher Metzgerei",
+  "Upcycling von Nierenfett von einem Schlachthof in Hinwil",
   "Neutrale Gläser in zwei Grössen, wiederverwendbar",
   "Hoher Rauchpunkt für Steak, Rösti und Gemüse",
 ];
@@ -152,7 +152,7 @@ function Shop() {
             <p className="mt-6 font-serif text-3xl text-copper">{selectedJar.priceLabel}</p>
             <p className="mt-1 text-sm text-muted-foreground">für das {selectedJar.label}</p>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-              Schonend in kleinen Chargen ausgelassen, zweifach filtriert und von Hand abgefüllt. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.
+              Schonend in kleinen Chargen ausgelassen, filtriert und von Hand abgefüllt. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.
             </p>
 
             {/* Size chooser */}

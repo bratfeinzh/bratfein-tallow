@@ -20,7 +20,7 @@ export default defineTool({
       })),
       priceFrom: "9 CHF",
       currency: "CHF",
-      origin: "Schweizer Nierenfett vom Rind von einer regionalen Metzgerei in Zürich, Schweiz",
+      origin: "Schweizer Nierenfett vom Rind von einem Schlachthof in Hinwil, Schweiz",
       properties: [
         "100% reines Rindertalg-Speisefett aus Zürich",
         "Ohne Konservierungsstoffe",

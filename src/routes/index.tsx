@@ -49,7 +49,7 @@ function Index() {
               Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Speisefett aus Nierenfett von Schweizer Rindern einer Zürcher Metzgerei. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse.
+              Speisefett aus Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
@@ -122,8 +122,8 @@ function Index() {
               {[
                 "Hitzestabil zum Braten (Rauchpunkt je nach Quelle ca. 200–250 °C)",
                 "Herzhafter, fein-würziger Eigengeschmack",
-                "Schonend in kleinen Chargen ausgelassen und zweifach filtriert",
-                "Aus Nierenfett von Schweizer Rindern einer Zürcher Metzgerei, das sonst oft ungenutzt bleibt",
+                "Schonend in kleinen Chargen ausgelassen und filtriert",
+                "Aus Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil, das sonst oft ungenutzt bleibt",
                 "Ohne Konservierungsstoffe",
               ].map((item, i) => (
                 <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
@@ -237,7 +237,7 @@ function Index() {
                 },
                 {
                   q: "Woher kommt das Fett?",
-                  a: "Von Schweizer Rindern. Eine Zürcher Metzgerei überlässt uns ihr Nierenfett. Wir holen es persönlich ab, lassen es in kleinen Chargen bei tiefer Temperatur aus und filtrieren es zweifach.",
+                  a: "Das Nierenfett stammt von einem Schlachthof in Hinwil. Wir lassen es in kleinen Chargen aus und filtrieren es.",
                 },
               ].map((item, i) => (
                 <AccordionItem key={item.q} value={`item-${i}`}>
