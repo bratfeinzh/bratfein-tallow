@@ -166,7 +166,7 @@ function Index() {
               Ein Glas, das jedes Steak besser macht.
             </h2>
             <p className="mx-auto mt-5 max-w-md text-sm text-walnut-foreground/70">
-              330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF. Abholung an unseren Marktständen oder Lieferung nach Absprache.
+              330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF. Abholung an unseren Marktständen oder Lieferung – Details unter «Lieferung &amp; Zahlung» im Shop.
             </p>
             <a
               href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"

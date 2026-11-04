@@ -6,7 +6,6 @@ const nav = [
   { to: "/", label: "Startseite" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/standorte", label: "Standorte" },
-  { to: "/shop", label: "Shop" },
 ] as const;
 
 export function Header() {
@@ -75,6 +74,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <Link
+            to="/shop"
+            onClick={() => setOpen(false)}
+            className="mt-5 block rounded-sm bg-primary px-5 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground"
+          >
+            Bestellen
+          </Link>
         </nav>
       )}
     </header>
