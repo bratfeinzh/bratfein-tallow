@@ -6,7 +6,6 @@ const nav = [
   { to: "/", label: "Startseite" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/standorte", label: "Standorte" },
-  { to: "/shop", label: "Shop" },
 ] as const;
 
 export function Header() {

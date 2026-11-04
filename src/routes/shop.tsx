@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, Flame, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { z } from "zod";
+
+import { supabase } from "@/integrations/supabase/client";
 
 import {
   Select,
@@ -30,7 +33,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Bratfein Rindertalg-Speisefett bestellen: 330-ml-Glas (275 g) für 12 CHF oder 205-ml-Glas (165 g) für 9 CHF. Abholung am Markt oder Lieferung nach Absprache, Zahlung via Twint, Karte oder bar.",
+          "Bratfein Rindertalg-Speisefett bestellen: 330-ml-Glas (275 g) für 12 CHF oder 205-ml-Glas (165 g) für 9 CHF. Abholung am Marktstand oder Lieferung, Zahlung via Twint, Karte oder bar.",
       },
       {
         property: "og:title",
@@ -93,10 +96,21 @@ const fieldClass =
 const labelClass = "block text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground";
 
 const deliveryOptions = [
-  { value: "bassersdorf", label: "Abholung Markt Bassersdorf (5. Dezember)" },
-  { value: "wallisellen", label: "Abholung Markt Wallisellen (10. Dezember)" },
-  { value: "lieferung", label: "Lieferung / Übergabe nach Absprache" },
+  { value: "bassersdorf", label: "Marktstand Bassersdorf (5. Dezember 2026)" },
+  { value: "wallisellen", label: "Marktstand Wallisellen (10. Dezember 2026)" },
+  { value: "lieferung", label: "Lieferung" },
 ] as const;
+
+const orderSchema = z.object({
+  name: z.string().trim().min(1, "Bitte geben Sie Ihren Namen an.").max(100, "Der Name ist zu lang."),
+  email: z.string().trim().min(1, "Bitte geben Sie Ihre E-Mail-Adresse an.").email("Bitte geben Sie eine gültige E-Mail-Adresse an.").max(255),
+  address: z.string().trim().max(300, "Die Adresse ist zu lang."),
+  notes: z.string().trim().max(1000, "Die Bemerkungen sind zu lang."),
+  quantity: z.number().int().min(1, "Bitte bestellen Sie mindestens 1 Glas.").max(99),
+  delivery: z.enum(["bassersdorf", "wallisellen", "lieferung"], {
+    message: "Bitte wählen Sie Abholung oder Lieferung.",
+  }),
+});
 
 const productDetails = [
   { icon: ShieldCheck, text: "100% reines Rindertalg-Speisefett aus Zürich" },
@@ -107,13 +121,14 @@ const productDetails = [
 function Shop() {
   const [jar, setJar] = useState<JarId>(defaultJarId);
   const [quantity, setQuantity] = useState(1);
-  const [delivery, setDelivery] = useState<string>("bassersdorf");
-  const [sent, setSent] = useState(false);
+  const [delivery, setDelivery] = useState<string>("");
+  const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState<{ ok: boolean; msg: string } | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const isDelivery = delivery === "lieferung";
 
   const selectedJar = findJar(jar) ?? jars[0];
   const total = totalChf(jar, quantity);
-  const totalWeight = totalWeightG(jar, quantity);
-  const selectedDelivery = deliveryOptions.find((o) => o.value === delivery)?.label ?? delivery;
 
 
   return (
@@ -206,9 +221,16 @@ function Shop() {
               </ul>
             </div>
 
-            <div className="mt-8 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
+            <div id="lieferung-zahlung" className="mt-8 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
               <Wallet className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
-              <p className="text-sm text-muted-foreground">Zahlung via Twint, Karte oder bar.</p>
+              <div>
+                <p className="eyebrow">Lieferung &amp; Zahlung</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                  <li>
+                    <span className="font-semibold text-foreground">Zahlung:</span> Twint, Karte oder bar
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -300,19 +322,6 @@ function Shop() {
                 </div>
               </div>
 
-              <div>
-                <label className={labelClass} htmlFor="address">
-                  Adresse
-                </label>
-                <input
-                  id="address"
-                  name="address"
-                  required
-                  autoComplete="street-address"
-                  placeholder="Strasse, PLZ, Ort"
-                  className={fieldClass}
-                />
-              </div>
 
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
@@ -403,7 +412,32 @@ function Shop() {
                     ))}
                   </SelectContent>
                 </Select>
+                {isDelivery && (
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Details siehe{" "}
+                    <a href="#lieferung-zahlung" className="text-copper underline">
+                      Lieferung &amp; Zahlung
+                    </a>
+                    .
+                  </p>
+                )}
               </div>
+
+              {isDelivery && (
+                <div>
+                  <label className={labelClass} htmlFor="address">
+                    Adresse
+                  </label>
+                  <input
+                    id="address"
+                    name="address"
+                    required
+                    autoComplete="street-address"
+                    placeholder="Strasse, PLZ, Ort"
+                    className={fieldClass}
+                  />
+                </div>
+              )}
 
               <div>
                 <label className={labelClass} htmlFor="notes">
@@ -419,16 +453,26 @@ function Shop() {
               </div>
 
               <p className="text-xs leading-relaxed text-muted-foreground">
-                Zahlung via Twint, Karte oder bar. Diese Anfrage ist noch keine verbindliche
-                Bestellung – wir bestätigen sie persönlich. Beim Absenden öffnet sich Ihr
-                E-Mail-Programm mit der fertigen Anfrage; übermittelt wird sie erst, wenn Sie die
-                E-Mail selbst abschicken.
+                Diese Anfrage ist noch keine verbindliche Bestellung – wir bestätigen sie persönlich.
               </p>
+
+              {status && (
+                <p
+                  role={status.ok ? "status" : "alert"}
+                  className={cn(
+                    "rounded-sm border px-4 py-3 text-sm",
+                    status.ok ? "border-copper/40 bg-background text-foreground" : "border-destructive/50 text-destructive",
+                  )}
+                >
+                  {status.msg}
+                </p>
+              )}
 
               <button
                 type="submit"
+                disabled={busy}
                 className="w-full rounded-sm bg-primary px-8 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
               >
-                Bestellung anfragen
+                {busy ? "Wird gesendet …" : "Bestellung anfragen"}
               </button>
             </form>
