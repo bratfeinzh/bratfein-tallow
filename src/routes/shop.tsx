@@ -476,3 +476,8 @@ function Shop() {
                 {busy ? "Wird gesendet …" : "Bestellung anfragen"}
               </button>
             </form>
+        </div>
+      </section>
+    </>
+  );
+}
