@@ -21,7 +21,7 @@ export const Route = createFileRoute("/ueber-uns")({
       { property: "og:title", content: "Über uns — Das YES-Projekt hinter Bratfein Rindertalg-Speisefett" },
       {
         property: "og:description",
-        content: "Sieben Jugendliche, eine Zürcher Metzgerei und ein Glas Schweizer Speisefett.",
+        content: "Sieben Jugendliche, ein Schlachthof in Hinwil und ein Glas Schweizer Speisefett.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -82,8 +82,8 @@ const pillars = [
   },
   {
     icon: Handshake,
-    title: "Partnerschaft in Zürich",
-    text: "Unser Rohstoff kommt von einer Metzgerei in Zürich, die uns ihr Nierenfett vom Rind überlässt. Wir holen es persönlich ab und lassen es selber aus.",
+    title: "Partnerschaft in Hinwil",
+    text: "Unser Rohstoff kommt von einem Schlachthof in Hinwil, der uns sein Nierenfett vom Rind überlässt. Wir lassen es selber aus.",
   },
   {
     icon: Beef,
@@ -158,13 +158,13 @@ function UeberUns() {
           <SectionHeading
             eyebrow="Unsere Geschichte"
             title="Vom Nebenprodukt zum Lieblingsfett"
-            lead="Angefangen hat alles mit einer Frage in der Schulküche: Wie können wir hochwertiges Nierenfett von Schweizer Rindern aus einer Zürcher Metzgerei für die Küche nutzen?"
+            lead="Angefangen hat alles mit einer Frage in der Schulküche: Wie können wir hochwertiges Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil für die Küche nutzen?"
           />
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
-              Nach einigen Telefonaten sagte eine Zürcher Metzgerei zu. Seither holen wir das
-              Nierenfett regelmässig ab, lassen es in kleinen Chargen bei tiefer Temperatur aus,
-              filtrieren es zweifach und füllen es von Hand in neutrale Gläser in zwei Grössen.
+              Nach einigen Telefonaten sagte ein Schlachthof in Hinwil zu. Seither lassen wir das
+              Nierenfett in kleinen Chargen aus,
+              filtrieren es und füllen es von Hand in neutrale Gläser in zwei Grössen.
             </p>
             <p>
               Jedes Glas verkaufen wir dort, wo wir erklären können, was drin ist: an
