@@ -12,6 +12,15 @@
 
 # Standorte
 
-- [ ] Markt-Datenfelder ergänzen, vergangene Termine ausblenden und leeren Zustand anzeigen.
-- [ ] Routenlinks, Zeitankündigung mit Instagram und Shop-Vorbestellung ergänzen.
-- [ ] Datumsregeln und Standorte-Seite prüfen.
+- [x] Markt-Datenfelder ergänzen, vergangene Termine ausblenden und leeren Zustand anzeigen.
+- [x] Routenlinks, Zeitankündigung mit Instagram und Shop-Vorbestellung ergänzen.
+- [x] Datumsregeln und Standorte-Seite prüfen.
+
+# Bestellweg und Produktinfos im Shop
+
+- [x] «Jetzt bestellen» auf der Startseite führt zum Bestellformular auf /shop.
+- [x] «Lieferung & Zahlung» mit Abholung kostenlos, Lieferung [X CHF], Lieferzeit [Z Tage], Zahlung Twint/Karte/bar.
+- [x] Hinweis unter dem Anfrage-Button: Rückmeldung innert 48 Stunden per E-Mail.
+- [x] Preis pro 100 g bei den Grössen: 4.36 CHF/100 g und 5.45 CHF/100 g.
+- [x] Block «Zutaten & Lagerung» mit Zutaten, Lagerung, Haltbarkeit und MHD-Hinweis.
+- [ ] Platzhalter in eckigen Klammern vom Nutzer ausfüllen lassen: [X CHF], [Z Tage], [kühl und dunkel], [X Monate], [Y Monate].
