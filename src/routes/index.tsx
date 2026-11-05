@@ -49,7 +49,7 @@ function Index() {
               Bratfein — Fein in der Pfanne, gross im Geschmack.
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground sm:text-2xl">
-              Speisefett aus Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse.
+              Speisefett aus Schweizer Rindernierenfett – von einem Schlachthof in Hinwil. Hitzebeständiges Bratfett für Steak, Rösti und Gemüse.
             </p>
             <hr className="copper-rule mt-7" />
             <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
@@ -93,7 +93,7 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="mt-12 max-w-3xl">
             <p className="text-lg leading-relaxed text-foreground md:text-xl">
-              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und damit verschwendet. Dabei handelt es sich um ein erstklassiges, hochwertiges Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in hochqualitatives Schweizer Speisefett für die Küche.
+              In der konventionellen Fleischverarbeitung wird wertvolles Nierenfett häufig schlicht entsorgt und damit verschwendet. Dabei handelt es sich um ein wertvolles Naturprodukt. Wir wirken dieser Verschwendung entgegen: Durch gezieltes Upcycling verwandeln wir dieses ungenutzte Fett in feines Schweizer Speisefett für die Küche.
             </p>
           </Reveal>
         </div>
@@ -123,7 +123,7 @@ function Index() {
                 "Hitzestabil zum Braten (Rauchpunkt je nach Quelle ca. 200–250 °C)",
                 "Herzhafter, fein-würziger Eigengeschmack",
                 "Schonend in kleinen Chargen ausgelassen und filtriert",
-                "Aus Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil, das sonst oft ungenutzt bleibt",
+                "Aus Schweizer Rindernierenfett, das sonst oft ungenutzt bleibt",
                 "Ohne Konservierungsstoffe",
               ].map((item, i) => (
                 <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
@@ -143,7 +143,7 @@ function Index() {
               {[
                 "Ebenfalls zum Braten geeignet",
                 "Neutraler Geschmack",
-                "Industriell raffiniert",
+                "Meist industriell raffiniert",
                 "Pflanzliche Alternative",
               ].map((item, i) => (
                 <Reveal as="li" key={item} delay={100 + i * 90} className="flex items-start gap-3">
@@ -155,6 +155,52 @@ function Index() {
           </Reveal>
         </div>
         <p className="mt-4 text-sm text-muted-foreground">Rauchpunkte variieren je nach Herstellung und Quelle.</p>
+        <p className="mt-1 text-xs text-muted-foreground/80">Quellen: [wird ergänzt]</p>
+      </section>
+
+      {/* Upcycling in Zahlen */}
+      <section className="border-y border-border bg-cream/60" aria-labelledby="upcycling-zahlen">
+        <div className="mx-auto max-w-6xl px-5 py-20 text-center md:px-8 md:py-28">
+          <Reveal>
+            <p className="eyebrow">Nachhaltigkeit</p>
+            <h2 id="upcycling-zahlen" className="mt-4 text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
+              Upcycling in Zahlen
+            </h2>
+            <hr className="copper-rule mx-auto mt-6" />
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-foreground md:text-xl">
+              Bisher haben wir [X] kg Nierenfett vor der Entsorgung bewahrt.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Kundenstimmen */}
+      <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="kundenstimmen">
+        <Reveal className="text-center">
+          <p className="eyebrow">Stimmen</p>
+          <h2 id="kundenstimmen" className="mt-4 text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
+            Das sagen unsere Kunden
+          </h2>
+          <hr className="copper-rule mx-auto mt-6" />
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
+          {[
+            { name: "[Name 1]", quote: "[Zitat 1 – wird noch ergänzt]" },
+            { name: "[Name 2]", quote: "[Zitat 2 – wird noch ergänzt]" },
+            { name: "[Name 3]", quote: "[Zitat 3 – wird noch ergänzt]" },
+          ].map((item, i) => (
+            <Reveal key={item.name} delay={100 + i * 90} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+              <blockquote className="flex-1 text-base leading-relaxed text-foreground">
+                «{item.quote}»
+              </blockquote>
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                {item.name}
+              </p>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* CTA */}

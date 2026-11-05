@@ -87,7 +87,7 @@ const ORDER_EMAIL = "bratfein.zh@gmail.com";
 
 const highlights = [
   "Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt",
-  "Upcycling von Nierenfett von einem Schlachthof in Hinwil",
+  "Upcycling von Schweizer Rindernierenfett",
   "Neutrale Gläser in zwei Grössen, wiederverwendbar",
   "Hoher Rauchpunkt für Steak, Rösti und Gemüse",
 ];
