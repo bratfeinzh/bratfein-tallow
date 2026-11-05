@@ -62,5 +62,10 @@ export function totalWeightG(id: string, quantity: number): number {
 }
 
 
+/** Price per 100 g, e.g. "4.36 CHF/100 g". Derived from price and weight so the two never drift. */
+export function pricePer100gLabel(jar: Pick<Jar, "priceChf" | "weightG">): string {
+  return `${((jar.priceChf / jar.weightG) * 100).toFixed(2)} CHF/100 g`;
+}
+
 /** "330-ml-Glas (275 g) für 12 CHF, 205-ml-Glas (165 g) für 9 CHF" */
 export const jarOfferLine = jars.map((jar) => `${jar.label} für ${jar.priceLabel}`).join(", ");

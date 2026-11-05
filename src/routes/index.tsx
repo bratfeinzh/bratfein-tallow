@@ -56,12 +56,12 @@ function Index() {
               Speisefett aus Schweizer Rindernierenfett, in Zürich ausgelassen und abgefüllt – herzhaft und fein-würzig.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"
+              <Link
+                to="/shop"
                 className="inline-flex items-center justify-center rounded-sm bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground transition-colors duration-300 hover:bg-accent"
               >
                 Jetzt bestellen
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -168,12 +168,12 @@ function Index() {
             <p className="mx-auto mt-5 max-w-md text-sm text-walnut-foreground/70">
               330 ml (275 g) für 12 CHF, 205 ml (165 g) für 9 CHF. Abholung an unseren Marktständen oder Lieferung – Details unter «Lieferung &amp; Zahlung» im Shop.
             </p>
-            <a
-              href="mailto:bratfein.zh@gmail.com?subject=Bestellung%20Bratfein%20Schweizer%20Speisefett"
+            <Link
+              to="/shop"
               className="mt-9 inline-flex items-center justify-center rounded-sm bg-copper px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground transition-opacity duration-300 hover:opacity-90"
             >
               Jetzt bestellen
-            </a>
+            </Link>
           </div>
         </Reveal>
       </section>
