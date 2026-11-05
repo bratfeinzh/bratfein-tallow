@@ -88,7 +88,7 @@ const pillars = [
   {
     icon: Beef,
     title: "Respekt vor dem Tier",
-    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Auch Nierenfett vom Rind ist ein hochwertiger Rohstoff für die Küche.",
+    text: "Nose-to-Tail heisst für uns: Wenn ein Tier geschlachtet wird, soll möglichst alles genutzt werden. Auch Nierenfett vom Rind ist ein wertvoller Rohstoff für die Küche.",
   },
 ];
 
@@ -158,7 +158,7 @@ function UeberUns() {
           <SectionHeading
             eyebrow="Unsere Geschichte"
             title="Vom Nebenprodukt zum Lieblingsfett"
-            lead="Angefangen hat alles mit einer Frage in der Schulküche: Wie können wir hochwertiges Nierenfett von Schweizer Rindern von einem Schlachthof in Hinwil für die Küche nutzen?"
+            lead="Angefangen hat alles mit einer Frage in der Schulküche: Wie können wir Nierenfett vom Rind, das sonst entsorgt wird, für die Küche nutzen?"
           />
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
