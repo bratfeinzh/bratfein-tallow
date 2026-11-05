@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Flame, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
+import { Check, Flame, Leaf, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { useRef, useState } from "react";
 import { z } from "zod";
 
@@ -20,6 +20,7 @@ import {
   findJar,
   jars,
   jarOfferLine,
+  pricePer100gLabel,
   totalChf,
   totalWeightG,
   type JarId,
@@ -193,6 +194,9 @@ function Shop() {
                       >
                         {option.priceLabel}
                       </span>
+                      <span className="mt-1 block text-xs text-muted-foreground">
+                        {pricePer100gLabel(option)}
+                      </span>
                     </button>
                   );
                 })}
@@ -227,8 +231,36 @@ function Shop() {
                 <p className="eyebrow">Lieferung &amp; Zahlung</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
+                    <span className="font-semibold text-foreground">Abholung am Marktstand:</span> kostenlos
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Lieferung im Raum Zürich:</span> [X CHF]
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Lieferzeit:</span> [Z Tage]
+                  </li>
+                  <li>
                     <span className="font-semibold text-foreground">Zahlung:</span> Twint, Karte oder bar
                   </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-start gap-3 rounded-sm bg-cream px-5 py-4">
+              <Leaf className="mt-0.5 size-5 shrink-0 text-copper" strokeWidth={1.6} />
+              <div>
+                <p className="eyebrow">Zutaten &amp; Lagerung</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                  <li>
+                    <span className="font-semibold text-foreground">Zutaten:</span> 100 % Rindernierenfett
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Lagerung:</span> [kühl und dunkel]
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Haltbarkeit:</span> ungeöffnet haltbar ca. [X Monate], geöffnet [Y Monate]
+                  </li>
+                  <li>Das genaue MHD steht auf dem Glas.</li>
                 </ul>
               </div>
             </div>
@@ -475,6 +507,9 @@ function Shop() {
               >
                 {busy ? "Wird gesendet …" : "Bestellung anfragen"}
               </button>
+              <p className="text-center text-xs leading-relaxed text-muted-foreground">
+                Wir melden uns innert 48 Stunden per E-Mail mit der Bestätigung.
+              </p>
             </form>
         </div>
       </section>
