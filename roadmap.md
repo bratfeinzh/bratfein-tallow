@@ -24,3 +24,10 @@
 - [x] Preis pro 100 g bei den Grössen: 4.36 CHF/100 g und 5.45 CHF/100 g.
 - [x] Block «Zutaten & Lagerung» mit Zutaten, Lagerung, Haltbarkeit und MHD-Hinweis.
 - [ ] Platzhalter in eckigen Klammern vom Nutzer ausfüllen lassen: [X CHF], [Z Tage], [kühl und dunkel], [X Monate], [Y Monate].
+
+# Startseiten-Texte und neue Abschnitte
+
+- [x] Herkunft nur einmal prominent (Hero), sonst kurz ohne doppeltes «von».
+- [x] «Meist industriell raffiniert» mit Quellen-Zeile; «erstklassig»/«hochwertig» durch sachliche Formulierungen ersetzt.
+- [x] Abschnitte «Upcycling in Zahlen» und «Das sagen unsere Kunden» auf der Startseite ergänzt.
+- [ ] Platzhalter vom Nutzer ausfüllen lassen: [X] kg Upcycling, Quellen im Vergleich, 3 Kundenzitate mit Namen.
