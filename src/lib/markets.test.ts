@@ -3,6 +3,13 @@ import { strict as assert } from "node:assert";
 import { markets, upcomingMarkets, zurichDate, marketMapsUrl } from "./markets";
 
 describe("confirmed market information", () => {
+  test("Zollikon selling hours are 11:00–18:00 on 29 November 2026", () => {
+    const market = markets.find((entry) => entry.place === "Zollikon");
+    assert.equal(market?.time, "11:00 – 18:00");
+    assert.equal(market?.start, "2026-11-29T11:00:00+01:00");
+    assert.equal(market?.end, "2026-11-29T18:00:00+01:00");
+  });
+
   test("Bassersdorf selling hours are 10:00–18:00 on 5 December 2026", () => {
     const market = markets.find((entry) => entry.place === "Bassersdorf");
     assert.equal(market?.time, "10:00 – 18:00");
@@ -20,8 +27,8 @@ describe("confirmed market information", () => {
 });
 
 describe("location page scheduling", () => {
-  test("both confirmed markets are upcoming on 3 November 2026", () => {
-    assert.deepEqual(upcomingMarkets("2026-11-03").map((m) => m.place), ["Bassersdorf", "Wallisellen"]);
+  test("all confirmed markets are upcoming on 3 November 2026, chronologically sorted", () => {
+    assert.deepEqual(upcomingMarkets("2026-11-03").map((m) => m.place), ["Zollikon", "Bassersdorf", "Wallisellen"]);
   });
   test("a market remains visible on its date", () => {
     assert.deepEqual(upcomingMarkets("2026-12-05").map((m) => m.place), ["Bassersdorf", "Wallisellen"]);
