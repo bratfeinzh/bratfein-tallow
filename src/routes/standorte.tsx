@@ -101,9 +101,7 @@ function Standorte() {
                   <div>
                     {m.begins && m.ends ? `${m.begins}–${m.ends}` : "Zeit wird noch bekanntgegeben"}
                     {(!m.begins || !m.ends) && (
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        Updates auf Instagram: <a href="https://www.instagram.com/bratfein.ch/" target="_blank" rel="noopener noreferrer" className="text-copper underline underline-offset-4">@bratfein.ch</a>
-                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">{"\n"}</p>
                     )}
                   </div>
                 </li>
