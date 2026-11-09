@@ -158,6 +158,37 @@ function Index() {
         <p className="mt-1 text-xs text-muted-foreground/80">Quellen: [wird ergänzt]</p>
       </section>
 
+      {/* So verwendest du Bratfein */}
+      <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28" aria-labelledby="anwendung">
+        <Reveal className="text-center">
+          <h2 id="anwendung" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
+            So verwendest du Bratfein
+          </h2>
+          <hr className="copper-rule mx-auto mt-6" />
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
+          {[
+            {
+              title: "Steak anbraten",
+              text: "Pfanne stark erhitzen und etwa 1 Esslöffel Speisefett darin schmelzen lassen. Das Steak trocken tupfen und pro Seite 2–3 Minuten scharf anbraten. Danach kurz ruhen lassen und erst dann salzen.",
+            },
+            {
+              title: "Rösti",
+              text: "2 Esslöffel Speisefett bei mittlerer Hitze in der Pfanne schmelzen. Die geriebenen Kartoffeln flach andrücken und pro Seite ca. 8–10 Minuten goldbraun braten. Zum Wenden einen Teller zu Hilfe nehmen.",
+            },
+            {
+              title: "Gemüse braten",
+              text: "1 Esslöffel Speisefett bei mittlerer bis hoher Hitze erhitzen. Das Gemüse in gleich grosse Stücke schneiden, nicht zu dicht in die Pfanne geben und unter Wenden 5–8 Minuten braten, bis es leicht gebräunt ist.",
+            },
+          ].map((card, i) => (
+            <Reveal key={card.title} delay={i * 120} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
+              <h3 className="font-serif text-2xl text-foreground">{card.title}</h3>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">{card.text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Upcycling in Zahlen */}
       <section className="border-y border-border bg-cream/60" aria-labelledby="upcycling-zahlen">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:px-8 md:py-28">
