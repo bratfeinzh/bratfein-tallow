@@ -170,36 +170,9 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-foreground md:text-xl">
-              Bisher haben wir [X] kg Nierenfett vor der Entsorgung bewahrt.
+              Bisher haben wir 70 kg Nierenfett vor der Entsorgung bewahrt.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Kundenstimmen */}
-      <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="kundenstimmen">
-        <Reveal className="text-center">
-          <p className="eyebrow">Stimmen</p>
-          <h2 id="kundenstimmen" className="mt-4 text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-            Das sagen unsere Kunden
-          </h2>
-          <hr className="copper-rule mx-auto mt-6" />
-        </Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
-          {[
-            { name: "[Name 1]", quote: "[Zitat 1 – wird noch ergänzt]" },
-            { name: "[Name 2]", quote: "[Zitat 2 – wird noch ergänzt]" },
-            { name: "[Name 3]", quote: "[Zitat 3 – wird noch ergänzt]" },
-          ].map((item, i) => (
-            <Reveal key={item.name} delay={100 + i * 90} className="gilded flex flex-col rounded-xl bg-background p-6 md:p-8">
-              <blockquote className="flex-1 text-base leading-relaxed text-foreground">
-                «{item.quote}»
-              </blockquote>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                {item.name}
-              </p>
-            </Reveal>
-          ))}
         </div>
       </section>
 
