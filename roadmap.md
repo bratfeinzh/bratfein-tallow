@@ -29,5 +29,6 @@
 
 - [x] Herkunft nur einmal prominent (Hero), sonst kurz ohne doppeltes «von».
 - [x] «Meist industriell raffiniert» mit Quellen-Zeile; «erstklassig»/«hochwertig» durch sachliche Formulierungen ersetzt.
-- [x] Abschnitte «Upcycling in Zahlen» und «Das sagen unsere Kunden» auf der Startseite ergänzt.
-- [ ] Platzhalter vom Nutzer ausfüllen lassen: [X] kg Upcycling, Quellen im Vergleich, 3 Kundenzitate mit Namen.
+- [x] Abschnitt «Upcycling in Zahlen» auf der Startseite ergänzt; Kundenstimmen-Abschnitt auf Wunsch wieder entfernt.
+- [x] Upcycling-Menge bestätigt: 70 kg Nierenfett.
+- [ ] Offen: Quellen-Zeile im Pflanzenöl-Vergleich.
