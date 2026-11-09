@@ -8,6 +8,7 @@ import nilsPhoto from "../assets/team-nils.jpg.asset.json";
 import stefanPhoto from "../assets/team-stefan.jpg.asset.json";
 import victorPhoto from "../assets/team-victor.jpg.asset.json";
 import valerioPhoto from "../assets/team-valerio.jpg.asset.json";
+import melissaPhoto from "../assets/team-melissa.jpg.asset.json";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
@@ -53,7 +54,7 @@ const team: TeamMember[] = [
     note: "\n",
     photo: nilsPhoto.url,
   },
-  { name: "Melissa", role: "CMO", note: "\n" },
+  { name: "Melissa", role: "CMO", note: "\n", photo: melissaPhoto.url },
   {
     name: "Stefan",
     role: "CFO",
