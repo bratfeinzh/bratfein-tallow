@@ -97,6 +97,7 @@ const fieldClass =
 const labelClass = "block text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground";
 
 const deliveryOptions = [
+  { value: "zollikon", label: "Marktstand Zollikon (29. November 2026)" },
   { value: "bassersdorf", label: "Marktstand Bassersdorf (5. Dezember 2026)" },
   { value: "wallisellen", label: "Marktstand Wallisellen (10. Dezember 2026)" },
   { value: "lieferung", label: "Lieferung" },
@@ -108,7 +109,7 @@ const orderSchema = z.object({
   address: z.string().trim().max(300, "Die Adresse ist zu lang."),
   notes: z.string().trim().max(1000, "Die Bemerkungen sind zu lang."),
   quantity: z.number().int().min(1, "Bitte bestellen Sie mindestens 1 Glas.").max(99),
-  delivery: z.enum(["bassersdorf", "wallisellen", "lieferung"], {
+  delivery: z.enum(["zollikon", "bassersdorf", "wallisellen", "lieferung"], {
     message: "Bitte wählen Sie Abholung oder Lieferung.",
   }),
 });
