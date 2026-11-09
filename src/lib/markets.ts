@@ -1,6 +1,19 @@
 // Venue names are published by the linked organizers; selling hours follow Bratfein's confirmation.
 export const markets = [
   {
+    place: "Zollikon",
+    date: "29. November 2026",
+    dateIso: "2026-11-29",
+    begins: "11:00",
+    ends: "18:00",
+    time: "11:00 – 18:00",
+    location: "Dorfplatz Zollikon (Alte Landstrasse)",
+    start: "2026-11-29T11:00:00+01:00",
+    end: "2026-11-29T18:00:00+01:00",
+    city: "Zollikon",
+    source: "https://www.zollikon.ch/dienstleistungen/12206",
+  },
+  {
     place: "Bassersdorf",
     date: "5. Dezember 2026",
     dateIso: "2026-12-05",
