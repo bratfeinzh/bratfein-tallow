@@ -235,7 +235,7 @@ function Shop() {
                     <span className="font-semibold text-foreground">Abholung am Marktstand:</span> kostenlos
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground">Lieferung:</span> (Preis und Lieferzeit nach Absprache)
+                    <span className="font-semibold text-foreground">Lieferung:</span> Preis und Lieferzeit nach Absprache
                   </li>
                   <li>
                     <span className="font-semibold text-foreground">Zahlung via</span> Twint, Karte oder Bar
@@ -253,7 +253,7 @@ function Shop() {
                     <span className="font-semibold text-foreground">Zutaten:</span> 100 % Rindernierenfett
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground">Lagerung:</span> [kühl und dunkel]
+                    <span className="font-semibold text-foreground">Lagerung:</span> kühl und dunkel
                   </li>
                   <li>
                     <span className="font-semibold text-foreground">Haltbarkeit:</span> ungeöffnet haltbar ca. [X Monate], geöffnet [Y Monate]
