@@ -31,9 +31,9 @@ function oauthApi(): OAuthNamespace {
 }
 
 const scopeLabels: Record<string, string> = {
-  openid: "Deine Anmeldung bestätigen",
-  email: "Deine E-Mail-Adresse teilen",
-  profile: "Dein Basisprofil teilen",
+  openid: "Ihre Anmeldung bestätigen",
+  email: "Ihre E-Mail-Adresse teilen",
+  profile: "Ihr Basisprofil teilen",
 };
 
 const searchSchema = z.object({
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/.lovable/oauth/consent")({
       {
         name: "description",
         content:
-          "Gib einer verbundenen Anwendung Zugriff auf Bratfein in deinem Namen.",
+          "Geben Sie einer verbundenen Anwendung Zugriff auf Bratfein in Ihrem Namen.",
       },
       { property: "og:title", content: "Zugriff freigeben | Bratfein" },
       {
@@ -206,8 +206,8 @@ function ConsentPage() {
         </p>
       ) : null}
       <p className="text-sm text-muted-foreground">
-        Damit kann {clientName} die freigegebenen Bratfein-Funktionen in deinem
-        Namen nutzen, solange du angemeldet bist.
+        Damit kann {clientName} die freigegebenen Bratfein-Funktionen in Ihrem
+        Namen nutzen, solange Sie angemeldet sind.
       </p>
       {scopes.length > 0 ? (
         <ul className="space-y-1 text-sm text-muted-foreground">

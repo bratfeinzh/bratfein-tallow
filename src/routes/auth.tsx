@@ -27,7 +27,7 @@ export const Route = createFileRoute("/auth")({
       {
         name: "description",
         content:
-          "Melde dich bei Bratfein an, um deinen Zugang für verbundene Anwendungen freizugeben.",
+          "Melden Sie sich bei Bratfein an, um Ihren Zugang für verbundene Anwendungen freizugeben.",
       },
       { property: "og:title", content: "Anmelden | Bratfein" },
       {
@@ -79,7 +79,7 @@ function AuthPage() {
         if (error) throw error;
         if (!data.session) {
           setMessage(
-            "Fast fertig: Bitte bestätige deine E-Mail-Adresse über den Link, den wir dir geschickt haben.",
+            "Fast fertig: Bitte bestätigen Sie Ihre E-Mail-Adresse über den Link, den wir Ihnen geschickt haben.",
           );
           return;
         }
@@ -97,7 +97,7 @@ function AuthPage() {
       setMessage(
         error instanceof Error
           ? error.message
-          : "Anmeldung nicht möglich. Bitte versuche es nochmals.",
+          : "Anmeldung nicht möglich. Bitte versuchen Sie es nochmals.",
       );
     } finally {
       setBusy(false);
