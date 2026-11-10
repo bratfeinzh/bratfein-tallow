@@ -22,7 +22,8 @@ function Agb() {
     <LegalPage eyebrow="Rechtliches" title="Allgemeine Geschäftsbedingungen">
       <p>{`\n`}</p>
       {/* REMOVED */}
-      <p>{`Ändere Design, Farben und Struktur NICHT. Mache nur Folgendes:
+      {/* REMOVED CONTENT BELOW */}
+      {false && <p>{`Ändere Design, Farben und Struktur NICHT. Mache nur Folgendes:
 
 
 1. Neue Seite /agb mit dem Titel «Allgemeine Geschäftsbedingungen» erstellen. Übernimm den folgenden Text exakt, ohne Kürzung oder Umformulierung:
@@ -98,7 +99,7 @@ Stand: November 2026
 3. Im Bestellformular unter dem Absenden-Button ergänzen: «Mit dem Absenden akzeptierst du die AGB.» Das Wort «AGB» ist ein Link auf /agb.
 
 
-4. Überall auf der Seite die Haltbarkeitsangabe prüfen: Sie soll ungeöffnet 6 Monate und geöffnet 3 Monate lauten. Keine anderen Änderungen.`}</p>
+4. Überall auf der Seite die Haltbarkeitsangabe prüfen: Sie soll ungeöffnet 6 Monate und geöffnet 3 Monate lauten. Keine anderen Änderungen.`}</p>}
     </LegalPage>
   );
 }
