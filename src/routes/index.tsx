@@ -120,7 +120,7 @@ function Index() {
             </div>
             <ul className="flex flex-1 flex-col gap-4">
               {[
-                "Hitzestabil zum Braten (Rauchpunkt je nach Quelle ca. 200–250 °C)",
+                "Hitzestabil zum Braten (Rauchpunkt ca. 200–220 °C)",
                 "Herzhafter, fein-würziger Eigengeschmack",
                 "Schonend in kleinen Chargen ausgelassen und filtriert",
                 "Aus Schweizer Rindernierenfett, das sonst oft ungenutzt bleibt",
@@ -155,14 +155,14 @@ function Index() {
           </Reveal>
         </div>
         <p className="mt-4 text-sm text-muted-foreground">Rauchpunkte variieren je nach Herstellung und Quelle.</p>
-        <p className="mt-1 text-xs text-muted-foreground/80">Quellen: [wird ergänzt]</p>
+        <p className="mt-1 text-xs text-muted-foreground/80">Quellen: REWE Lexikon «Frittierfette» (rewe.de); Verbraucherzentrale NRW «Speiseöle – welche eignen sich für was?».</p>
       </section>
 
       {/* So verwendest du Bratfein */}
       <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28" aria-labelledby="anwendung">
         <Reveal className="text-center">
           <h2 id="anwendung" className="text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-            So verwendest du Bratfein
+            So verwenden Sie Bratfein
           </h2>
           <hr className="copper-rule mx-auto mt-6" />
         </Reveal>
@@ -245,7 +245,7 @@ function Index() {
             </Reveal>
             <Reveal delay={200}>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im YES-Programm ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand. Unser Ziel: regionale Ressourcen wertschätzen und euch zeigen, wie gut Nachhaltigkeit schmecken kann.
+                Wir sind sieben Schweizer Gymnasiastinnen und Gymnasiasten, die im YES-Programm ein echtes Unternehmen aufbauen – von der Idee über die Kalkulation bis zum Marktstand. Unser Ziel: regionale Ressourcen wertschätzen und Ihnen zeigen, wie gut Nachhaltigkeit schmecken kann.
               </p>
             </Reveal>
             <Reveal delay={300}>

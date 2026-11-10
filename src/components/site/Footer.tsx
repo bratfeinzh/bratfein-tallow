@@ -90,6 +90,11 @@ export function Footer() {
             </li>
             <li>Emil-Rütti-Weg 4, 8050 Zürich, Schweiz</li>
             <li>Zahlung via Twint, Karte oder bar</li>
+            <li className="flex flex-wrap gap-4">
+              <Link to="/impressum" className="transition-colors hover:text-copper-soft">Impressum</Link>
+              <Link to="/datenschutz" className="transition-colors hover:text-copper-soft">Datenschutz</Link>
+              <Link to="/agb" className="transition-colors hover:text-copper-soft">AGB</Link>
+            </li>
             <li className="pt-2 text-xs leading-relaxed text-walnut-foreground/60">
               Bratfein ist ein offizielles Mini-Unternehmen von Young Enterprise Switzerland (YES).
             </li>
@@ -122,6 +127,9 @@ export function Footer() {
           </Link>
           <Link to="/datenschutz" className="transition-colors hover:text-copper-soft">
             Datenschutz
+          </Link>
+          <Link to="/agb" className="transition-colors hover:text-copper-soft">
+            AGB
           </Link>
         </span>
       </div>
