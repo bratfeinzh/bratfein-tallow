@@ -51,7 +51,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
           Diese Seite konnte nicht geladen werden
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Es ist ein Fehler aufgetreten. Bitte lade die Seite erneut oder gehe zur Startseite.
+          Es ist ein Fehler aufgetreten. Bitte laden Sie die Seite erneut oder gehen Sie zur Startseite.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button

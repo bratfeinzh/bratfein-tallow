@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Flame, Leaf, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { useRef, useState } from "react";
 import { z } from "zod";
@@ -117,7 +117,7 @@ const orderSchema = z.object({
 const productDetails = [
   { icon: ShieldCheck, text: "100% reines Rindertalg-Speisefett aus Zürich" },
   { icon: Check, text: "Ohne Konservierungsstoffe" },
-  { icon: Flame, text: "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–250 °C)" },
+  { icon: Flame, text: "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–220 °C)" },
 ];
 
 function Shop() {
@@ -235,13 +235,10 @@ function Shop() {
                     <span className="font-semibold text-foreground">Abholung am Marktstand:</span> kostenlos
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground">Lieferung im Raum Zürich:</span> [X CHF]
+                    <span className="font-semibold text-foreground">Lieferung:</span> (Preis und Lieferzeit nach Absprache)
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground">Lieferzeit:</span> [Z Tage]
-                  </li>
-                  <li>
-                    <span className="font-semibold text-foreground">Zahlung:</span> Twint, Karte oder bar
+                    <span className="font-semibold text-foreground">Zahlung via</span> Twint, Karte oder Bar
                   </li>
                 </ul>
               </div>
@@ -322,7 +319,7 @@ function Shop() {
               setQuantity(1);
               setDelivery("");
               setJar(defaultJarId);
-              setStatus({ ok: true, msg: "Danke! Deine Anfrage ist bei uns eingegangen. Wir bestätigen sie persönlich per E-Mail." });
+              setStatus({ ok: true, msg: "Danke! Ihre Anfrage ist bei uns eingegangen. Wir bestätigen sie persönlich per E-Mail." });
             }}
           >
               <div className="grid gap-6 sm:grid-cols-2">
@@ -510,6 +507,9 @@ function Shop() {
               </button>
               <p className="text-center text-xs leading-relaxed text-muted-foreground">
                 Wir melden uns innert 48 Stunden per E-Mail mit der Bestätigung.
+              </p>
+              <p className="text-center text-xs leading-relaxed text-muted-foreground">
+                Mit dem Absenden akzeptieren Sie die <Link to="/agb" className="text-copper underline underline-offset-4">AGB</Link>.
               </p>
             </form>
         </div>

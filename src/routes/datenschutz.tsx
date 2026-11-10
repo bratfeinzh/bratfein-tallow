@@ -60,6 +60,7 @@ function Datenschutz() {
           angegebene E-Mail-Adresse.
         </p>
       </LegalBlock>
+      <p>Diese Website verwendet nur technisch notwendige Cookies, die für den Betrieb der Seite erforderlich sind. Es werden keine Analyse- oder Marketing-Cookies eingesetzt.</p>
     </LegalPage>
   );
 }

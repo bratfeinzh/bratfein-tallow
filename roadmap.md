@@ -19,11 +19,11 @@
 # Bestellweg und Produktinfos im Shop
 
 - [x] «Jetzt bestellen» auf der Startseite führt zum Bestellformular auf /shop.
-- [x] «Lieferung & Zahlung» mit Abholung kostenlos, Lieferung [X CHF], Lieferzeit [Z Tage], Zahlung Twint/Karte/bar.
+- [x] «Lieferung & Zahlung» mit Abholung kostenlos, Lieferung (Preis und Lieferzeit nach Absprache), Zahlung Twint/Karte/Bar.
 - [x] Hinweis unter dem Anfrage-Button: Rückmeldung innert 48 Stunden per E-Mail.
 - [x] Preis pro 100 g bei den Grössen: 4.36 CHF/100 g und 5.45 CHF/100 g.
 - [x] Block «Zutaten & Lagerung» mit Zutaten, Lagerung, Haltbarkeit und MHD-Hinweis.
-- [ ] Platzhalter in eckigen Klammern vom Nutzer ausfüllen lassen: [X CHF], [Z Tage], [kühl und dunkel], [X Monate], [Y Monate].
+- [ ] Lagerung und Haltbarkeit vom Nutzer bestätigen lassen: [kühl und dunkel], [X Monate], [Y Monate].
 
 # Startseiten-Texte und neue Abschnitte
 
@@ -31,4 +31,11 @@
 - [x] «Meist industriell raffiniert» mit Quellen-Zeile; «erstklassig»/«hochwertig» durch sachliche Formulierungen ersetzt.
 - [x] Abschnitt «Upcycling in Zahlen» auf der Startseite ergänzt; Kundenstimmen-Abschnitt auf Wunsch wieder entfernt.
 - [x] Upcycling-Menge bestätigt: 70 kg Nierenfett.
-- [ ] Offen: Quellen-Zeile im Pflanzenöl-Vergleich.
+- [x] Quellen-Zeile im Pflanzenöl-Vergleich ergänzt.
+
+# Texte und Rechtliches
+
+- [x] Rauchpunkt, Sie-Anrede und Lieferbedingungen aktualisieren; Navigation geprüft (bereits nur ein Bestellen-Eintrag).
+- [x] AGB-Seite mit unverändertem Platzhalter, Footer- und Formularlinks ergänzt.
+- [x] Gewünschten Cookie-Absatz ergänzt, kein Banner eingebaut; Seiten und Links im Browser geprüft.
+- [ ] Vollständiger AGB-Text fehlt: Nutzer muss den Platzhalter ersetzen lassen.

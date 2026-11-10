@@ -75,7 +75,7 @@ function Standorte() {
 
       {visibleMarkets.length === 0 ? (
         <p className="mt-14 text-base leading-relaxed text-muted-foreground">
-          Aktuell sind keine Märkte geplant. Du kannst trotzdem direkt über den <Link to="/shop" className="text-copper underline underline-offset-4">Shop</Link> bestellen.
+          Aktuell sind keine Märkte geplant. Sie können trotzdem direkt über den <Link to="/shop" className="text-copper underline underline-offset-4">Shop</Link> bestellen.
         </p>
       ) : <div className="mt-14 grid gap-6 sm:grid-cols-2">
         {visibleMarkets.map((m) => (
@@ -120,7 +120,7 @@ function Standorte() {
                 Angaben des Veranstalters
               </a>
               <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
-                Besuche unseren Marktstand und sichere dir dein Schweizer Speisefett direkt vor Ort.
+                Besuchen Sie unseren Marktstand und sichern Sie sich Ihr Schweizer Speisefett direkt vor Ort.
               </p>
               <Button asChild variant="outline" className="mt-6 h-auto w-full rounded-sm border-foreground/20 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] hover:border-copper hover:text-copper">
                 <a href={marketMapsUrl(m.location)} target="_blank" rel="noopener noreferrer" aria-label={`Route öffnen: ${m.location} (öffnet in neuem Tab)`}>

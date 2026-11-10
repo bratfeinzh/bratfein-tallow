@@ -24,7 +24,7 @@ export default defineTool({
       properties: [
         "100% reines Rindertalg-Speisefett aus Zürich",
         "Ohne Konservierungsstoffe",
-        "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–250 °C)",
+        "Hohe Hitzebeständigkeit (Rauchpunkt ca. 200–220 °C)",
         "Nose-to-Tail / Upcycling von Nierenfett",
       ],
       usage:
