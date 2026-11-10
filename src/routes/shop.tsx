@@ -256,7 +256,7 @@ function Shop() {
                     <span className="font-semibold text-foreground">Lagerung:</span> kühl und dunkel
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground">Haltbarkeit:</span> ungeöffnet haltbar ca. [X Monate], geöffnet [Y Monate]
+                    <span className="font-semibold text-foreground">Haltbarkeit:</span> ungeöffnet 6 Monate, geöffnet 3 Monate
                   </li>
                   <li>Das genaue MHD steht auf dem Glas.</li>
                 </ul>
