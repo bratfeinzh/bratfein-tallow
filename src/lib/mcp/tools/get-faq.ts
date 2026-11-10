@@ -4,7 +4,7 @@ const faq = [
   {
     question: "Wie lange ist das Schweizer Speisefett haltbar?",
     answer:
-      "Ungeöffnet und kühl und dunkel gelagert mehrere Monate. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.",
+      "Ungeöffnet 6 Monate, geöffnet 3 Monate. Das genaue Mindesthaltbarkeitsdatum steht auf dem Glas.",
   },
   {
     question: "Muss das Glas im Kühlschrank gelagert werden?",
