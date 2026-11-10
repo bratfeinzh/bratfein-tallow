@@ -20,6 +20,8 @@ export const Route = createFileRoute("/agb")({
 function Agb() {
   return (
     <LegalPage eyebrow="Rechtliches" title="Allgemeine Geschäftsbedingungen">
+      <p>{`\n`}</p>
+      {/* REMOVED */}
       <p>{`Ändere Design, Farben und Struktur NICHT. Mache nur Folgendes:
 
 
